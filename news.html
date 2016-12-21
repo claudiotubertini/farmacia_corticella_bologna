@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Farmacia di Corticella</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="Stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="Stylesheet" href="css/base.css" />
+<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("feeds", "1");</script> -->
+  </head>
+  <body>
+    
+    <div class="container">
+
+    <div class="blog-header">
+        <h1 class="blog-title">Le notizie sulla salute</h1>
+        <p class="lead blog-description">The official example template of claudio's blog with Bootstrap.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post" data-bind="foreach: RetrieveNews.products">
+            <h2 class="blog-post-title" data-bind="text: data.title"></h2>
+            <p class="blog-post-meta" data-bind="text: data.date"></p><p> <a data-bind="attr: {href: data.link}"> clicca qui</a></p>
+
+            <p data-bind="text: data.description"></p>
+     </div>
+
+      
+      
+        <script>
+
+  var RetrieveNews = function () {
+        var mydate = function (date){
+                year = date.getFullYear();
+                mm = date.getMonth()+1;
+                dd = date.getDate();
+                if(dd<10){
+                    dd='0'+dd
+                } 
+                if(mm<10){
+                    mm='0'+mm
+                }
+                result = dd+'/'+mm+'/'+year;
+                return result;
+        };
+            $.get('http://www.agi.it/salute/rss', function (data) {
+            $(data).find("item").each(function () { // or "item" or whatever suits your feed
+                  var el = $(this);
+                  item = {
+                    "title": el.find("title").text(),
+                    "date": el.find("pubDate").text(),
+                    "link": el.find("link").text(),
+                    "description": el.find("description").text()  }
+                  products.push(new productModel(item))
+                  console.log("------------------------");
+                  console.log("title      : " + el.find("title").text());
+                  console.log("data      :" + el.find("pubDate").text())
+                  console.log("link     : " + el.find("link").text());
+                  console.log("description: " + el.find("description").text());
+                  });
+              });
+/* model for products */
+  var productModel = function(item) {
+    this.data = {};
+    this.data.title = ko.observable(item.title);
+    this.data.date = ko.observable(item.date);
+    this.data.link = ko.observable(item.link);
+    this.data.description = ko.observable(item.description);
+    //this.displayMode = ko.observable(itemMode);
+  };
+  
+  /* product observable array */
+  var products = ko.observableArray();
+  
+ 
+           // http://www.ansa.it/canale_saluteebenessere/notizie/saluteebenessere_rss.xml
+//http://xml.corriereobjects.it/rss/salute.xml *****************
+            //'http://www.quotidianosanita.it/rss/feed.php', function (data) {
+              // $.ajax({
+              //     url: "http://www.quotidianosanita.it/rss/feed.php",
+              //     type: "GET",
+              //     crossDomain: true,
+              //     //data: JSON.stringify('somejson'),
+              //     dataType: "jsonp",
+              //     //processData: false,
+              //     jsonp: false,
+              //     success: function (data) {
+              //       $(data).find("item").each(function () { // or "item" or whatever suits your feed
+              //             var el = $(this);
+
+              //             console.log("------------------------");
+              //             console.log("title      : " + el.find("title").text());
+              //             console.log("data      :" + el.find("pubDate").text())
+              //             console.log("link     : " + el.find("link").text());
+              //             console.log("description: " + el.find("description").text());
+              //             });
+              //         },
+              //     error: function (xhr, status) {
+              //         alert("error");
+              //     }
+              // });
+
+            // function parseRSS(url, container) {
+            //   $.ajax({
+            //     url: "http://www.quotidianosanita.it/rss/feed.php",
+            //     dataType: 'xml',
+            //     success: function(data) {
+            //       //console.log(data.responseData.feed);
+            //       $(container).html('<h2>'+capitaliseFirstLetter(data.responseData.feed.title)+'</h2>');
+
+            //       $.each(data.responseData.feed.entries, function(key, value){
+            //         var thehtml = '<h3><a href="'+value.link+'" target="_blank">'+value.title+'</a></h3>';
+            //         $(container).append(thehtml);
+            //       });
+            //     }
+            //   });
+            // }
+
+            // $.ajax({
+            //       url: "http://xml.corriereobjects.it/rss/salute.xml",
+            //       type: "GET",
+            //       //crossDomain: true,
+            //       //data: JSON.stringify('somejson'),
+            //       dataType: "script",
+            //       //processData: false,
+            //       jsonp: true,
+            //       success: function (data) {
+            //         $(data).find("item").each(function () { // or "item" or whatever suits your feed
+            //               var el = $(this);
+
+            //               console.log("------------------------");
+            //               console.log("title      : " + el.find("title").text());
+            //               console.log("data      :" + el.find("pubDate").text())
+            //               console.log("link     : " + el.find("link").text());
+            //               console.log("description: " + el.find("description").text());
+            //               });
+            //           },
+            //       error: function (xhr, status) {
+            //           alert("error");
+            //       }
+            //   });
+            // $.getJSON("http://www.ilsole24ore.com/rss/norme-e-tributi/sanita.xml", function (data){
+            //     $nytHeaderElem.text('New York Times Articles About ' + cityStr);
+
+            //     articles = data.response.docs;
+            //     for (var i = 0; i < articles.length; i++) {
+            //         var article = articles[i];
+            //         $nytElem.append('<li class="article">'+ '<a href="' + article.web_url + '">' + article.headline.main + '</a>'+
+            //             '<p>' + article.snippet + '</p>' + 
+            //             '</li>');
+            //     };
+            // }).error(function(e){
+            //     $nytHeaderElem.text('New York Times Articles Could Not be Loaded');
+            // });
+            // $.getJSON("http://www.ilsole24ore.com/rss/norme-e-tributi/sanita.xml", function (data){
+            // $(data).find("item").each(function () { // or "item" or whatever suits your feed
+            //       var el = $(this);
+
+            //       console.log("------------------------");
+            //       console.log("title      : " + el.find("title").text());
+            //       console.log("data      :" + el.find("pubDate").text())
+            //       console.log("link     : " + el.find("link").text());
+            //       console.log("description: " + el.find("description").text());
+            //       });
+            //   });
+            var init = function () {
+            /* add code to initialise this module */
+            //retrieveProducts();
+            //apply ko bindings
+            ko.applyBindings(RetrieveNews);
+          };
+
+          /* execute the init function when the DOM is ready */
+          $(init);  
+          
+          return {
+            /* add members that will be exposed publicly */
+            products: products,
+            
+          };
+}();
+</script>
+       
+        <hr>
+        <div>
+          
+        </div>
+      </div>
+      
+    </div>
+
+
+   <!--  <script async defer
+        src=
+        "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyBZR08CuagYkwAw6KeJBry2pZpiULeYuhM&v=3&callback=initMap">
+    </script> -->
+   <!--  <script type="text/javascript" src="js/app.js"></script> -->
+
+
+
+
+  </body>
+</html>
