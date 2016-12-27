@@ -19,6 +19,23 @@ a:hover {
   border: 1px solid #fff;
 }
 
+.circleLine {
+  background: radial-gradient(circle at center, #ffbdd7 0%, #ffbdd7 30%, transparent 20%);
+  background-size: 30px 30px;
+  background-repeat: repeat-x;
+  background-position: 5px center;
+  width: 100%;
+  height: 50px;
+}
+.circleLineSmall {
+    background: radial-gradient(circle at center, #ffbdd7 0%, #ffbdd7 30%, transparent 20%);
+    background-size: 5px 5px;
+    background-repeat: repeat-x;
+    background-position: 5px center;
+    width: 100%;
+    height: 50px;
+    margin-top:-1em; 
+    }
 
 /*
  * Base structure
@@ -46,6 +63,7 @@ body {
   min-height: 100%;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  /*margin: 10px;*/
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -71,7 +89,15 @@ html {
 @media (max-width: 543px) {
   html {
     font-size: 16px;
-  }
+    }
+  .portfolio_description {
+    position: absolute;
+    top: 30px;
+    right:0;
+    width: 100%;
+    /*background-color: rgba(255,255,255,0.1);*/
+    }
+  
 }
 
 
@@ -79,7 +105,14 @@ html {
  html {
     font-size: 20px;
   }
+.portfolio_description {
+    position: absolute;
+    top: 30px;
+    right:0;
+    width: 50%;
+    /*background-color: rgba(255,255,255,0.1);*/
 
+}
  }
 
 
@@ -87,15 +120,40 @@ html {
 html {
     font-size: 20px;
   }
+.portfolio_description {
+    position: absolute;
+    top: 30px;
+    right:0;
+    width: 30%;
+    /*background-color: rgba(255,255,255,0.1);*/
 
+}
  }
 
 @media (max-width: 1199px) {
 html {
     font-size: 28px;
   }
+.portfolio_description {
+    position: absolute;
+    top: 30px;
+    right:0;
+    width: 30%;
+    /*background-color: rgba(255,255,255,0.1);*/
 
+}
  }
+@media (min-width: 1120px) {
+
+ .portfolio_description {
+    position: absolute;
+    top: 30px;
+    right:0;
+    width: 30%;
+    /*background-color: rgba(255,255,255,0.1);*/
+
+  }
+}
 
 
 
@@ -212,11 +270,18 @@ html {
   text-align: left;
 }
 
-.portfolio_description {
-    position: absolute;
-    top: 30px;
-    right:0;
-    width: 30%;
-    /*background-color: rgba(255,255,255,0.1);*/
 
+.title {
+  font-family: 'Roboto';
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-align: left;
 }
+
+
+.hrline {
+    padding: 0px;
+    margin: 0px;
+    margin-top:-1em; 
+  }
