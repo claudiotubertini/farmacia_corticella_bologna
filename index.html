@@ -37,41 +37,57 @@
    <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
-
-<nav class="navbar-inverse navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li ><a href="#presentazione">Home</a></li>
-            <li><a href="#farmacia">Farmacia</a></li>
-            <li><a href="#contact">Contatti</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+<!-- <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">-->
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                  <!--  <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#content-types">Content Types</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#distribution">Distribution</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#retargeting">Retargeting</a>
+                    </li>
+                </ul>
+            </div> -->
+        <nav class="navbar-inverse navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li ><a href="#presentazione">Home</a></li>
+                <li><a href="#farmacia">Farmacia</a></li>
+                <li><a href="#contact">Contatti</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
-        </div>
-     </div>
-    </nav>
+            </div>
+         </div>
+        </nav>
 
-          <div id="presentazione" class="row ">
+          <div id="presentazione" class="row">
             <h1 class="cover-heading"></h1>
             <div >
               <img class="img-responsive" alt="Responsive image" src="img/01_da_cambiare.jpg" >
@@ -80,7 +96,7 @@
 
           </div>
 
-<div class="container marketing">
+      <div class="container-fluid">
 
 
       <div class="row">
@@ -109,11 +125,11 @@
 
 
 
-      <div id="farmacia" class="row featurette">
-      <div class="row inner cover">
+    <div id="farmacia" class="row">
+      <div class="row">
           <img class="img-responsive" alt="Responsive image" src="img/farmacia.jpg" />
       </div>
-      <div class="row">
+      <div class="row inner">
         <div class="col-md-4">
 
           <p class="small">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -129,13 +145,13 @@
         </div>
       </div>
       <hr class="circleLine">
-<h1 class="title">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</h1>
+<h1 class="inner title">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</h1>
 <p class="pull-right"><a href="#">Back to top</a></p>
 <hr class="circleLine">
     </div>
      
 
-      <div id="servizi" class="row featurette">
+      <div id="servizi" class="row">
         <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
