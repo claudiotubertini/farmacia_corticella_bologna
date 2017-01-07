@@ -175,13 +175,13 @@
 
      <!--  <hr class="featurette-divider">
  -->
-      <div id="eventi" class="row">
-        <div class="col-sm-8 blog-main">
+      <div id="eventi" class="row description">
+        <div class="col-sm-4 blog-main">
           <div class="blog-post" data-bind="foreach: RetrieveNews.products">
-            <h5 class="blog-post-title" data-bind="text: data.title"></h5>
+            <h4 class="blog-post-title" data-bind="text: data.title"></h4>
             <p class="blog-post-meta" data-bind="text: formattedDate"></p>
-            <p data-bind="text: formattedText"></p>
-            <p> <a data-bind="attr: {href: data.link}"> clicca qui</a></p>
+            <p><span data-bind="text: formattedText"></span>.
+             <a data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
 
             
           </div>
@@ -294,18 +294,11 @@
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script type="text/javascript">
       (function(){
-// You can avoid the document.ready if you put the script at the bottom of the page
-//$(document).ready(function() {
-  // Bind to the click of all links with a #hash in the href
   $('a[href^="#"]').click(function(e) {
-    // Prevent the jump and the #hash from appearing on the address bar
-    e.preventDefault();
-    // Scroll the window, stop any previous animation, stop on user manual scroll
-    // Check https://github.com/flesler/jquery.scrollTo for more customizability
-    $(window).stop(true).scrollTo(this.hash, {duration:1000, interrupt:true});
-  });
-//});
-}());
+      e.preventDefault();
+      $(window).stop(true).scrollTo(this.hash, {duration:2000, interrupt:true});
+    });
+  }());
     </script>
     <script type="text/javascript" src="js/corticellaapp.js"></script>
     <script type="text/javascript" src="js/newsapp.js"></script>
