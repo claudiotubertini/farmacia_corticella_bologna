@@ -49,34 +49,30 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse navbar-right">
               <ul class="nav navbar-nav">
-                <li ><a  href="#presentazione">Home</a></li>
+                <li ><a  href="#presentazione">Presentazione</a></li>
                 <li><a  href="#farmacia">Farmacia</a></li>
-                <li><a  href="#servizi">Contatti</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+                <li><a  href="#servizi">Servizi</a></li>
+                <li><a  href="#eventi">Salute</a></li>
+                <li><a  href="#contatti">Contatti</a></li>
+                <li><a  href="#calendar">Orari </a></li>
               </ul>
             </div>
          
         </nav>
 
-          <div id="presentazione" class="row">
-            <h1 class="cover-heading"></h1>
+          <section id="presentazione" class="row">
+           <h1 class="payoff">Prevenzione<br /> è benessere.</h1> 
             
               <img class="img-responsive" alt="Responsive image" src="img/01_da_cambiare.jpg" >
-              <p class="portfolio_description">Farmacia di Corticella della dott.ssa Anna Bragagliadi Dott.ssa Anna Bragaglia Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead"></p>
+              <div class="portfolio_description"><p class="portfolio_description circleLineSmall">di Dott.ssa Anna Bragaglia</p>
+              <p class="portfolio_description circleLineSmall">Via Bentini, 37 | Bologna</p>
+              <p class="portfolio_description circleLineSmall">Lunedì/sabato 7:30 - 20:00</p>
+              <p class="portfolio_description circleLineSmall">Festivi 8:00 - 20:00</p>
+              <p class="portfolio_description circleLineSmall"><span class="glyphicon glyphicon-phone-alt"></span> 051 705478</p>
+              <p class="portfolio_description circleLineSmall"><span class="glyphicon glyphicon-envelope"></span> Scrivici via mail</p></div>
+           
 
-          </div>
+          </section>
 
       
 
@@ -138,36 +134,32 @@
           <img class="img-responsive" alt="Responsive image" src="img/eventiNews.jpg" />
       </div>
       <div class="row inner description">
-      <ul>
-        <li class="circleLineSmall">
-          <span class="col-md-4">Servizio Cup</span>
-          <span class="col-md-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-        </li>
-        
-        <li class="circleLineSmall">
-          <span class="col-md-4">Autoanalisi</span>
-          <span class="col-md-8">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span>
-        </li>
-        
-        <li class="circleLineSmall">
-          <span class="col-md-4">Analisi di laboratorio</span >
-          <span  class="col-md-8">Qui non est dollabin vel expedis mai on et vendisit qui acip sum</span >
-          
-        </li>
-        <li class="circleLineSmall">
-          <span  class="col-md-4">Omeopatia</span>
-          <span  class="col-md-8">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</span >
-        </li>
-        <li class="circleLineSmall">
-          <span  class="col-md-4">Dermocosmesi</span>
-          <span  class="col-md-8">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias.</span>
-        </li>
-        <li class="circleLineSmall">
-          <span  class="col-md-4">Veterinaria</span >
-          <span  class="col-md-8">Qui non est dollabin vel expedis mai on et vendisit qui acip sum</span>
-        </li>
-        </ul>
-      </div>
+<div class="table-responsive">
+  <table class="col-md-12">
+    <tr class="circleLineSmall">
+      <td class="col-md-4">Servizio Cup</td>
+      <td class="col-md-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    </tr>
+    <tr class="circleLineSmall">
+      <td class="col-md-4">Autoanalisi</td>
+      <td class="col-md-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    </tr>
+<tr class="circleLineSmall">
+      <td class="col-md-4">Analisi di laboratorio</td>
+      <td class="col-md-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    </tr>
+    <tr class="circleLineSmall">
+      <td class="col-md-4">Omeopatia</td>
+      <td class="col-md-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    </tr>
+    <tr class="circleLineSmall">
+      <td class="col-md-4">Veterinaria</td>
+      <td class="col-md-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+    </tr>
+  </table>
+</div>
+</div>
+
 
         <p class="pull-right"><a href="#presentazione">Torna su</a></p>
         <hr class="circleLine">
@@ -180,16 +172,15 @@
           <div class="blog-post" data-bind="foreach: RetrieveNews.products">
             <h4 class="blog-post-title" data-bind="text: data.title"></h4>
             <p class="blog-post-meta" data-bind="text: formattedDate"></p>
-            <p><span data-bind="text: formattedText"></span>.
+            <p><img class="img-responsive" data-bind="attr: {src: data.enclosure}"></span>
              <a data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
 
             
           </div>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        
         </div>
-      </div>
+    
 
      <!--  <hr class="featurette-divider"> -->
 
@@ -271,7 +262,7 @@
 
     </div>
 
-
+</div>
 
 
     <!-- Bootstrap core JavaScript
