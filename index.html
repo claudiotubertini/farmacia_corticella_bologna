@@ -28,8 +28,6 @@
     <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Roboto:900&width=7">
   </head>
-<!-- NAVBAR
-================================================== -->
   <body>
    <div class="site-wrapper">
 
@@ -60,19 +58,17 @@
          
         </nav>
 
-          <section id="presentazione" class="row">
-           <h1 class="payoff">Prevenzione<br /> è benessere.</h1> 
-            
-              <img class="img-responsive" alt="Responsive image" src="img/01_da_cambiare.jpg" >
-              <div class="portfolio_description"><p class="portfolio_description circleLineSmall">di Dott.ssa Anna Bragaglia</p>
-              <p class="portfolio_description circleLineSmall">Via Bentini, 37 | Bologna</p>
-              <p class="portfolio_description circleLineSmall">Lunedì/sabato 7:30 - 20:00</p>
-              <p class="portfolio_description circleLineSmall">Festivi 8:00 - 20:00</p>
-              <p class="portfolio_description circleLineSmall"><span class="glyphicon glyphicon-phone-alt"></span> 051 705478</p>
-              <p class="portfolio_description circleLineSmall"><span class="glyphicon glyphicon-envelope"></span> Scrivici via mail</p></div>
-           
-
-          </section>
+          <div id="presentazione" class="row">
+             
+              <img class="img-responsive" alt="Responsive image" src="img/01_da_cambiare.jpg">
+              <ul class="portfolio_description">
+                <li class="circleLineSmall">di Dott.ssa Anna Bragaglia</li>
+              <li class="circleLineSmall">Via Bentini, 37 | Bologna</li>
+              <li class="circleLineSmall">Lunedì/sabato 7:30 - 20:00</li>
+              <li class="circleLineSmall">Festivi 8:00 - 20:00</li>
+              <li class="circleLineSmall"><span class="glyphicon glyphicon-phone-alt"></span> 051 705478</li>
+              <li class="circleLineSmall"><span class="glyphicon glyphicon-envelope"></span> Scrivici via mail</p></ul>
+           </div>
 
       
 
@@ -167,7 +163,7 @@
 
      <!--  <hr class="featurette-divider">
  -->
-      <div id="eventi" class="row description">
+      <div id="eventi" class="row inner description">
         <div class="col-sm-4 blog-main">
           <div class="blog-post" data-bind="foreach: RetrieveNews.products">
             <h4 class="blog-post-title" data-bind="text: data.title"></h4>

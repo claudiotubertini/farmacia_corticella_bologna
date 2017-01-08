@@ -29,7 +29,7 @@ a:hover {
 
   .payoff{
     position: absolute;
-    bottom: 0px !important;
+    bottom: 0px;
     top: 500px;
     left:30px;
     width: 50%;
@@ -60,6 +60,28 @@ a:hover {
 /*
  * Base structure
  */
+html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        height: 100%;
+        position: relative;
+      }
+
+      input {
+        font-size: 12px;
+      }
+
+      h1 {
+        color: #525454;
+        font-size: 22px;
+        margin: 0 0 10px 0;
+        text-align: center;
+      }
 
 html,
 body {
@@ -72,24 +94,41 @@ body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
-/*tr {
-  border-width: 3px;
-  padding: 5px;  
-  border-style: dotted;  
-  border-color: grey;
-  width: 100%;
-}*/
+
 .table-responsive {
   border-style: hidden;
   text-align: left;
 }
 
 
+.small {
+  text-align: left;
+}
+
+
+.title {
+  font-family: 'Roboto';
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-align: left;
+}
+
+
+.hrline {
+    padding: 0px;
+    margin: 0px;
+    margin-top:-1em; 
+  }
 
 
 
 #presentazione {
   margin-bottom: 30px;
+  /*background: url("../img/01_da_cambiare.jpg");*/
+}
+#presentazione li{
+  list-style: none;
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -119,29 +158,33 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
   padding: 30px;
   margin:30px;
 }
+
 @media (max-device-width: 480px){
   html {
     font-size: 9px;
-    }
+  }
 
-.inner {
-  padding: 0;
-  margin:0;
-}
-.row p{
-  width: 100%;
-}
-.portfolio_description {
-    position: absolute;
+  .inner {
+    padding: 0;
+    margin:0;
+  }
+  .portfolio_description {
+    /*position: absolute;*/
     top: 50px;
     right: 0;
     width: 100%;
-    /*background-color: rgba(255,255,255,0.1);*/
-    }
-.circleLineSmall {
+    text-align: left;
+  }
+  .circleLineSmall {
     background: none;
-    }
-
+    width: 100%;
+  }
+  .payoff{
+    left:10px;
+    width: 100%;
+    font-family: 'Roboto';
+    text-align: left;
+  }
 }
 
 @media (max-width: 543px) {
@@ -149,16 +192,16 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
     font-size: 12px;
     }
   .portfolio_description {
-    position: absolute;
-    top: 50px;
-    right:0;
-    width: 100%;
-    /*background-color: rgba(255,255,255,0.1);*/
+      /*position: absolute;*/
+      top: 50px;
+      right:0;
+      width: 100%;
+      text-align: left;
     }
    .inner {
-  padding: 10px;
-  margin:10px;
-}
+      padding: 10px;
+      margin:10px;
+    }
 }
 
 
@@ -217,7 +260,7 @@ html {
 }
 
 
-
+/* **********************************/
 
 
 /*
@@ -327,23 +370,3 @@ html {
   }
 }
 
-
-.small {
-  text-align: left;
-}
-
-
-.title {
-  font-family: 'Roboto';
-  font-size: 40px;
-  font-weight: 900;
-  letter-spacing: 4px;
-  text-align: left;
-}
-
-
-.hrline {
-    padding: 0px;
-    margin: 0px;
-    margin-top:-1em; 
-  }
