@@ -29,7 +29,7 @@ a:hover {
 
   .payoff{
     position: absolute;
-    bottom: 0px;
+    bottom: 0px !important;
     top: 500px;
     left:30px;
     width: 50%;
@@ -101,6 +101,7 @@ body {
 }
 
 
+
 .small {
   text-align: left;
 }
@@ -120,6 +121,7 @@ body {
     margin: 0px;
     margin-top:-1em; 
   }
+
 
 
 
@@ -173,6 +175,7 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
     top: 50px;
     right: 0;
     width: 100%;
+
     text-align: left;
   }
   .circleLineSmall {
@@ -185,6 +188,10 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
     font-family: 'Roboto';
     text-align: left;
   }
+
+.circleLineSmall {
+    background: none;
+    }
 }
 
 @media (max-width: 543px) {
@@ -192,11 +199,17 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
     font-size: 12px;
     }
   .portfolio_description {
+
       /*position: absolute;*/
       top: 50px;
       right:0;
       width: 100%;
       text-align: left;
+
+    position: absolute;
+    top: 50px;
+    right:0;
+    width: 100%;
     }
    .inner {
       padding: 10px;
@@ -254,10 +267,10 @@ html {
     right:0;
     width: 20%;
     text-align: left;
-    /*background-color: rgba(255,255,255,0.1);*/
 
   }
 }
+
 
 
 /* **********************************/
