@@ -24,20 +24,36 @@ a:hover {
     top: 50px;
     right:0;
     width: 20%;
-    /*background-color: rgba(255,255,255,0.1);*/
+    text-align: left;
   }
 
-  .payoff{
+  .payoff {
     position: absolute;
-    bottom: 0px !important;
-    top: 500px;
-    left:30px;
-    width: 50%;
+    bottom: 0;
+    left:0;
+    width: 100%;
+  }
+  .payoff span {
     font-family: 'Roboto';
     font-size: 70px;
     font-weight: 900;
     letter-spacing: 4px;
     text-align: left;
+    color: white;
+  }
+  #presentazione {
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  }
+  #presentazione h1{
+    text-align: left;
+    padding-left: 10px;
+  }
+  #presentazione img{
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 .circleLine {
   background: radial-gradient(circle at center, #ffbdd7 0%, #ffbdd7 30%, transparent 20%);
@@ -51,7 +67,7 @@ a:hover {
     background: radial-gradient(circle at center, #ffbdd7 0%, #ffd3bc 30%, transparent 20%);
     background-size: 10px 10px;
     background-repeat: repeat-x;
-    background-position: 5px 20px;
+    background-position: 20px 20px;
     width: 100%;
     height: 2em;
     text-align: left;
@@ -125,13 +141,6 @@ body {
 
 
 
-#presentazione {
-  margin-bottom: 30px;
-  /*background: url("../img/01_da_cambiare.jpg");*/
-}
-#presentazione li{
-  list-style: none;
-}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   /*display: table;*/
@@ -166,28 +175,36 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
     font-size: 9px;
   }
 
-  .inner {
-    padding: 0;
-    margin:0;
-  }
-  .portfolio_description {
-    /*position: absolute;*/
-    top: 50px;
-    right: 0;
-    width: 100%;
-
-    text-align: left;
-  }
-  .circleLineSmall {
-    background: none;
-    width: 100%;
-  }
   .payoff{
     left:10px;
     width: 100%;
     font-family: 'Roboto';
     text-align: left;
   }
+  .payoff span {
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: left;
+    color: white;
+  }
+  .inner {
+    padding: 0;
+    margin:0;
+  }
+  .portfolio_description {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    text-align: left;
+  }
+  .circleLineSmall {
+    background: none;
+    width: 100%;
+  }
+  
 
 .circleLineSmall {
     background: none;
@@ -198,9 +215,23 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
   html {
     font-size: 12px;
     }
+   .payoff span {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: left;
+    color: white;
+  }
+  .payoff{
+    left:10px;
+    width: 100%;
+    font-family: 'Roboto';
+    text-align: left;
+  } 
   .portfolio_description {
 
-      /*position: absolute;*/
+      position: absolute;
       top: 50px;
       right:0;
       width: 100%;
@@ -222,6 +253,20 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
  html {
     font-size: 20px;
   }
+  .payoff span {
+    font-family: 'Roboto';
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: left;
+    color: white;
+  }
+  .payoff{
+    left:10px;
+    width: 100%;
+    font-family: 'Roboto';
+    text-align: left;
+  }
 .portfolio_description {
     position: absolute;
     top: 50px;
@@ -242,6 +287,20 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
 html {
     font-size: 20px;
   }
+  .payoff span {
+    font-family: 'Roboto';
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: left;
+    color: white;
+  }
+  .payoff{
+    left:10px;
+    width: 100%;
+    font-family: 'Roboto';
+    text-align: left;
+  }
 .portfolio_description {
     position: absolute;
     top: 50px;
@@ -260,6 +319,20 @@ html {
 @media (max-width: 1199px) {
 html {
     font-size: 28px;
+  }
+  .payoff span {
+    font-family: 'Roboto';
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: left;
+    color: white;
+  }
+  .payoff{
+    left:10px;
+    width: 100%;
+    font-family: 'Roboto';
+    text-align: left;
   }
 .portfolio_description {
     position: absolute;
