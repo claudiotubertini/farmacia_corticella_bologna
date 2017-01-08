@@ -27,11 +27,12 @@ a:hover {
     text-align: left;
   }
 
-  .payoff {
+  .payoff td span{
     position: absolute;
     bottom: 0;
     left:0;
     width: 100%;
+    z-index: 100;
   }
   .payoff span {
     font-family: 'Roboto';
@@ -41,20 +42,38 @@ a:hover {
     text-align: left;
     color: white;
   }
+  .bottomleft {
+    position: absolute;
+    top: 28px;
+    left: 16px;
+    font-size: 18px;
+  }
+  .topright {
+      position: absolute;
+      top: 108px;
+      right: 16px;
+      font-size: 18px;
+  }
   #presentazione {
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
+  background-image:  url(../img/01_da_cambiare.JPG);
+  background-repeat: no-repeat;
+  height: 702px;
+  width: 1268px;
   }
   #presentazione h1{
     text-align: left;
     padding-left: 10px;
   }
-  #presentazione img{
+ /* #presentazione img{
     display: block;
     max-width: 100%;
     height: auto;
-  }
+  }*/
+
+
 .circleLine {
   background: radial-gradient(circle at center, #ffbdd7 0%, #ffbdd7 30%, transparent 20%);
   background-size: 30px 30px;
@@ -175,12 +194,6 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
     font-size: 9px;
   }
 
-  .payoff{
-    left:10px;
-    width: 100%;
-    font-family: 'Roboto';
-    text-align: left;
-  }
   .payoff span {
     font-family: 'Roboto';
     font-size: 10px;
