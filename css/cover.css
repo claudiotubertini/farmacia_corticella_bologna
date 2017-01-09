@@ -44,7 +44,7 @@ a:hover {
   }
   .bottomleft {
     position: absolute;
-    top: 28px;
+    bottom: 28px;
     left: 16px;
     font-size: 18px;
   }
@@ -58,8 +58,8 @@ a:hover {
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
-  background-image:  url(../img/01_da_cambiare.JPG);
-  background-repeat: no-repeat;
+  /*background-image:  url(../img/01_da_cambiare.JPG);
+  background-repeat: no-repeat;*/
   height: 702px;
   width: 1268px;
   }
