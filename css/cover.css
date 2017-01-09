@@ -34,7 +34,7 @@ a:hover {
     color: white;
   }
 
-  #presentazione, #farmacia-img{
+  #presentazione, .farmacia-img{
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
@@ -47,15 +47,15 @@ a:hover {
     width: 100%;
     height: 100%;
   }
-  #farmacia-img h1{
+  .farmacia-img h1{
     text-align: left;
     padding-left: 10px;
   }
- #farmacia-img img {
+ .farmacia-img img {
     width: 100%;
     height: 100%;
   }
-#farmacia-img .payoff2 span{
+.farmacia-img .payoff2 span{
     position: absolute;
     bottom: 0;
     left: 20px;
@@ -153,7 +153,9 @@ body {
     margin-top:-1em;
   }
 
-
+.pull-right {
+  padding-right:10px;
+}
 
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -189,15 +191,23 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
   html {
     font-size: 9px;
   }
-#presentazione {
+#presentazione, .farmacia-img {
   position: relative;
   display: inline-block;
 }
 
 #presentazione h1 span{
-  font-size: 14px;
+  font-size: 20px;
 }
-
+.farmacia-img img{
+  width: 100%;
+  height: 100%;
+}
+.farmacia-img .payoff2 span{
+    font-size: 20px;
+    left:10px;
+    bottom:10px;
+  }
   .inner {
     padding: 0;
     margin:0;
@@ -212,7 +222,7 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
 
 @media (max-width: 543px) {
   html {
-    font-size: 12px;
+    font-size: 24px;
     }
     #presentazione h1 span{
   font-size: 16px;
@@ -465,3 +475,11 @@ html {
   }
 }
 
+.columnfill {
+    -webkit-column-count: 3; 
+    -moz-column-count: 3; 
+    column-count: 3;
+    -webkit-column-fill: balance; 
+    -moz-column-fill: balance; 
+    column-fill: balance;
+}

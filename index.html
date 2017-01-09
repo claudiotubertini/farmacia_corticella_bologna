@@ -102,7 +102,7 @@
 
 
     <section id="farmacia" class="row">
-          <div id="farmacia-img">
+          <div class="farmacia-img">
           <img class="img-responsive" alt="Responsive image" src="img/farmacia.jpg" />
            <h1 class="payoff2"><span>Farmacia.</span></h1>
           </div>
@@ -129,8 +129,9 @@
 
 <!-- SERVIZI-->
       <section id="servizi" class="row">
-      <div id="servizi-img">
+      <div class="farmacia-img">
           <img class="img-responsive" alt="Responsive image" src="img/eventiNews.jpg" />
+          <h1 class="payoff2"><span>Servizi.</span></h1>
       </div>
       <div class="row inner description">
           <div class="table-responsive">
@@ -166,12 +167,12 @@
 <!-- FINE SERVIZI-->
      <!--  EVENTI -->
       <div id="eventi" class="row inner description">
-        <div class="col-sm-4 blog-main">
-          <div class="blog-post" data-bind="foreach: RetrieveNews.products">
+        <div class=" blog-main ">
+          <div class="blog-post columnfill" data-bind="foreach: RetrieveNews.products">
             <h4 class="blog-post-title" data-bind="text: data.title"></h4>
             <p class="blog-post-meta" data-bind="text: formattedDate"></p>
-            <p><img class="img-responsive" data-bind="attr: {src: data.enclosure}">
-             <a data-bind="attr: {href: data.link}"> Leggi tutto</a></p></div>
+            <p><img class="img-responsive" data-bind="attr: {src: data.enclosure}"><br />
+             <a class="circleLineSmall" data-bind="attr: {href: data.link}"> Leggi tutto</a></p></div>
         </div>
 
       </div>
