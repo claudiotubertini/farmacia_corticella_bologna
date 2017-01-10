@@ -2,7 +2,7 @@
 var restify = require('restify');
 
 var PATH = '/schedule-corticella';
-var shifts = [ 
+var shifts = [
 		{week: "28/11/2016" , description: "A"},
 		{week: "29/11/2016", description:"B"},
 		{week: "30/11/2016", description:"C"},
@@ -14,7 +14,7 @@ var shifts = [
 		{week: "06/12/2016", description:"Solo sabato 8:30 - 12:30; 15:30 - 19:30"}
 ];
 
-// var products = [ 
+// var products = [
 //                  { id: "1000", name: "Chess Periodicals", description: "A book on chess periodicals", price: 100},
 //                  { id: "2000", name: "Strategy and Tactics", description: "A book on chess strategy and tactics", price: 120},
 //                  { id: "3000", name: "Computer Chess", description: "Computer chess application", price: 50},
@@ -40,7 +40,7 @@ function getShifts(req, res, next) {
 // function addProduct(req, res, next) {
 // 	res.setHeader('Access-Control-Allow-Origin','*');
 // 	console.log("POST[" + PATH + "] " + JSON.stringify(req.body));
-	
+
 // 	currentIdCount = currentIdCount + 1;
 // 	var productId = currentIdCount * 1000;
 // 	req.body.id = productId.toString();
@@ -52,7 +52,7 @@ function getShifts(req, res, next) {
 // function updateProduct(req, res, next) {
 // 	res.setHeader('Access-Control-Allow-Origin','*');
 // 	console.log("PUT[" + PATH + "] " + JSON.stringify(req.body));
-	
+
 // 	products.forEach(function(product, index) {
 // 		if(req.body.id == product.id) {
 // 			product.name = req.body.name;
@@ -60,7 +60,7 @@ function getShifts(req, res, next) {
 // 			product.price = req.body.price;
 // 		}
 // 	});
-	
+
 // 	res.send(200);
 // 	next();
 // };

@@ -36,7 +36,7 @@ var openings = ko.observableArray();
         /* the base url for the rest service */
         var baseUrl = url;
         
-        /* method to retrieve products */
+        /* method to retrieve data */
         var getShifts = function(callback) {
             $.ajax({
                 url: baseUrl + "/schedule-corticella",

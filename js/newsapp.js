@@ -29,7 +29,7 @@ $.ajax({
               });
         },
     error: function(){
-            alert('Abbiamo riscontrato un problema nella generazione delle news. Riprovate fra qualche minuto.');
+            alert("Abbiamo riscontrato un problema nell\'aggiornamento delle notizie. Riprovate fra qualche minuto.");
         }
     });
 
