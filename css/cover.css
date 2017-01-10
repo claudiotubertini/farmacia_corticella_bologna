@@ -34,7 +34,7 @@ a:hover {
     color: white;
   }
 
-  #presentazione, .farmacia-img{
+  #presentazione, .farmacia-img, #incontri, #eventi{
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
@@ -54,6 +54,35 @@ a:hover {
  .farmacia-img img {
     width: 100%;
     height: 100%;
+  }
+  #incontri {
+    margin-top:30px;
+  }
+  #incontri .payoff3 span {
+    position: absolute;
+    top: -50px;
+    left: 20px;
+    width: 100%;
+    font-family: 'Roboto';
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: left;
+    color: grey;
+    z-index: 100;
+  }
+  #eventi .payoff3 span {
+    position: absolute;
+    top: -50px;
+    left: 20px;
+    width: 100%;
+    font-family: 'Roboto';
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-align: left;
+    color: grey;
+    z-index: 100;
   }
 .farmacia-img .payoff2 span{
     position: absolute;
@@ -476,10 +505,10 @@ html {
 }
 
 .columnfill {
-    -webkit-column-count: 3; 
-    -moz-column-count: 3; 
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3;
-    -webkit-column-fill: balance; 
-    -moz-column-fill: balance; 
+    -webkit-column-fill: balance;
+    -moz-column-fill: balance;
     column-fill: balance;
 }
