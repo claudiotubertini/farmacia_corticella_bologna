@@ -143,7 +143,7 @@ html,
 body {
   height: 100%;
   background-color: #fff;
-  font-family: "Helvetica Neue", Arial, sans-serif !default;
+  font-family: Helvetica, Arial, sans-serif;
   /*background: url("../img/07.jpg") repeat;*/
 }
 body {
