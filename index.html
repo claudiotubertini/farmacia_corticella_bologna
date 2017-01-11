@@ -198,7 +198,7 @@
 </section>
 <hr class="circleLine">
 <!-- FINE EVENTI -->
-     <!--  NOTIZIE -->
+     <!--  NOTIZIE KOEVENTI -->
       <div id="eventi" class="row inner description">
       <h1 class="payoff3"><span>Notizie.</span></h1>
         <div class=" blog-main ">
@@ -209,90 +209,78 @@
              <a class="circleLineSmall" data-bind="attr: {href: data.link}"> Leggi tutto</a></p></div>
         </div>
       </div>
-    <!-- FINE EVENTI-->
+    <!-- FINE EVENTI KOEVENTI-->
 <hr class="circleLine">
-     <!-- CONTATTI -->
+     <!-- CONTATTI KOCONTATTI-->
+<div id="contatti">
+      <section class="container">
+        <div class="row">
+            <div class="col-sm-4 options-box">
+              <h1>Contatti e indirizzo</h1>
+              <div>
+               <div id='mytest'></div>
+              </div>
+              <hr>
+            </div>
 
-       <div class="container" id="contatti">
-       <div class="row">
-      <div class="col-sm-4 options-box">
-        <h1>Contatti e indirizzo</h1>
-        <div>
-         <div id='mytest'></div>
-
-
+            <div class="col-sm-8" >
+                <div id="floating-panel">
+                  <b>Come raggiungere la nostra farmacia: </b>
+                  <select id="mode">
+                    <option value="DRIVING">in automobile</option>
+                    <option value="WALKING">a piedi</option>
+                    <option value="BICYCLING">in bicicletta</option>
+                    <option value="TRANSIT">con i mezzi pubblici</option>
+                  </select>
+              </div>
+              <div id="map" ></div>
+            </div>
         </div>
-
-        <hr>
-
-      </div>
-
-      <div class="col-sm-8" >
-
-      <div id="floating-panel">
-    <b>Come raggiungere la nostra farmacia: </b>
-    <select id="mode">
-      <option value="DRIVING">in automobile</option>
-      <option value="WALKING">a piedi</option>
-      <option value="BICYCLING">in bicicletta</option>
-      <option value="TRANSIT">con i mezzi pubblici</option>
-    </select>
-    </div>
-        <div id="map" >
-        </div>
-      </div>
-
-
-
-   </div>
-
-
-     <!-- div for datepicker-->
-<div class="media">
-  <div class="media-left media-middle">
-   <!--  <a href="#">
-      <img class="media-object" src="../corticelladocs/img/server.jpeg" alt="...">
-    </a> -->
-
-  <div  id="calendar" data-bind="datepicker: openings"></div>
- </div>
-    <div class="media-body" data-bind="with: openings">
-    <h4 class="media-heading">Middle aligned media</h4>
-   <!--  <table data-bind='visible: openings().length > 0'>
-            <thead>
-                <tr>
-                    <th>Beschikkingsdatum</th>
-                    <th>Beschikkingsnr</th>
-                    <th />
-                </tr>
-            </thead>
-            <tbody data-bind='foreach: beschikkingen'>
-                <tr>
-                    <td><input name="apertura" type="text" class="" value="" data-bind='datepicker: beschikkingsdatum' /> </td>
-                    <td><input class='required number' data-bind='value: beschikkingsnummer, uniqueName: true' /></td>
-                    <td><a href='#' data-bind='click: $root.removebeschikking'>Delete</a></td>
-                </tr>
-            </tbody>
-</table> -->
-    <!-- p data-bind="text: data.description"></p> -->
-    </div>
-</div>
-      <div class="row">
-           <div class="mastfoot">
-
-        <p>&copy; <span data-bind="text: copyrightyear"></span> Farmacia di Corticella, via Bentini ecc. P.I. xxxxxxxxx &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>. Designed by <a href="http://www.lizartcomunicazionevisiva.it">Studio Lizart</a>. Built by <a href="http://www.open-word.com">open-word.com</a></p>
-
-      </div>
-       </div>
-
-  </div>
+      </section>
 <!-- FINE CONTATTI-->
+         <!-- CALENDARIO -->
+    <section class="media">
+      <div class="media-left media-middle">
+       <!--  <a href="#">
+          <img class="media-object" src="../corticelladocs/img/server.jpeg" alt="...">
+        </a> -->
+
+      <div  id="calendar" ></div>
+     </div>
+        <div class="media-body">
+        <h4 class="media-heading">Turni di apertura</h4>
+        <table data-bind='visible: openings().length > 0'>
+                <thead>
+                    <tr>
+                        <th>Giorno</th>
+                        <th>Orari</th>
+                        <th />
+                    </tr>
+                </thead>
+                <tbody data-bind='foreach: openings'>
+                    <tr>
+                        <td><span class="" data-bind='text: data.week'></span> </td>
+                        <td><span class="" data-bind='text: data.description'></span></td>
+
+                    </tr>
+                </tbody>
+    </table>
+        <h4 data-bind="visible: openings().length == 0">Siamo spiacenti ma in questo momento gli orari di apertura non sono disponibili.</h4>
+        </div>
+    </section>
+          <footer class="row">
+               <div class="mastfoot">
+
+            <p>&copy; <span data-bind="text: copyrightyear"></span> Farmacia di Corticella, via Bentini ecc. P.I. xxxxxxxxx &middot; <a href="#">Privacy &middot; Terms</a>. Designed by <a href="http://www.lizartcomunicazionevisiva.it">Studio LizArt</a>. Built by <a href="http://www.open-word.com">open-word.com</a></p>
+
+          </div>
+           </footer>
+  </div>
+<!-- FINE KOCONTATTI-->
+  </div>
+
 </div>
 
-    </div>
-
-<!-- </div>
- -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -307,7 +295,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="js/knockout-3.4.1.js">
     </script>
-    <script type="text/javascript" src="js/schedule-server.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script type="text/javascript" src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script type="text/javascript" src="js/jquery.fragmentscroll.min.js"></script>
@@ -315,7 +303,8 @@
     $(window).load(function() {
       $('body').fragmentScroll({
         frame: 'html, body',
-        speed: 2000
+        speed: 2000,
+        offset: 0
       });
     });
     </script>

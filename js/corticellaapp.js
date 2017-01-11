@@ -23,7 +23,7 @@ var ShiftWork = function(){
           view: "VIEW",
           edit: "EDIT"
         };
-    
+
     /* model for shifts */
     var shiftModel = function(item) {
         this.data = {};
@@ -32,10 +32,10 @@ var ShiftWork = function(){
     };
 var openings = ko.observableArray();
     var ShiftClient = function (url) {
-        
+
         /* the base url for the rest service */
         var baseUrl = url;
-        
+
         /* method to retrieve data */
         var getShifts = function(callback) {
             $.ajax({
@@ -51,14 +51,14 @@ var openings = ko.observableArray();
             getShifts: getShifts
         };
     };
-    var client = ShiftClient("http://localhost:8080");
+    var client = ShiftClient("http://localhost:8081");
 
 /* method to retrieve products using the client */
     var retrieveShifts = function () {
         console.log("Retrieving products from server ...");
         client.getShifts(retrieveShiftsCallback);
     };
-    
+
     /* callback for when the products are retrieved from the server */
     var retrieveShiftsCallback = function (data) {
         data.forEach(function(item) {
@@ -102,8 +102,8 @@ var init = function () {
     };
 
     /* execute the init function when the DOM is ready */
-    $(init);    
-    
+    $(init);
+
     return {
         /* add members that will be exposed publicly */
        openings: openings
@@ -143,11 +143,11 @@ var init = function () {
 //             }
 //         };
 //     };
-// $( "#calendar" ).datepicker({ 
+// $( "#calendar" ).datepicker({
 //         showWeek: true,
 //         onSelect: function(dateText, inst) {
 //             alert($.datepicker.iso8601Week(new Date(dateText)))
-//      } 
+//      }
 // });
 // $("#calendar").datepicker({
 //         showWeek: true,
@@ -168,7 +168,7 @@ var init = function () {
 //       }
 
 // function AppViewModel() {
-  
+
 //     self.value2 = ko.observableArray([]);
 // evtjson = [
 //       { name: "Bungle", apdate: "01-01-2017" },
@@ -176,8 +176,8 @@ var init = function () {
 //     { name: "Zippy", apdate: "03-03-2017" }
 //     ];
 //     self.value1 = ko.observable();
-   
-    
+
+
     // $("#datepicker").datepicker({
     //                     dateFormat: "@", // Unix timestamp
     //                     onSelect: function(dateText, inst){
@@ -190,16 +190,16 @@ var init = function () {
     //                         }
     //                         return [true, ""];
     //                     }
-    //                 });    
+    //                 });
     //self.value2(new Date(2000, 0, 1));
     //$("#txtDate").val($.datepicker.formatDate('dd M yy', new Date()));
-    //$( "#datepicker" ).datepicker();  
-    //$.datepicker.parseDate(new Date(1957, 24, 12)); 
+    //$( "#datepicker" ).datepicker();
+    //$.datepicker.parseDate(new Date(1957, 24, 12));
 
 
 
 
-  
+
 //}
 
 // Activates knockout.js

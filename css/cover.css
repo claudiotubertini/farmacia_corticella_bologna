@@ -26,7 +26,6 @@ a:hover {
     bottom: 20px;
     left: 20px;
     width: 100%;
-    font-family: 'Roboto';
     font-size: 70px;
     font-weight: 900;
     letter-spacing: 4px;
@@ -63,7 +62,6 @@ a:hover {
     top: -50px;
     left: 20px;
     width: 100%;
-    font-family: 'Roboto';
     font-size: 70px;
     font-weight: 900;
     letter-spacing: 4px;
@@ -76,7 +74,6 @@ a:hover {
     top: -50px;
     left: 20px;
     width: 100%;
-    font-family: 'Roboto';
     font-size: 70px;
     font-weight: 900;
     letter-spacing: 4px;
@@ -89,7 +86,6 @@ a:hover {
     bottom: 0;
     left: 20px;
     width: 100%;
-    font-family: 'Roboto';
     font-size: 70px;
     font-weight: 900;
     letter-spacing: 4px;
@@ -147,12 +143,13 @@ html,
 body {
   height: 100%;
   background-color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif !default;
   /*background: url("../img/07.jpg") repeat;*/
 }
 body {
   color: #000;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  /*text-shadow: 0 1px 3px rgba(0,0,0,.5);*/
 }
 
 .table-responsive {
@@ -168,7 +165,6 @@ body {
 
 
 .title {
-  font-family: 'Roboto';
   font-size: 40px;
   font-weight: 900;
   letter-spacing: 4px;
@@ -400,7 +396,7 @@ html {
 /*
  * Header
  */
-.masthead-brand {
+/*.masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -417,7 +413,7 @@ html {
   font-size: 16px;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  /*color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,
@@ -431,7 +427,7 @@ html {
 .masthead-nav > .active > a:focus {
   color: #fff;
   border-bottom-color: #fff;
-}
+}*/
 
 @media (min-width: 768px) {
   .masthead-brand {
@@ -461,11 +457,13 @@ html {
  * Footer
  */
 
-.mastfoot {
-  color: #000; /* IE8 proofing */
+/*.mastfoot {
+  color: #000;  IE8 proofing
   color: rgba(255,255,255,.5);
+}*/
+.mastfoot a, a:focus, a:hover {
+  color: #000;
 }
-
 
 /*
  * Affix and center
@@ -505,10 +503,10 @@ html {
 }
 
 .columnfill {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-fill: balance;
-    -moz-column-fill: balance;
-    column-fill: balance;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-fill: balance;
+  -moz-column-fill: balance;
+  column-fill: balance;
 }
