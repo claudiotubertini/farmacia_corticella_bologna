@@ -86,7 +86,7 @@ a:hover {
 .farmacia-img .payoff2 span{
     position: absolute;
     bottom: 0;
-    left: 50px;
+    left: 0.7em;
     width: 100%;
     font-size: 100px;
     font-weight: 900;
@@ -103,6 +103,7 @@ a:hover {
   background-position: 5px center;
   width: 100%;
   height: 50px;
+  padding-left:20px;
 }
 .circleLineSmall {
     background: radial-gradient(circle at center, #ffbdd7 0%, #ffd3bc 30%, transparent 20%);
@@ -150,7 +151,7 @@ body {
 }
 body {
   color: #000;
-  text-align: center;
+  /*text-align: center;*/
   /*text-shadow: 0 1px 3px rgba(0,0,0,.5);*/
 }
 
@@ -211,7 +212,7 @@ background-color: #99CC00;
 }
 .site-wrapper-inner {
   /*display: table-cell;*/
-  vertical-align: top;
+  vertical-align: middle;
 }
 /*.cover-container {
   margin-right: auto;
@@ -224,11 +225,17 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
 }
 /* Padding for spacing */
 .inner {
-  padding: 20px;
-  margin:30px;
+  padding-left: 3em;
+  padding-right:2em;
+  margin: 30px;
   text-align: left;
 }
-
+.center {
+  text-align: center;
+}
+.margin {
+  margin-bottom: 1em;
+}
 @media (max-device-width: 480px){
   html {
     font-size: 9px;
@@ -328,7 +335,7 @@ background: url('../img/MolMotion.jpg') no-repeat center center fixed;
 
 }
 .inner {
-  padding: 20px;
+  padding:20px;
   margin:20px;
 }
 .circleLineSmall {
@@ -514,13 +521,6 @@ html {
   }
 }
 
-@media (min-width: 992px) {
-  .cover-container{
-    width: 100%;
-
-    text-align: center;
-  }
-}
 
 .columnfill {
   -webkit-column-count: 3;

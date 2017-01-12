@@ -25,10 +25,10 @@
   padding-right: 0;
   padding-left: 0;
 }
-.navbar-wrapper .navbar {
+/*.navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
-}
+}*/
 .navbar-wrapper .navbar .container {
   width: auto;
 }
@@ -85,7 +85,7 @@
 
 .featurette-divider {
   margin: 80px 0px; /* Space out the Bootstrap <hr> more */
-  
+
 }
 
 /* Thin out the marketing headings */
