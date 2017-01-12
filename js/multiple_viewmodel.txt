@@ -1,0 +1,81 @@
+
+
+This is my answer after completing very large project with lots of ViewModels in single view.
+
+Html View
+
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="container1">
+        <ul>
+            <li >Container1 item</li>
+            <!-- ko foreach: myItems -->
+            <li>Item <span data-bind="text: $data"></span></li>
+            <!-- /ko -->
+        </ul>
+    </div>
+
+    <div id="container2">
+        <ul>
+            <li >Container2 item</li>
+            <!-- ko foreach: myItems -->
+                <li>Item <span data-bind="text: $data"></span></li>
+            <!-- /ko -->
+        </ul>
+    </div>
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/knockout-3.0.0.js"></script>
+    <script src="js/DataFunction.js"></script>
+    <script src="js/Container1ViewModel.js"></script>
+    <script src="js/Container2ViewModel.js"></script>
+
+</body>
+</html>
+
+For this view I'm creating 2 view models for id=container1 and id=container2 in two separate javascript files.
+
+Container1ViewModel.js
+
+function Container1ViewModel()
+{
+    var self = this;
+    self.myItems = ko.observableArray();
+    self.myItems.push("ABC");
+    self.myItems.push("CDE");
+
+} 
+
+Container2ViewModel.js
+
+function Container2ViewModel() {
+    var self = this;
+    self.myItems = ko.observableArray();
+    self.myItems.push("XYZ");
+    self.myItems.push("PQR");
+
+}
+
+Then after these 2 viewmodels are registering as separate viewmodels in DataFunction.js
+
+var container1VM;
+var container2VM;
+
+$(document).ready(function() {
+
+    if ($.isEmptyObject(container1VM)) {
+        container1VM = new Container1ViewModel();
+        ko.applyBindings(container1VM, document.getElementById("container1"));
+    }
+
+    if ($.isEmptyObject(container2VM)) {
+        container2VM = new Container2ViewModel();
+        ko.applyBindings(container2VM, document.getElementById("container2"));
+    }
+});
+
+Like this you can add any number of viewmodels for separate divs. But make sure do not create separate view model for a div inside registered div.
