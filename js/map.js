@@ -1,4 +1,4 @@
-export var mystyles =
+var mystyles = [
 
           {
             featureType: 'water',
@@ -64,3 +64,4 @@ export var mystyles =
               { lightness: -25 }
             ]
           }
+        ];

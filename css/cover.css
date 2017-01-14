@@ -63,33 +63,23 @@ padding:0;
     width: 100%;
     height: 100%;
   }
-  #incontri {
-    margin-top:30px;
+  #notizie-div {
+    position: relative;
+    display: inline-block;
+    padding-top:30px;
   }
-  #incontri .payoff3 span {
+  .payoff3 span {
     position: absolute;
-    top: -50px;
-    left: 20px;
+    top: -40px;
+    left: 40px;
     width: 100%;
     font-size: 70px;
     font-weight: 900;
-
+    margin-bottom:30px;
     text-align: left;
-    color: grey;
-    z-index: 100;
+    color: #c6c6c6;
   }
-  #notizie .payoff3 span {
-    position: absolute;
-    top: -50px;
-    left: 20px;
-    width: 100%;
-    font-size: 70px;
-    font-weight: 900;
-
-    text-align: left;
-    color: grey;
-    z-index: 100;
-  }
+  
 .farmacia-img .payoff2 span{
     position: absolute;
     bottom: 0;
@@ -104,18 +94,17 @@ padding:0;
   }
 
 .circleLine {
-  background: radial-gradient(circle at center, #ffbdd7 0%, #ffbdd7 30%, transparent 20%);
+  background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
   background-size: 30px 30px;
   background-repeat: repeat-x;
   background-position: 5px center;
   width: 100%;
   height: 50px;
   padding-left:20px;
-
   display:block;
 }
 .circleLineSmall {
-    background: radial-gradient(circle at center, #ffbdd7 0%, #ffd3bc 30%, transparent 20%);
+    background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
     background-size: 10px 10px;
     background-repeat: repeat-x;
     background-position: 20px 20px;
@@ -171,9 +160,12 @@ body {
   font-weight: 900;
   text-align: left;
   padding-left:0.5em;
+  color:#c6c6c6;
 }
 
-
+.title-bolli {
+  color
+}
 .hrline {
     padding: 0px;
     margin: 0px;
@@ -222,7 +214,8 @@ background-color: #99CC00;
 .inner {
   margin-left: 2em;
   margin-right:2em;
-  padding-left:3em;
+  margin-bottom:2em;
+  padding-left:2.5em;
   padding-right:3em;
 }
 
@@ -238,9 +231,14 @@ background-color: #99CC00;
 }
 .color_green{
   color:#99CC00;
+  font-size: 2em;
 }
-
-
+.grigio_scuro{
+  color:rgb(122,134,128);
+}
+.grigio_chiaro{
+  color:rgb(198,198,198);
+}
 
 @media (max-device-width: 480px){
   html {
@@ -345,7 +343,7 @@ background-color: #99CC00;
   margin:20px;
 }
 .circleLineSmall {
-    background: radial-gradient(circle at center, #ffbdd7 0%, #ffd3bc 30%, transparent 20%);
+    background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
     background-size: 10px 10px;
     background-repeat: repeat-x;
     background-position: 20px 20px;

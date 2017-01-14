@@ -13,7 +13,19 @@ var RetrieveNews = function (){
                 result = dd+'/'+mm+'/'+year;
                 return result;
         };
-
+/* model for products */
+  var self = this;
+  var productModel = function(item) {
+    self.data = {};
+    self.data.title = ko.observable(item.title);
+    self.data.date = ko.observable(item.date);
+    self.data.link = ko.observable(item.link);
+    self.data.enclosure = ko.observable(item.enclosure);
+    //this.displayMode = ko.observable(itemMode);
+  };
+  
+  /* product observable array */
+  var products = ko.observableArray();
 $.ajax({
     url: 'http://www.agi.it/salute/rss',
     dataType: 'xml',
@@ -52,19 +64,7 @@ $.ajax({
         //   });
 
 
-/* model for products */
-  var self = this;
-  var productModel = function(item) {
-    self.data = {};
-    self.data.title = ko.observable(item.title);
-    self.data.date = ko.observable(item.date);
-    self.data.link = ko.observable(item.link);
-    self.data.enclosure = ko.observable(item.enclosure);
-    //this.displayMode = ko.observable(itemMode);
-  };
-  
-  /* product observable array */
-  var products = ko.observableArray();
+
 
 // function htmlEncode(value){
 //   //create a in-memory div, set it's inner text(which jQuery automatically encodes)
@@ -86,7 +86,7 @@ $.ajax({
     }, self);
 
   var init = function(){
-      ko.applyBindings(RetrieveNews, document.getElementById("eventi"));
+      ko.applyBindings(RetrieveNews, document.getElementById("notizie"));
   };
 
   $(init);
