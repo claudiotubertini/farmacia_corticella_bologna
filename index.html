@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -21,7 +22,7 @@
 
 
    <link href="css/carousel.css" rel="stylesheet">
-    <link href="css/cover.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/base.css" />
 
   </head>
@@ -30,10 +31,11 @@
 
       <div class="site-wrapper-inner">
 
-        <div class="row">
+        
 
-        <nav class="navbar navbar-default navbar-fixed-top">
-
+        <section class="navbar navbar-default navbar-fixed-top">
+    
+          
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -41,9 +43,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Farmacia di Corticella</a>
+              <a class="navbar-brand" href=""></a>
             </div>
-            <div id="navbar" class="collapse navbar-collapse navbar-right">
+            <div id="mynavbar" class="collapse navbar-collapse navbar-right">
               <ul class="nav navbar-nav">
                 <li ><a  href="#presentazione">Home</a></li>
                 <li><a  href="#farmacia">Farmacia</a></li>
@@ -54,12 +56,13 @@
 
               </ul>
             </div>
+            
 
-        </nav>
+        </section>
 
 
           <section id="presentazione" class="clearfix row">
-            <img class="img-responsive" alt="Logo farmacia di corticella" src="img/home.jpg" />
+            <img class="img-responsive" alt="Logo farmacia di corticella" src="img/Img_Home.jpg" />
 
 
 
@@ -90,9 +93,10 @@
 
 
 
-    <section id="farmacia" class="row">
+    <section  class="row">
+    <div id="farmacia">
           <div class="farmacia-img">
-          <img class="img-responsive" alt="Responsive image" src="img/farmacia_low.jpg" />
+          <img class="img-responsive" alt="Responsive image" src="img/Img_Sezione_Farmacia.jpg" />
            <h1 class="payoff2"><span>Farmacia.</span></h1>
           </div>
       <div class="row inner">
@@ -128,11 +132,11 @@
      <div class="row inner">
       <p class="title">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
       <p class="pull-right"><a href="#presentazione"><img class="img-responsive" src="img/tornasu.jpg" /></a></p></div>
-
+</div>
 </section>
 
 <!-- SERVIZI-->
-      <section id="servizi" class="row">
+      <div id="servizi" class="row">
       <div class="farmacia-img">
           <img class="img-responsive" alt="Responsive image" src="img/servizi_low.jpg" />
           <h1 class="payoff2"><span>Servizi.</span></h1>
@@ -188,11 +192,11 @@
 
 
 
-      </section>
+      </div>
 <!-- FINE SERVIZI-->
 <!-- EVENTI -->
- <section id="eventi" class="row">
-
+ <section  class="row">
+<div id="eventi">
  <div class="farmacia-img">
           <img class="img-responsive" alt="Responsive image" src="img/eventi_low.jpg" />
           <h1 class="payoff2"><span>Eventi.</span></h1>
@@ -226,12 +230,13 @@
 
   </div>
 </div>
+</div>
 </section>
 <div class="inner"><hr class="circleLine" /></div>
 <!-- FINE EVENTI -->
      <!--  NOTIZIE KOEVENTI -->
-      <div id="notizie" class="description">
-      <div id="notizie-div" class="row inner">
+      
+      <div id="notizie" class="row inner description">
       <h1 class="payoff3"><span>Notizie.</span></h1>
         <div class=" blog-main ">
           <div class="blog-post columnfill" data-bind="foreach: RetrieveNews.products">
@@ -241,7 +246,7 @@
              <a class="circleLineSmall" data-bind="attr: {href: data.link}"> Leggi tutto</a></p></div>
         </div>
       </div>
-    </div>
+    
   <div class="inner"><hr class="circleLine" /></div>
     <!-- FINE EVENTI KOEVENTI-->
 <!-- <hr class="circleLine"> -->
@@ -250,7 +255,7 @@
       <section class="container">
         <div class="row">
             <div class="col-sm-4 options-box">
-              <h1>Contatti e indirizzo</h1>
+              <h1>Contatti</h1>
               <div>
                <div id='mytest'></div>
               </div>
@@ -273,7 +278,7 @@
       </section>
 <!-- FINE CONTATTI-->
          <!-- CALENDARIO -->
-    <section id="orari" class="media">
+    <section class="media row inner">
       <div class="media-left media-middle">
        <!--  <a href="#">
           <img class="media-object" src="../corticelladocs/img/server.jpeg" alt="...">
@@ -316,7 +321,7 @@
            </footer>
   </div>
 <!-- FINE KOCONTATTI-->
-    </div>
+    
   </div>
 </div>
 
@@ -333,43 +338,59 @@
     <script src="jquery-ui/jquery-ui.min.js"></script>
     <script src="jquery-ui/datepicker-it.js">
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+   <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script> -->
     <script type="text/javascript" src="js/knockout-3.4.1.js">
     </script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script type="text/javascript" src="assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script type="text/javascript" src="js/jquery.fragmentscroll.min.js"></script>
-    <script type="text/javascript">
+   <!--  <script type="text/javascript" src="js/jquery.fragmentscroll.min.js"></script> -->
+   <!--  <script type="text/javascript">
     $(window).load(function() {
       $('body').fragmentScroll({
         frame: 'html, body',
         speed: 2000,
-        offset: 0
+        offset:0,
+        easing: 'swing'
       });
     });
-    </script>
-
- <!--    <script type="text/javascript">
-    // $("#nav ul li a[href^='#']").on('click', function(e) {
-    //      // prevent default anchor click behavior
-    //      e.preventDefault();
-    //      // store hash
-    //      var hash = this.hash;
-    //      // animate
-    //      $('html, body').animate({
-    //          scrollTop: $(hash).offset().top
-    //        }, 300, function(){
-    //          // when done, add hash to url (default click behaviour)
-    //          window.location.hash = hash;
-    //        });
-    //   });
-      (function(){
-  $('a[href^="#"]').click(function(e) {
-      e.preventDefault();
-      $(window).stop(true).scrollTo(this.hash, {duration:2000, interrupt:true});
-    });
-  }());
+    </script> -->
+ <!--    <script>
+    $(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script> -->
+  <!--   <script type="text/javascript">
+    $("#nav ul li a[href^='#']").on('click', function(e) {
+         // prevent default anchor click behavior
+         e.preventDefault();
+         // store hash
+         var hash = this.hash;
+         // animate
+         $('html, body').animate({
+             scrollTop: $(hash).offset().top
+           }, 300, function(){
+             // when done, add hash to url (default click behaviour)
+             window.location.hash = hash;
+           });
+      });
+  //     (function(){
+  // $('a[href^="#"]').click(function(e) {
+  //     e.preventDefault();
+  //     $(window).stop(true).scrollTo(this.hash, {duration:2000, interrupt:true});
+  //   });
+  // }());
     </script> -->
     <script type="text/javascript" src="js/corticellaapp.js"></script>
     <script type="text/javascript" src="js/newsapp.js"></script>
