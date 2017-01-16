@@ -236,15 +236,19 @@
 <!-- FINE EVENTI -->
      <!--  NOTIZIE KOEVENTI -->
 
-      <div id="notizie" class="row">
+      
+<div id="notizie" class="row inner">
+  <div  class="container">
       <h1 class="payoff3"><span>Notizie.</span></h1>
-        <div class=" blog-main inner description">
+      <hr class="hrline">
+        <div class=" blog-main">
           <div class="blog-post columnfill" data-bind="foreach: RetrieveNews.products">
             <h4 class="blog-post-title" data-bind="text: data.title"></h4>
             <p class="blog-post-meta" data-bind="text: formattedDate"></p>
             <p><img class="img-responsive" data-bind="attr: {src: data.enclosure}"><br />
              <a class="circleLineSmall" data-bind="attr: {href: data.link}"> Leggi tutto</a></p></div>
         </div>
+</div>
       </div>
 
   <div class="inner"><hr class="circleLine" /></div>

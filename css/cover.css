@@ -57,17 +57,20 @@ a.decoration {
   }
   #notizie {
     position: relative;
-    display: inline-block;
+    display: block;
     padding-top:30px;
   }
-  h1.payoff3 span{
+  .payoff3 {
+    padding-left: 20px;
+  }
+ #notizie h1.payoff3 span{
     position: absolute;
     top: -40px;
     left: 40px;
+
     width: 100%;
-    font-size: 70px;
+    font-size: 100px;
     font-weight: 900;
-    margin-bottom:30px;
     text-align: left;
     color: #c6c6c6;
   }
@@ -116,7 +119,7 @@ a.decoration {
 html,
 body {
   padding: 0px;
-  padding-top:100px;
+  /*padding-top:100px;*/
   width: 100%;
   margin: 0px;
 
@@ -153,7 +156,8 @@ body {
 .hrline {
     padding: 0px;
     margin: 0px;
-    margin-top:-1em;
+    margin-bottom:1em;
+    background-color:white;
   }
 
 .pull-right {
