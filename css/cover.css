@@ -35,14 +35,21 @@ a.decoration {
   }
 
 
-  
+
 
   #presentazione, .farmacia-img, #incontri, #eventi{
   margin-bottom: 30px;
   position: relative;
   display: block;
   }
-  
+.parent{
+  position:relative;
+}
+#navbar{
+  position: absolute;
+    bottom:0;
+    right:10px;
+}
   #farmacia {
     margin-top: 30px;
   }
@@ -119,7 +126,7 @@ a.decoration {
 html,
 body {
   padding: 0px;
-  /*padding-top:100px;*/
+  padding-top:50px;
   width: 100%;
   margin: 0px;
 
@@ -218,7 +225,7 @@ background-color: #99CC00;
   margin-bottom: 1em;
 }
 .margin-neg{
-  margin-bottom:-1px;
+  margin-top:-1px;
 }
 .vertalign{
     display: table-cell;
@@ -245,12 +252,24 @@ html, body {
     font-size: 10px;
     text-align: center;
     width:100%;
+    padding-top:0;
   }
+.parent{
+position:static;
+}
+#navbar{
+position:static;
+
+}
+
 .center {
   text-align: center;
 }
 .navbar-brand{
   display: inline;
+}
+#logo{
+  display:none;
 }
  .farmacia-img {
   position: relative;
@@ -258,8 +277,8 @@ html, body {
   padding-top:10px;
 }
 
-#presentazione h1 span{
-  font-size: 20px;
+#presentazione{
+  padding-top:50px;
 }
 .farmacia-img img{
   width: 100%;
@@ -287,7 +306,7 @@ html, body {
   padding-left:0;
   padding-right:0;
 }
-  
+
   .circleLineSmall {
      display:none;
   }
@@ -312,11 +331,18 @@ html, body {
   html {
     font-size: 24px;
     }
-    #presentazione h1 span{
+.parent{
+position:static;
+}
+#navbar{
+position:static;
+
+}
+#presentazione h1 span{
   font-size: 16px;
 }
-  
-  
+
+
    .inner {
       padding:10px;
       margin:10px;
@@ -328,10 +354,18 @@ html, body {
  html {
     font-size: 20px;
   }
+
+.parent{
+position:static;
+}
+#navbar{
+position:static;
+
+}
 #presentazione h1 span{
   font-size: 30px;
 }
-  
+
 
 .inner {
   padding:20px;
@@ -357,7 +391,7 @@ p {
 html {
     font-size: 20px;
   }
-  
+
 
 .inner {
   padding: 20px;
@@ -369,7 +403,7 @@ html {
 html {
     font-size: 28px;
   }
-  
+
 
 }
 
