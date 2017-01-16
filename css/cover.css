@@ -262,9 +262,14 @@ html, body {
   height: 100%;
 }
 .farmacia-img .payoff2 span{
-    font-size: 20px;
-    left:20px;
-    bottom:10px;
+    font-size: 40px;
+    left:30px;
+    bottom:20px;
+}
+#notizie .payoff3 span{
+  font-size: 40px;
+    left:40px;
+    bottom:20px;
 }
 .title {
   padding:0;
@@ -284,9 +289,19 @@ html, body {
   }
   #notizie {
     position: relative;
-    display: inline-block;
-    padding-top:10px;
+    display: block;
+    padding:0px;
   }
+  .circleLine {
+  background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
+  background-size: 30px 30px;
+  background-repeat: repeat-x;
+  background-position: 5px center;
+  width: 100%;
+  height: 50px;
+  padding-left:0px;
+  display:block;
+}
 }
 
 @media (max-width: 543px) {
