@@ -9,50 +9,40 @@ a:hover {
 }
 a.decoration {
   text-decoration: underline;
-  text-decoration-color: #99CC00;
+  -moz-text-decoration-line: #99CC00;
+-moz-text-decoration-color: #99CC00;
+-webkit-tap-highlight-color: #99CC00;
 }
-.navbar-brand {
+/*.navbar-brand {
     max-width: 60%;
-}
+}*/
 
-.container-fluid {
-margin:0;
-padding:0;
-}
-
-.portfolio_description {
-    position: absolute;
-    top: 50px;
-    right:10px;
-    /*width: 20%;*/
-    text-align: left;
+.mastfoot {
+   /* position: absolute;*/
+   /* bottom: 0px;*/
+    margin: 20px;
+    width:100%;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container{
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 
-  .payoff span{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 100%;
-    font-size: 70px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    text-align: left;
-    color: white;
-  }
+
+  
 
   #presentazione, .farmacia-img, #incontri, #eventi{
   margin-bottom: 30px;
   position: relative;
-  display: inline-block;
+  display: block;
   }
-  #presentazione h1{
-    text-align: left;
-    padding-left: 10px;
-  }
- #presentazione img {
-    width: 100%;
-    height: 100%;
-  }
+  
   #farmacia {
     margin-top: 30px;
   }
@@ -81,7 +71,7 @@ padding:0;
     text-align: left;
     color: #c6c6c6;
   }
-  
+
 .farmacia-img .payoff2 span{
     position: absolute;
     bottom: 0;
@@ -115,14 +105,7 @@ padding:0;
     text-align: left;
     display: block;
     }
-/*tr td .img-div{
-    height:10px;
-    width:10px;
-    overflow:hidden;
-    border-radius:50%;
-    background:#99CC00;
-    display:inline;
-}*/
+
 
 
 /*
@@ -136,7 +119,7 @@ body {
   padding-top:100px;
   width: 100%;
   margin: 0px;
-  
+
   overflow-x: hidden;
   background-color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -166,9 +149,7 @@ body {
   color:#c6c6c6;
 }
 
-.title-bolli {
-  color
-}
+
 .hrline {
     padding: 0px;
     margin: 0px;
@@ -197,14 +178,14 @@ background-color: #99CC00;
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
-  display: table;
+  display: block;
   width: 100%;
   /*height: 100%; /* For at least Firefox */
   /*min-height: 100%;*/
 
 }
 .site-wrapper-inner {
-  display: table-cell;
+  display: block;
   /*vertical-align: top;*/
 }
 .cover-container {
@@ -243,10 +224,10 @@ background-color: #99CC00;
     display: flex;
     align-items: baseline;
 }
-}
+
 .color_green{
   color:#99CC00;
-  font-size: 2em;
+  font-size: 20px;
 }
 .grigio_scuro{
   color:rgb(122,134,128);
@@ -256,20 +237,21 @@ background-color: #99CC00;
 }
 
 @media (max-device-width: 480px){
-  html {
-    font-size: 9px;
+html, body {
+    font-size: 10px;
     text-align: center;
+    width:100%;
   }
-  
-  .vertical-align {
-        display: block;
-    }
+.center {
+  text-align: center;
+}
 .navbar-brand{
   display: inline;
 }
  .farmacia-img {
   position: relative;
   display: inline-block;
+  padding-top:10px;
 }
 
 #presentazione h1 span{
@@ -281,9 +263,14 @@ background-color: #99CC00;
 }
 .farmacia-img .payoff2 span{
     font-size: 20px;
-    left:10px;
+    left:20px;
     bottom:10px;
-  }
+}
+.title {
+  padding:0;
+ margin:0;
+ margin-right:10px;
+}
   .inner {
   margin-left: 0;
   margin-right:0;
@@ -291,11 +278,14 @@ background-color: #99CC00;
   padding-left:0;
   padding-right:0;
 }
-  .portfolio_description {
-    display:none;
-  }
+  
   .circleLineSmall {
      display:none;
+  }
+  #notizie {
+    position: relative;
+    display: inline-block;
+    padding-top:10px;
   }
 }
 
@@ -306,24 +296,8 @@ background-color: #99CC00;
     #presentazione h1 span{
   font-size: 16px;
 }
-  /* .payoff span {
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    text-align: left;
-    color: white;
-  }
-  .payoff{
-    left:10px;
-    width: 100%;
-    font-family: 'Roboto';
-    text-align: left;
-  }*/
-  .portfolio_description {
-
-       display:none;
-    }
+  
+  
    .inner {
       padding:10px;
       margin:10px;
@@ -338,29 +312,8 @@ background-color: #99CC00;
 #presentazione h1 span{
   font-size: 30px;
 }
-  .payoff span {
-    font-family: 'Roboto';
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    text-align: left;
-    color: white;
-  }
-  .payoff{
-    left:10px;
-    width: 100%;
-    font-family: 'Roboto';
-    text-align: left;
-  }
-.portfolio_description p span{
-    position: absolute;
-    top: 50px;
-    right:0;
+  
 
-    text-align: left;
-    /*background-color: rgba(255,255,255,0.1);*/
-
-}
 .inner {
   padding:20px;
   margin:20px;
@@ -385,29 +338,8 @@ p {
 html {
     font-size: 20px;
   }
-  .payoff span {
-    font-family: 'Roboto';
-    font-size: 50px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    text-align: left;
-    color: white;
-  }
-  .payoff{
-    left:10px;
-    width: 100%;
-    font-family: 'Roboto';
-    text-align: left;
-  }
-.portfolio_description {
-    position: absolute;
-    top: 50px;
-    right:0;
-    width: 20%;
-    text-align: left;
-    /*background-color: rgba(255,255,255,0.1);*/
+  
 
-}
 .inner {
   padding: 20px;
   margin:20px;
@@ -418,79 +350,12 @@ html {
 html {
     font-size: 28px;
   }
-  .payoff span {
-    font-family: 'Roboto';
-    font-size: 70px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    text-align: left;
-    color: white;
-  }
-  .payoff{
-    left:10px;
-    width: 100%;
-    font-family: 'Roboto';
-    text-align: left;
-  }
-.portfolio_description {
-    position: absolute;
-    top: 50px;
-    right:0;
-    width: 20%;
-    text-align: left;
+  
 
-  }
 }
 
 
 
-/* **********************************/
-
-
-/*
- * Header
- */
-/*.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  /*color: rgba(255,255,255,.75);
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
-}*/
-
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
 
 
 /*
@@ -519,34 +384,6 @@ html {
   color: #000;
 }
 
-/*
- * Affix and center
- */
-
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-   /* position: absolute;*/
-    top: 0;
-  }
-
-  .mastfoot {
-   /* position: absolute;*/
-   /* bottom: 0px;*/
-    margin: 20px;
-    width:100%;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container{
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
 
 
 .columnfill {
