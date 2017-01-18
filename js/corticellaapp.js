@@ -1,16 +1,4 @@
 
-// var scroll = (function(){
-// $('a[href="#presentazione"]').scrollTo(target[,duration][,settings]);
-// }());
-
-
-
-
-/////////////////
-
-function initMap(){}
-
-////////////////////////////////////
 
 var ShiftWork = function(){
 
@@ -98,7 +86,7 @@ var init = function () {
             showWeek: true
         });
         //apply ko bindings
-        ko.applyBindings(ShiftWork, document.getElementById('contatti'));
+        ko.applyBindings(ShiftWork, document.getElementById('turni'));
     };
 
     /* execute the init function when the DOM is ready */

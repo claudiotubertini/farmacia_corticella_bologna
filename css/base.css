@@ -11,10 +11,13 @@
         margin: 20px 0 20px 0;
         border: none;
       }
-
-      #map {
+.rowmap{
+  width: 100%; 
+  height: 100%;
+}
+     #map {
       /*bottom:0px;*/
-        height: 450px;
+        height: 500px;
         width: 100%;
         border: 1px solid #999;
         border-radius: 3px;

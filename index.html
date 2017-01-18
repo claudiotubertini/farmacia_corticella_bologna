@@ -235,7 +235,7 @@
 </section>
 <div class="inner"><hr class="circleLine" /></div>
 <!-- FINE EVENTI -->
-     <!--  NOTIZIE KOEVENTI -->
+     <!--  NOTIZIE KONOTIZIE -->
 
 
 <div id="notizie" class="row inner">
@@ -253,20 +253,39 @@
       </div>
 
   <div class="inner"><hr class="circleLine" /></div>
-    <!-- FINE EVENTI KOEVENTI-->
+    <!-- FINE EVENTI KONOTIZIE-->
 <!-- <hr class="circleLine"> -->
      <!-- CONTATTI KOCONTATTI-->
-<div id="contatti">
-      <section class="container">
+<section id="contatti">
+      <div class="container">
         <div class="row">
             <div class="col-sm-4 options-box">
               <h1>Contatti</h1>
               <p>Farmacia di Corticella della dott.ssa Anna Bragaglia<br />
 Via Bentini 37 | Bologna<br />
 051 705478</p>
- <form>
-
+ <form data-bind="submit: RegistrationForm.submit">
+ <fieldset>
+<div class="form-group">
+        <label for="firstNameInput">Nome</label>
+        <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.firstName" id="firstNameInput" placeholder="Nome">
+      </div>
+      <div class="form-group">
+        <label for="lastNameInput">Cognome</label>
+        <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.lastName" id="lastNameInput" placeholder="Cognome">
+      </div>
+      <div class="form-group">
+        <label for="phoneNumberInput">Telefono</label>
+        <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.contactDetails.phoneNumber" id="phoneNumberInput" placeholder="Il tuo telefono">
+      </div>
+       <div class="form-group">
+        <label for="emailAddressInput">Email</label>
+        <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.contactDetails.emailAddress" id="emailAddressInput" placeholder="La tua email">
+      </div>
+ </fieldset>
+  <button type="Submit" class="btn btn-default">Submit</button>
 </form>
+
 
 
             </div>
@@ -284,9 +303,12 @@ Via Bentini 37 | Bologna<br />
               <div id="map" ></div>
             </div>
         </div>
-      </section>
+      </div>
+    </section>
+     <div class="inner"><hr class="circleLine" /></div>
 <!-- FINE CONTATTI-->
          <!-- CALENDARIO -->
+  <div id="turni">
     <section class="media row inner">
       <div class="media-left media-middle">
        <!--  <a href="#">
@@ -317,9 +339,7 @@ Via Bentini 37 | Bologna<br />
         </div>
     </section>
 
-    <section>
-      <div id="form"></div>
-    </section>
+    
 
           <footer class="row">
                <div class="mastfoot">
@@ -328,9 +348,9 @@ Via Bentini 37 | Bologna<br />
 
           </div>
            </footer>
-  </div>
+  
 <!-- FINE KOCONTATTI-->
-
+</div>
   </div>
 </div>
 
@@ -354,53 +374,8 @@ Via Bentini 37 | Bologna<br />
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script type="text/javascript" src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script type="text/javascript" src="js/scrollto.js"></script>
-   <!--  <script type="text/javascript">
-    $(window).load(function() {
-      $('body').fragmentScroll({
-        frame: 'html, body',
-        speed: 2000,
-        offset:0,
-        easing: 'swing'
-      });
-    });
-    </script> -->
- <!--    <script>
-    $(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
-</script> -->
-  <!--   <script type="text/javascript">
-    $("#nav ul li a[href^='#']").on('click', function(e) {
-         // prevent default anchor click behavior
-         e.preventDefault();
-         // store hash
-         var hash = this.hash;
-         // animate
-         $('html, body').animate({
-             scrollTop: $(hash).offset().top
-           }, 300, function(){
-             // when done, add hash to url (default click behaviour)
-             window.location.hash = hash;
-           });
-      });
-  //     (function(){
-  // $('a[href^="#"]').click(function(e) {
-  //     e.preventDefault();
-  //     $(window).stop(true).scrollTo(this.hash, {duration:2000, interrupt:true});
-  //   });
-  // }());
-    </script> -->
+    <script type="text/javascript" src="js/registrationform.js"></script>
+   
     <script type="text/javascript" src="js/corticellaapp.js"></script>
     <script type="text/javascript" src="js/newsapp.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
