@@ -1,3 +1,13 @@
+.col-13 {
+    width: calc((100vw / 4 ) - 1vw);
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0.2vw;
+    margin-right: 0.2vw;
+   float: left;
+}
+
+
 html,
 body {
   padding: 0px;
@@ -90,7 +100,7 @@ a:hover {
  #notizie h1.payoff3{
     position: absolute;
     top: -40px;
-    left: 40px;
+    left: 35px;
 
     width: 100%;
     font-size: 100px;
@@ -159,7 +169,7 @@ a:hover {
 .hrline {
     padding: 0px;
     margin: 0px;
-    margin-bottom:1em;
+    margin-bottom:2em;
     background-color:white;
   }
 
@@ -200,15 +210,18 @@ background-color: #99CC00;
 
 }
 
-/* Padding for spacing */
 .inner {
   margin-left: 3em;
   margin-right:4em;
   margin-top:2.5em;
   margin-bottom:2em;
-
 }
-
+.innerrow {
+  margin-left: 2em;
+  margin-right:2em;
+  margin-top:2.5em;
+  margin-bottom:2em;
+}
 .description {
   text-align: left;
 }
@@ -220,6 +233,7 @@ background-color: #99CC00;
   margin-left:30px;
   margin-right:30px;
 }
+
 .marginrow{
   margin-left:13px;
   margin-right:13px;

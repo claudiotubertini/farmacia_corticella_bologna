@@ -205,7 +205,7 @@
           <h1 class="payoff2">Eventi.</h1>
       </div>
 <div class="marginrow">
-  <div class="col-xs-4 col-sm-4">
+  <div class="col-sm-4">
 
       <div class="caption description">
         <h1 class="title"><strong>Nome <br />Evento</strong></h1><h4>GIOVEDÌ<br />
@@ -216,7 +216,7 @@ DALLE 10 ALLE 13.30</h4>
       </div>
 
   </div>
-  <div class="col-xs-4 col-sm-4">
+  <div class="col-sm-4">
 
       <div class="caption description">
         <h1 class="title"><strong>Nome <br />Evento</strong></h1><h4>SABATO<br />
@@ -227,7 +227,7 @@ ORE 11</h4>
       </div>
 
   </div>
-  <div class="col-xs-4 col-sm-4">
+  <div class="col-sm-4">
 
        <div class="caption description">
         <h1 class="title"><strong>Nome <br />Evento</strong></h1><h4>MARTEDÌ<br />
@@ -247,31 +247,70 @@ DALLE 9 ALLE 18</h4>
 
 
 <section id="notizie" class="container-fluid">
-  <!-- <div  class="row description">
+  <div  class="row description">
       <h1 class="payoff3">Notizie.</h1>
- -->
-      <!--   <div class=" blog-main">
-          <div class="blog-post columnfill" data-bind="foreach: RetrieveNews.products">
-            <h4 class="blog-post-title" data-bind="text: data.title"></h4>
+<hr class="hrline">
+</div>
+       <!--  <div class=" blog-main">
+        <div data-bind="foreach: RetrieveNews.products">
+        <div class="col-xs-4 col-md-4">
+          <div class="blog-post" data-bind="visible: $index()<5">
+            <p data-bind="text: data.title" style="font-weight:bold"></p>
             <p class="blog-post-meta" data-bind="text: formattedDate"></p>
-            <p><img class="img-thumbnail" data-bind="attr: {src: data.enclosure}"><br />
-             <a class="circleLineSmall" target="_blank" data-bind="attr: {href: data.link}"> Leggi tutto</a></p></div>
+            <p><img class="img-thumbnail hidden-xs" data-bind="attr: {src: data.enclosure}"><br />
+             <a class="circleLineSmall" target="_blank" data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
+          </div>
         </div>
-  </div> -->
-  <div class="row">
+      </div>
+    </div> -->
+    <div class="row">
+    <div class=" innerrow description ">
+    <div data-bind="foreach: RetrieveNews.products">
+
+    <div data-bind="visible: $index()<4">
+
+<div class="col-sm-3">
+      <div class="caption">
+         <p data-bind="text: data.title" style="font-weight:bold"></p>
+            <p class="blog-post-meta" data-bind="text: formattedDate"></p>
+            <p><img class="img-rounded img-responsive" width="171" height="180" data-bind="attr: {src: data.enclosure}"><br />
+             <a class="circleLineSmall" target="_blank" data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
+      </div>
+  </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<!--   <div class="row inner description">
   <div data-bind="foreach: RetrieveNews.products">
-  <div class="col-xs-4" >
-    <div class="thumbnail">
-    <div class="caption">
-        <h3 data-bind="text: data.title"></h3>
+
+ <div class="col-sm-4">
+<div class="media" data-bind="visible: $index()<3">
+  <div class="media-left hidden-xs">
+   <a data-bind="attr: {href: data.link}" target="_blank"> <img class="media-object img-thumbnail img-responsive" width="171" height="180" data-bind="attr: {src: data.enclosure}"></a>
+  </div>
+  <div class="media-body">
+     <p data-bind="text: data.title" style="font-weight:bold"></p>
+      <p data-bind="text: formattedDate"></p>
+      <p> <a class="circleLineSmall" target="_blank" data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
+  </div>
+</div> -->
+
+
+
+   <!--  <div class="thumbnail description">
+
+        <p data-bind="text: data.title" style="font-weight:bold"></p>
         <p data-bind="text: formattedDate"></p>
       <img class="img-thumbnail" width="171" height="180" data-bind="attr: {src: data.enclosure}">
 
        <p> <a class="circleLineSmall" target="_blank" data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+
+    </div> -->
+
+
 </section>
 
   <div class="row-fluid margindot"> <hr class="circleLine" /></div>
