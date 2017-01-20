@@ -35,7 +35,7 @@ a:hover {
   text-decoration: none;
 }
 .decoration {
-  border-bottom: solid 2px #99CC00;
+  border-bottom: solid 1px #000;
 }
 
 
@@ -141,6 +141,7 @@ a:hover {
 }
 .table-text {
   font-size:14px;
+  text-align: left;
 }
 
 
@@ -253,13 +254,31 @@ td.color_green{
   font-size: 20px;
   text-align:right;
 }
-}
+
 .grigio_scuro{
   color:rgb(122,134,128);
 }
 .grigio_chiaro{
   color:rgb(198,198,198);
 }
+
+a {
+    display:inline-block;
+}
+a img {
+    display:block;
+}
+a.img-button{
+   display:block;
+}
+.img-button{
+        background-image: url("../img/tornasu.jpg");
+        background-size: 200px 100px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+
 
 @media (max-device-width: 543px){
 html, body {
@@ -268,6 +287,20 @@ html, body {
     width:100%;
     padding-top:40px;
   }
+
+#navbar > ul.nav.navbar-nav{
+  text-align:right;
+}
+/*#navbar{
+  position:relative;
+  right:-2em;
+  top:-2em;
+}*/
+  .site-wrapper-inner {
+  display: block;
+  width:100%;
+  /*vertical-align: top;*/
+}
   td.color_green{
   color:#99CC00;
   font-size: 20px;
@@ -294,11 +327,7 @@ html, body {
   left:20px;
   max-width: 60%;
 }
-#navbar{
-  position:absolute;
-  right:-2em;
-  top:-2em;
-}
+
 .navbar-header{
   margin-top:-10px;
   margin-left:0;
@@ -332,26 +361,32 @@ html, body {
 }
 #notizie {
     position: relative;
-    display: block;
+    display: inline;
     padding:0px;
   }
 
 #notizie div h1.payoff3{
   position:absolute;
   font-size: 30px;
-  left:10px;
-  bottom:10px;
+  left:20px;
+  bottom:0px;
 }
 .title {
   padding:0;
   margin:0;
 }
-  .inner, .innerrow {
+  .inner {
   margin-left: 0;
   margin-right:0;
   margin-bottom:0;
   padding-left:0;
   padding-right:0;
+}
+.innerrow {
+  margin-left: 2em;
+  margin-right:2em;
+  margin-top:2.5em;
+  margin-bottom:2em;
 }
 img.imgres{
   max-width: 80%;
@@ -370,9 +405,9 @@ img.imgres{
   padding-left:0px;
   display:block;
 }
+
 table.table-responsive {
   border-style: hidden;
-
  }
 }
 
@@ -382,7 +417,31 @@ table.table-responsive {
  html {
 
   }
+.farmacia-img {
+  position: relative;
+  display: inline-block;
+  padding-top:10px;
+}
 
+
+.farmacia-img .payoff2{
+  position:absolute;
+  font-size: 30px;
+  left:10px;
+  bottom:-15px;
+}
+#notizie {
+    position: relative;
+    display: block;
+    padding:0px;
+  }
+
+#notizie div h1.payoff3{
+  position:absolute;
+  font-size: 30px;
+  left:10px;
+  bottom:10px;
+}
 .parent{
 position:static;
 }

@@ -1,35 +1,200 @@
+
+var googlestyle = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dadada"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#c9c9c9"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  }
+]
+
+
+
 var mystyles = [
 
           {
             featureType: 'water',
             stylers: [
-              { color: '#19a0d8' }
+              { color: '#9d9489' }
             ]
           },{
             featureType: 'administrative',
             elementType: 'labels.text.stroke',
             stylers: [
-              { color: '#ffffff' },
+              { color: '#000' },
               { weight: 6 }
             ]
           },{
             featureType: 'administrative',
             elementType: 'labels.text.fill',
             stylers: [
-              { color: '#e85113' }
+              { color: '#9d9489' }
             ]
           },{
             featureType: 'road.highway',
             elementType: 'geometry.stroke',
             stylers: [
-              { color: '#efe9e4' },
-              { lightness: -40 }
+              { color: '#9d9489' },
+              { lightness: -50 },
+              { saturation: -100 }
             ]
           },{
             featureType: 'transit.station',
             stylers: [
               { weight: 9 },
-              { hue: '#e85113' }
+              { hue: '#9d9489' }
             ]
           },{
             featureType: 'road.highway',
@@ -41,7 +206,7 @@ var mystyles = [
             featureType: 'water',
             elementType: 'labels.text.stroke',
             stylers: [
-              { lightness: 100 }
+              { lightness: -100 }
             ]
           },{
             featureType: 'water',
@@ -54,38 +219,51 @@ var mystyles = [
             elementType: 'geometry',
             stylers: [
               { visibility: 'on' },
-              { color: '#f0e4d3' }
+              { color: '#9d9489' }
             ]
           },{
             featureType: 'road.highway',
             elementType: 'geometry.fill',
             stylers: [
-              { color: '#efe9e4' },
-              { lightness: -25 }
+              { color: '#FFF' },
+              { lightness: -200 }
             ]
           }
         ];
 var initMap = function() {
-        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+          suppressMarkers: true
+        });
         var directionsService = new google.maps.DirectionsService;
         var largeInfowindow = new google.maps.InfoWindow;
         var map;
-
-      // Create a new blank array for all the listing markers.
         var marker;
         var mymarker;
         var pos;
         var farma = {lat: 44.5466389, lng: 11.3566971};
+    function makeMarkerIcon(markerColor) {
+        var markerImage = new google.maps.MarkerImage(
+          'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
+          '|40|_|%E2%80%A2',
+          new google.maps.Size(21, 34),
+          new google.maps.Point(0, 0),
+          new google.maps.Point(10, 34),
+          new google.maps.Size(21,34));
+        return markerImage;
+      }
+      var defaultIcon = makeMarkerIcon('99CC00');
+      var yourIcon = makeMarkerIcon('CFCFCF');
       map = new google.maps.Map(document.getElementById('map'), {
           center: farma,
           zoom: 14,
-          styles: mystyles,
+          styles: googlestyle,
           mapTypeControl: false
         });
          marker = new google.maps.Marker({
               position: farma,
               title: "Farmacia di Corticella",
-              animation: google.maps.Animation.DROP
+              animation: google.maps.Animation.DROP,
+              icon: defaultIcon
             });
              marker.setMap(map);
 
@@ -101,12 +279,16 @@ mymarker = new google.maps.Marker({
               position: pos,
               title: "La tua posizione",
               animation: google.maps.Animation.DROP,
-              map: map
+              map: map,
+              icon: yourIcon
             });
 
 
 
         directionsDisplay.setMap(map);
+        directionsDisplay.setOptions({
+          polylineOptions:'#99CC00'
+        });
         calculateAndDisplayRoute(directionsService, directionsDisplay);
         document.getElementById('mode').addEventListener('change', function() {
             calculateAndDisplayRoute(directionsService, directionsDisplay);
