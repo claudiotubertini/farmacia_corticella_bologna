@@ -50,6 +50,8 @@ a:hover {
   position: relative;
   display: block;
   }
+
+
 .navbar-header{
   margin-top:4em;
   margin-left:-1em;
@@ -57,6 +59,7 @@ a:hover {
 .parent{
   position:relative;
 }
+
 #logo{
   position:absolute;
   bottom:20px;
@@ -78,18 +81,11 @@ a:hover {
     height: 100%;
 
   }
-  #notizie {
-    position: relative;
-    display: block;
-    padding-top:30px;
-  }
 
- #notizie h1.payoff3{
-    position: absolute;
-    top: -40px;
-    left: 35px;
 
-    width: 100%;
+ .payoff3{
+    margin-top:0;
+    margin-left:-0.2em;
     font-size: 100px;
     font-weight: 900;
     text-align: left;
@@ -116,8 +112,6 @@ a:hover {
   background-position: 5px center;
   width: 100%;
   height: 50px;
- /* padding-left:20px;
-   padding-right:20px;*/
   display:block;
 }
 .circleLineSmall {
@@ -133,12 +127,14 @@ a:hover {
 
 
 
-.table-responsive {
+table.table-responsive {
   border-style: hidden;
   text-align: left;
-  margin-right:10px;
-  margin-left:-50px;
+  margin-right:30px;
+  margin-left:-45px;
+  display:block;
 }
+
 .table-text {
   font-size:14px;
   text-align: left;
@@ -168,6 +164,7 @@ a:hover {
 .pull-right {
   padding-right: 2em;
   margin-bottom:1em;
+
 }
 
 
@@ -213,6 +210,10 @@ background-color: #99CC00;
   margin-right:2em;
   margin-top:2.5em;
   margin-bottom:2em;
+}
+.innerblock {
+  margin-left: 2em;
+  margin-right:2em;
 }
 .bollirow{
   margin-left:-40px;
@@ -262,22 +263,8 @@ td.color_green{
   color:rgb(198,198,198);
 }
 
-a {
-    display:inline-block;
-}
-a img {
-    display:block;
-}
-a.img-button{
-   display:block;
-}
-.img-button{
-        background-image: url("../img/tornasu.jpg");
-        background-size: 200px 100px;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
 
+/*INIZIO SMARTPHONE*/
 
 
 @media (max-device-width: 543px){
@@ -288,9 +275,7 @@ html, body {
     padding-top:40px;
   }
 
-#navbar > ul.nav.navbar-nav{
-  text-align:right;
-}
+
 /*#navbar{
   position:relative;
   right:-2em;
@@ -309,6 +294,7 @@ html, body {
 .pull-right {
   padding-right: 0;
   margin-bottom:1em;
+
 }
 .decoration {
   border-bottom: solid 0px #99CC00;
@@ -321,23 +307,31 @@ html, body {
   margin-left:15px;
   margin-right:15px;
 }
-#logo{
-  display:inline;
-  position:absolute;
-  left:20px;
-  max-width: 60%;
-}
-
-.navbar-header{
-  margin-top:-10px;
-  margin-left:0;
-}
-
 .center {
   text-align: center;
 }
+/* NAVBAR*/
+#navbar > ul.nav.navbar-nav{
+  text-align:left;
+
+}
+#logo{
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+}
+
+.navbar-header{
+  margin-top:0;
+  margin-right:0;
+}
+
+
 .navbar-brand{
-  display: inline;
+  position:relative;
+  display: inline-block;
+  width:70%;
 }
 
  .farmacia-img {
@@ -359,18 +353,17 @@ html, body {
   left:10px;
   bottom:-15px;
 }
-#notizie {
-    position: relative;
-    display: inline;
-    padding:0px;
+
+.payoff3{
+    margin-top:0;
+    margin-left:0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    color: #c6c6c6;
   }
 
-#notizie div h1.payoff3{
-  position:absolute;
-  font-size: 30px;
-  left:20px;
-  bottom:0px;
-}
+
 .title {
   padding:0;
   margin:0;
@@ -388,9 +381,7 @@ html, body {
   margin-top:2.5em;
   margin-bottom:2em;
 }
-img.imgres{
-  max-width: 80%;
-}
+
   .circleLineSmall {
      display:none;
   }
@@ -408,15 +399,41 @@ img.imgres{
 
 table.table-responsive {
   border-style: hidden;
+  display:table;
  }
 }
 
-
+/* FINE SMARTPHONE*/
 
 @media (max-width: 790px) {
- html {
 
-  }
+ /* NAVBAR*/
+/*#navbar > ul.nav.navbar-nav{
+  text-align:left;
+
+}*/
+/*#logo{
+  position:absolute;
+
+  left:0;
+  width: 100%;
+}
+
+.navbar-header{
+  margin-top:0;
+  margin-right:0;
+}
+*/
+
+/*.navbar-brand{
+  position:relative;
+  display: block;
+  width:100%;
+}*/
+
+
+
+
 .farmacia-img {
   position: relative;
   display: inline-block;
@@ -426,22 +443,18 @@ table.table-responsive {
 
 .farmacia-img .payoff2{
   position:absolute;
-  font-size: 30px;
+  font-size: 40px;
   left:10px;
   bottom:-15px;
 }
-#notizie {
-    position: relative;
-    display: block;
-    padding:0px;
+.payoff3{
+    margin-top:0;
+    margin-left:0;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: left;
+    color: #c6c6c6;
   }
-
-#notizie div h1.payoff3{
-  position:absolute;
-  font-size: 30px;
-  left:10px;
-  bottom:10px;
-}
 .parent{
 position:static;
 }
@@ -479,11 +492,30 @@ p {
 
 
 @media (max-width: 991px) {
-html {
+/* NAVBAR*/
+/*#navbar > ul.nav.navbar-nav{
+  text-align:left;
 
-  }
+}
+#logo{
+  position:absolute;
+
+  left:0;
+  width: 100%;
+}
+
+.navbar-header{
+  margin-top:0;
+  margin-right:0;
+}
 
 
+.navbar-brand{
+  position:relative;
+  display: inline-block;
+  width:70%;
+}
+*/
 .inner {
   padding: 20px;
   margin:20px;
