@@ -48,7 +48,7 @@ ko.extenders.required = function(target, option) {
 
   var init = function () {
     /* add code to initialize this module */
-    ko.applyBindings(RegistrationForm, document.getElementById('contatti'));
+    ko.applyBindings(RegistrationForm, document.getElementById('registration'));
   };
 
   /* execute the init function when the DOM is ready */

@@ -86,7 +86,7 @@ var init = function () {
             showWeek: true
         });
         //apply ko bindings
-        ko.applyBindings(ShiftWork, document.getElementById('turni'));
+        ko.applyBindings(ShiftWork, document.getElementById('koturni'));
     };
 
     /* execute the init function when the DOM is ready */
