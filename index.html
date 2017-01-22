@@ -313,104 +313,168 @@ DALLE 9 ALLE 18</h4>
         <h1 class="payoff3">Contatti.</h1></div>
 
   </div>
-<div class="row innerblock">
+<div class="innerblock row row-eq-height">
 
   <div class="col-sm-4">
-  <table class="table description">
-<tr><td>
-  
-              <p>Farmacia di Corticella della dott.ssa Anna Bragaglia<br />
-Via Bentini 37 | Bologna<br />
-051 705478</p></td>
-</tr>
-<tr><td>
-  <div id="panel">
-                  <b>Come raggiungere la nostra farmacia: </b><br />
-      <p class="table-text">&#8594
-      <a class="decoration" href="" data-bind="text: driving, click: $data.modeclick"></a><br />
-       &#8594
-      <a class="decoration" href="" data-bind="text: walking, click: $data.modeclick"></a><br />
-      &#8594
-      <a class="decoration" href="" data-bind="text: bicycling, click: $data.modeclick"></a><br />
-      &#8594
-      <a class="decoration" href="" data-bind="text: transit, click: $data.modeclick"></a></p>
-                  <!-- <select id="mode">
-                    <option value="DRIVING">in automobile</option>
-                    <option value="WALKING">a piedi</option>
-                    <option value="BICYCLING">in bicicletta</option>
-                    <option value="TRANSIT">con i mezzi pubblici</option>
-                  </select> -->
-              </div>
-</td></tr>
-<tr>
-<td>
-
-         <form id="registration" data-bind="submit: RegistrationForm.submit">
-         <fieldset>
-        <div class="form-group">
-                <label for="firstNameInput">Nome</label>
-                <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.firstName" id="firstNameInput" placeholder="Nome">
-              </div>
-              <div class="form-group">
-                <label for="lastNameInput">Cognome</label>
-                <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.lastName" id="lastNameInput" placeholder="Cognome">
-              </div>
-               <div class="form-group">
-                <label for="emailAddressInput">Email</label>
-                <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.contactDetails.emailAddress" id="emailAddressInput" placeholder="La tua email">
-              </div>
-         </fieldset>
-          <button type="Submit" class="btn btn-default">Invia</button>
-          <button type="button" class="btn btn-default" data-bind="click: RegistrationForm.clear">Clear</button>
-        </form>
+      <div class="margin_neg_laterale">
+          <table class="table description">
+            <tr><td>
+        <div class="margin_neg_laterale">
+                    <p class="table-text"><b>Farmacia di Corticella</b></p> <p >della dott.ssa Anna Bragaglia<br />
+      Via Bentini 37 | Bologna<br />
+      051 705478</p>
+      </div>
       </td>
       </tr>
-      </table>
-      </div>
+      <tr><td>
+        <div id="panel" class="margin_neg_laterale">>
+                        <b>Come raggiungere la nostra farmacia: </b><br />
+            <p id="mode" class="table-text">&#8594
+            <a class="decoration" href="#" data-bind="text: driving, click: viewModel.modeclick, clickBubble: false"></a><br />
+             &#8594
+            <a class="decoration" href="#" data-bind="text: walking, click: viewModel.modeclick, clickBubble: false"></a><br />
+            &#8594
+            <a class="decoration" href="#" data-bind="text: bicycling, click: viewModel.modeclick, clickBubble: false"></a><br />
+            &#8594
+            <a class="decoration" href="#" data-bind="text: transit, click: viewModel.modeclick, clickBubble: false"></a></p>
+                        <!-- <select id="mode">
+                          <option value="DRIVING">in automobile</option>
+                          <option value="WALKING">a piedi</option>
+                          <option value="BICYCLING">in bicicletta</option>
+                          <option value="TRANSIT">con i mezzi pubblici</option>
+                        </select> -->
+                    </div>
+      </td></tr>
+      <tr>
+      <td>
+<div class="margin_neg_laterale">
+      <form class="form-horizontal" id="registration">
+      <label><b>Scrivici</b></label>
+          <div class="form-group">
+          <label for="name" class="col-sm-3 control-label">Nome</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" placeholder="Nome">
+          </div>
+        </div>
+         <div class="form-group">
+          <label for="cognome" class="col-sm-3 control-label">Cognome</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="cognome" placeholder="Cognome">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="oggetto" class="col-sm-3 control-label">Oggetto</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="oggetto" placeholder="Oggetto">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="testo" class="col-sm-3 control-label">Testo</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="testo" placeholder="Scrivi qui la tua domanda">
+          </div>
+        </div>
+       
+        <div class="form-group">
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-default">Invia</button>
+          <button type="button" class="btn btn-default">Cancella</button>
+          </div>
+        </div>
+      </form>
+</div>
 
-            <div class="col-sm-8">
-             <div id="map" ></div>
-           </div>
+
+
+              <!--  <form  id="registration" data-bind="submit: RegistrationForm.submit">
+               <label><b>Scrivici</b></label>
+               <fieldset>
+               
+              <div class="form-group">
+                      <label for="firstNameInput" class="col-sm-2">Nome</label>
+                      <div class=" col-sm-10">
+                      <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.firstName" id="firstNameInput" placeholder="Nome"></div>
+                    </div>
+                   
+                    <div class="form-group">
+                      <label for="lastNameInput" class="col-sm-2">Cognome</label>
+                      <div class=" col-sm-10">
+                      <input type="text" class="form-control col-sm-10" data-bind="value: RegistrationForm.customer.personalInfo.lastName" id="lastNameInput" placeholder="Cognome"></div>
+                    </div>
+                     <div class="form-group">
+                      <label for="emailAddressInput" class="col-sm-2">Email</label>
+                      <div class=" col-sm-10">
+                      <input type="text" class="form-control col-sm-10" data-bind="value: RegistrationForm.customer.contactDetails.emailAddress" id="emailAddressInput" placeholder="La tua email"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="emailAddressInput" class="col-sm-2">Oggetto</label>
+                      <div class=" col-sm-10">
+                      <input type="text" class="form-control col-sm-10" data-bind="value: RegistrationForm.customer.contactDetails.emailAddress" id="emailAddressInput" placeholder="La tua email"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="emailAddressInput">Testo</label>
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+               </fieldset>
+                <button type="Submit" class="btn btn-default">Invia</button>
+                <button type="button" class="btn btn-default" data-bind="click: RegistrationForm.clear">Cancella</button>
+              </form> -->
+            </td>
+            </tr>
+            </table>
+         </div>  
+    </div>
+                  <div class="col-sm-8">
+                  <div class="margin_neg_destro"
+                   <div id="map" ></div>
+                   </div>
+                 </div>
     </div>
 </section>
      <div class="inner"><hr class="circleLine" /></div>
 <!-- FINE CONTATTI-->
          <!-- CALENDARIO -->
-<div id="koturni">
-    <section class="container-fluid">
-<div class="row">
-    <div  class="col-sm-4 innerblock description">
-        <h1 class="payoff3">Orari.</h1></div>
+      <div id="koturni">
+          <section class="container-fluid">
+      <div class="row">
+          <div  class="col-sm-4 innerblock description">
+              <h1 class="payoff3">Orari.</h1></div>
 
-  </div>
+        </div>
 
-    <div class="media row inner">
-      <div class="media-left media-middle">
+          <div class="media row inner">
+            <div class="media-left media-middle">
 
-      <div  id="calendar" ></div>
-     </div>
-        <div class="media-body">
-        <h4 class="media-heading">Turni di apertura</h4>
-        <table data-bind='visible: openings().length > 0'>
-                <thead>
-                    <tr>
-                        <th>Giorno</th>
-                        <th>Orari</th>
-                        <th />
-                    </tr>
-                </thead>
-                <tbody data-bind='foreach: openings'>
-                    <tr>
-                        <td><span class="" data-bind='text: data.week'></span> </td>
-                        <td><span class="" data-bind='text: data.description'></span></td>
+            <div  id="calendar" ></div>
+           </div>
+              <div class="media-body">
+              <h4 class="media-heading">Turni di apertura</h4>
+              <table data-bind='visible: openings().length > 0'>
+                      <thead>
+                          <tr>
+                              <th>Giorno</th>
+                              <th>Orari</th>
+                              <th />
+                          </tr>
+                      </thead>
+                      <tbody data-bind='foreach: openings'>
+                          <tr>
+                              <td><span class="" data-bind='text: data.week'></span> </td>
+                              <td><span class="" data-bind='text: data.description'></span></td>
 
-                    </tr>
-                </tbody>
-    </table>
-        <h4 data-bind="visible: openings().length == 0">Siamo spiacenti ma in questo momento gli orari di apertura non sono disponibili.</h4>
-    </div>
-</div>
-    </section>
+                          </tr>
+                      </tbody>
+          </table>
+              <h4 data-bind="visible: openings().length == 0">Siamo spiacenti ma in questo momento gli orari di apertura non sono disponibili.</h4>
+          </div>
+      </div>
+          </section>
 
 
 

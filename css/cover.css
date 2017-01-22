@@ -37,20 +37,29 @@ a:hover {
 .decoration {
   border-bottom: solid 1px #000;
 }
-
-
+.form-control {
+  background-color: rgb(198,198,198);
+  height: 25px;
+}
+label {
+  font-weight: normal;
+}
 
 .table-responsive > tbody:nth-child(1) > tr > td{
      vertical-align: baseline;
 }
-
-
+#registration > div > label.control-label {
+  text-align: left;
+}
+.form-horizontal{}
   #presentazione, .farmacia-img, #incontri, #eventi{
   margin-bottom: 30px;
   position: relative;
   display: block;
   }
-
+/*#contatti > div.row.innerblock > div.col-sm-4 > table > tbody > tr > td{
+  margin-left:-30px;
+}*/
 
 .navbar-header{
   margin-top:4em;
@@ -134,8 +143,11 @@ table.table-responsive {
   display:block;
 }
 
-.table > tbody:nth-child(1) > tr > td{
-  border-top:3px solid #ddd;;
+.table > tbody:nth-child(1) > tr{
+  border-top:3px solid #ddd;
+}
+.table{
+  margin-left:0;
 }
 .table-text {
   font-size:14px;
@@ -255,7 +267,13 @@ background-color: #99CC00;
     display: flex;
     align-items: baseline;
 }
-
+.margin_neg_laterale{
+  margin-left: -8px;
+}
+.margin_neg_destro{
+  margin-right: -40px;
+  margin-left:0;
+}
 td.color_green{
   color:#99CC00;
   font-size: 20px;
