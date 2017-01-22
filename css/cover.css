@@ -36,6 +36,7 @@ a:hover {
 }
 .decoration {
   border-bottom: solid 1px #000;
+  cursor: pointer;
 }
 .form-control {
   background-color: rgb(198,198,198);
@@ -271,7 +272,7 @@ background-color: #99CC00;
   margin-left: -8px;
 }
 .margin_neg_destro{
-  margin-right: -40px;
+  margin-right: -15px;
   margin-left:0;
 }
 td.color_green{
