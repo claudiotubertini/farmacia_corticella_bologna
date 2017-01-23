@@ -97,14 +97,10 @@
           <img class="img-responsive" alt="Responsive image" src="img/Img_Sezione_Farmacia.jpg" />
            <h1 class="payoff2">Farmacia.</h1>
           </div>
-      <div class="marginrow" >
-        <div class=" col-md-2">
-
-          <img class="img-responsive margin hidden-xs " src="img/Logo_Corticella_Colore2.jpg" width="140" height="140" />
-
-        </div>
-        <div class="col-xs-4 col-md-2">
-        <p class="small">&#8594
+      <div class="row marginrow" >
+      
+        <div class="col-md-2 is-table-row">
+        <p class="table-text">&#8594
           <a class="decoration" href="#calendar">I nostri orari</a><br />
            &#8594
           <a class="decoration" href="#contatti">Dove siamo</a><br />
@@ -117,13 +113,23 @@
             Via Bentini 37 | Bologna<br />
             Telefono 051 705478</p>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-3 is-table-row">
           <p class="table-text">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
            <p class="table-text">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-3 is-table-row">
           <p class="table-text">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
            <p class="table-text">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+          <div class=" col-md-2 verticalborder is-table-row">
+
+          <img class="img-responsive hidden-xs" src="img/Logo_Corticella_Colore2.jpg" width="110" height="110" />
+
+        </div>
+          <div class=" col-md-2 verticalborder-second is-table-row">
+
+          <img class="img-responsive hidden-xs" src="img/FederfarmaBologna.jpg" width="180" height="140" />
+
         </div>
       </div>
       </div>
@@ -288,7 +294,7 @@ DALLE 9 ALLE 18</h4>
           <div class="caption">
              <p data-bind="text: data.title" style="font-weight:bold"></p>
                 <p class="blog-post-meta" data-bind="text: formattedDate"></p>
-                <p><img class="img-rounded img-responsive" width="171" height="180" data-bind="attr: {src: data.enclosure}"><br />
+                <p><img class="img-responsive" width="171" height="180" data-bind="attr: {src: data.enclosure}"><br />
                  <a class="circleLineSmall small" target="_blank" data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
           </div>
       </div>
@@ -320,15 +326,15 @@ DALLE 9 ALLE 18</h4>
           <table class="table description">
             <tr><td>
         <div class="margin_neg_laterale">
-                    <p class="table-text"><b>Farmacia di Corticella</b></p> <p >della dott.ssa Anna Bragaglia<br />
+                    <p class="table-text"><b>Farmacia di Corticella</b><br /> <b>della dott.ssa Anna Bragaglia</b><br />
       Via Bentini 37 | Bologna<br />
       051 705478</p>
       </div>
       </td>
       </tr>
       <tr><td>
-        <div id="panel" class="margin_neg_laterale">>
-                        <b>Come raggiungere la nostra farmacia: </b><br />
+        <div id="panel" class="margin_neg_laterale">
+                        <b>Come raggiungere la nostra farmacia</b><br />
             <p id="mode" class="table-text">&#8594
             <a class="decoration"  data-bind="text: driving, click: viewModel.modeclick, clickBubble: false"></a><br />
              &#8594
@@ -351,38 +357,38 @@ DALLE 9 ALLE 18</h4>
       <form class="form-horizontal" id="registration">
       <label><b>Scrivici</b></label>
           <div class="form-group">
-          <label for="name" class="col-sm-3 control-label">Nome</label>
-          <div class="col-sm-9">
+          <label for="name" class="col-md-3 control-label">Nome</label>
+          <div class="col-md-9">
             <input type="text" class="form-control" id="name" placeholder="Nome">
           </div>
         </div>
          <div class="form-group">
-          <label for="cognome" class="col-sm-3 control-label">Cognome</label>
-          <div class="col-sm-9">
+          <label for="cognome" class="col-md-3 control-label">Cognome</label>
+          <div class="col-md-9">
             <input type="text" class="form-control" id="cognome" placeholder="Cognome">
           </div>
         </div>
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
-          <div class="col-sm-9">
+          <label for="inputEmail3" class="col-md-3 control-label">Email</label>
+          <div class="col-md-9">
             <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
           </div>
         </div>
         <div class="form-group">
-          <label for="oggetto" class="col-sm-3 control-label">Oggetto</label>
-          <div class="col-sm-9">
+          <label for="oggetto" class="col-md-3 control-label">Oggetto</label>
+          <div class="col-md-9">
             <input type="text" class="form-control" id="oggetto" placeholder="Oggetto">
           </div>
         </div>
         <div class="form-group">
-          <label for="testo" class="col-sm-3 control-label">Testo</label>
-          <div class="col-sm-9">
+          <label for="testo" class="col-md-3 control-label">Testo</label>
+          <div class="col-md-9">
             <input type="text" class="form-control" id="testo" placeholder="Scrivi qui la tua domanda">
           </div>
         </div>
        
         <div class="form-group">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <button type="button" class="btn btn-default">Invia</button>
           <button type="button" class="btn btn-default">Cancella</button>
           </div>

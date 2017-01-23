@@ -40,7 +40,11 @@ a:hover {
 }
 .form-control {
   background-color: rgb(198,198,198);
-  height: 25px;
+  height: 22px;
+  border-radius: 0;
+}
+button.btn.btn-default {
+  border-radius: 0;
 }
 label {
   font-weight: normal;
@@ -103,7 +107,7 @@ label {
 
 .farmacia-img > .payoff2{
     position: absolute;
-    bottom: -28px;
+    bottom: -29px;
     left: 35px;
     width: 100%;
     font-size: 100px;
@@ -122,6 +126,8 @@ label {
   width: 100%;
   height: 50px;
   display:block;
+  margin-bottom:0;
+  padding-bottom:0;
 }
 .circleLineSmall {
     background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
@@ -154,7 +160,14 @@ table.table-responsive {
   font-size:14px;
   text-align: left;
 }
-
+.is-table-row {
+      display: table;
+  }
+.is-table-row [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: bottom;
+  }
 
 .small {
   text-align: left;
@@ -229,6 +242,7 @@ background-color: #99CC00;
 .innerblock {
   margin-left: 1.5em;
   margin-right:2em;
+  padding-top: 0;
 }
 .innermap {
   margin-left: 1.5em;
@@ -257,8 +271,19 @@ background-color: #99CC00;
 .margin {
   margin-bottom: 1em;
 }
+.margin-neg-bottom {
+  margin-bottom: -1em;
+}
 .margin-neg{
   margin-top:-1px;
+}
+.verticalborder {
+  border-left:3px solid #ddd;
+  border-right:3px solid #ddd;
+}
+.verticalborder-second {
+  
+  border-right:3px solid #ddd;
 }
 .vertalign{
     display: table-cell;
