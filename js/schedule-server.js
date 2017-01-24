@@ -1,6 +1,7 @@
 var restify = require('restify');
 
 var PATH = '/schedule-corticella';
+var MPATH = '/messages';
 var shifts = [
 		{week: "28/11/2016" , description: "A"},
 		{week: "29/11/2016", description:"B"},
@@ -13,16 +14,11 @@ var shifts = [
 		{week: "06/12/2016", description:"Solo sabato 8:30 - 12:30; 15:30 - 19:30"}
 ];
 
-// var products = [
-//                  { id: "1000", name: "Chess Periodicals", description: "A book on chess periodicals", price: 100},
-//                  { id: "2000", name: "Strategy and Tactics", description: "A book on chess strategy and tactics", price: 120},
-//                  { id: "3000", name: "Computer Chess", description: "Computer chess application", price: 50},
-//                  { id: "4000", name: "Medieval Chess", description: "Medieval chess set", price: 400},
-//                  { id: "5000", name: "End Games", description: "A book on end strategies", price: 100},
-//                  { id: "6000", name: "Games of Individual Players", description: "A record of games by individual players", price: 200}
-//                 ];
+var msg = [
+                 { id: "1000", firstName: "", lastName: "", emailAddress: "", subject: "", message: ""},
+                 ];
 
-// var currentIdCount = products.length;
+var currentIdCount = msg.length;
 
 // function getProducts(req, res, next) {
 // 	res.setHeader('Access-Control-Allow-Origin','*');
@@ -36,17 +32,23 @@ function getShifts(req, res, next) {
 	res.send(200, shifts);
 	next();
 };
-// function addProduct(req, res, next) {
-// 	res.setHeader('Access-Control-Allow-Origin','*');
-// 	console.log("POST[" + PATH + "] " + JSON.stringify(req.body));
+function getMessage(req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin','*');
+	console.log("GET[" + MPATH + "] " + JSON.stringify(msg));
+	res.send(200, msg);
+	next();
+};
+function addMessage(req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin','*');
+	console.log("POST[" + MPATH + "] " + JSON.stringify(req.body));
 
-// 	currentIdCount = currentIdCount + 1;
-// 	var productId = currentIdCount * 1000;
-// 	req.body.id = productId.toString();
-// 	products.push(req.body);
-// 	res.send(200, productId);
-// 	next();
-// };
+	currentIdCount = currentIdCount + 1;
+	var msgId = currentIdCount * 1000;
+	req.body.id = msgId.toString();
+	msg.push(req.body);
+	res.send(200, msgId);
+	next();
+};
 
 // function updateProduct(req, res, next) {
 // 	res.setHeader('Access-Control-Allow-Origin','*');
@@ -83,7 +85,8 @@ server.use(restify.bodyParser({ mapParams: true }));
 
 server.get(PATH, getShifts);
 // server.put(PATH, updateProduct);
-// server.post(PATH, addProduct);
+server.get(MPATH, getMessage);
+server.post(MPATH, addMessage);
 // server.del(PATH +'/:id', deleteProduct);
 
 server.listen(8081, '127.0.0.1',function() {

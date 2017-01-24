@@ -40,7 +40,7 @@ a:hover {
 }
 .form-control {
   background-color: rgb(198,198,198);
-  height: 22px;
+  height: 30px;
   border-radius: 0;
 }
 button.btn.btn-default {
@@ -95,7 +95,18 @@ label {
     height: 100%;
 
   }
+select {
+  
+  background: transparent;
+  border-radius: 0;
+}
 
+select option {
+  border:1 #fff;
+  background: transparent;
+  border-radius: 0;
+  
+}
 
  .payoff3{
     

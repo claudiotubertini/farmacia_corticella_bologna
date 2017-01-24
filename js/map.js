@@ -232,33 +232,9 @@ var mystyles = [
         ];
 var map;
 var farma = {lat: 44.5466389, lng: 11.3566971};
-var selectedMode;
-var viewModel = function() {
-  var self = this;
 
-    
-    self.driving = ko.observable('in automobile');
-    self.walking = ko.observable('a piedi');
-    self.bicycling = ko.observable('in bicicletta');
-    self.transit = ko.observable('con i mezzi pubblici');
-
-    self.modeclick = function(mode) {
-                      if(mode == self.driving()){
-                        selectedMode = 'DRIVING';
-                      }
-                      if(mode == self.walking()){
-                        selectedMode = 'WALKING';
-                      }  
-                         
-                     if(mode == self.bicycling()){
-                      selectedMode = 'BICYCLING';
-                     }
-                          
-                        if ( mode == self.transit()){
-                          selectedMode = 'TRANSIT';
-                        }
-            console.log(selectedMode);
-         }
+var initMap = function() {
+  
 
         var directionsDisplay = new google.maps.DirectionsRenderer({
           suppressMarkers: true
@@ -268,7 +244,13 @@ var viewModel = function() {
         var marker;
         var mymarker;
         var pos;
-        
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: farma,
+      zoom: 14,
+      styles: googlestyle,
+      mapTypeControl: false
+    });
+  
     function makeMarkerIcon(markerColor) {
         var markerImage = new google.maps.MarkerImage(
           'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
@@ -338,7 +320,7 @@ mymarker = new google.maps.Marker({
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var selectedMode = document.getElementById('mode').value;
-        console.log(selectedMode);
+        
         directionsService.route({
           origin: pos,
           destination: farma,
@@ -365,13 +347,3 @@ mymarker = new google.maps.Marker({
 var googleError = function(){
   alert( "Scusate: al momento non vi sono mappe disponibili" );
 };
-var initMap = function(){
-   map = new google.maps.Map(document.getElementById('map'), {
-          center: farma,
-          zoom: 14,
-          styles: googlestyle,
-          mapTypeControl: false
-        });
-   ko.applyBindings(new viewModel(), document.getElementById('panel'));
-
-}
