@@ -15,8 +15,8 @@ var shifts = [
 ];
 
 var msg = [
-                 { id: "1000", firstName: "", lastName: "", emailAddress: "", subject: "", message: ""},
-                 ];
+        { id: "1000", firstName: "", lastName: "", emailAddress: "", subject: "", message: ""},
+    ];
 
 var currentIdCount = msg.length;
 

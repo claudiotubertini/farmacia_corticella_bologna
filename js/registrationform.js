@@ -1,11 +1,10 @@
 /* Module for Registration form application */
 var RegistrationForm = function () {
-  
+var client = ProductsClient("http://localhost:8081/messages");
   /* extender for required fields */
 ko.extenders.required = function(target, option) {
   //observables to indicate an error
   target.hasError = ko.observable(false);
-
   //set the error flag whenever the value changes
   target.subscribe(function (newValue) {
      target.hasError(newValue ? false : true);
@@ -16,17 +15,12 @@ ko.extenders.required = function(target, option) {
 };
 
   var customer = {
-  personalInfo: {
+    id: ko.observable(),
     firstName: ko.observable().extend({ required: null}),
-    lastName: ko.observable().extend({ required: null})
-  },
-  contactDetails: {
-    emailAddress: ko.observable().extend({ required: null})
-  },
-  contents: {
+    lastName: ko.observable().extend({ required: null}),
+    emailAddress: ko.observable().extend({ required: null}),
     subject: ko.observable(),
     message: ko.observable()
-  }
 };
 
 /* method to traverse the model and clear observables */
@@ -51,7 +45,21 @@ ko.extenders.required = function(target, option) {
   /* form submission */
     var submit = function () {
       console.log(ko.toJSON(customer));
+      client.addProduct(customer, saveProductCallback);
     };
+
+  /* method to send add request to the client */
+  var saveProduct = function (product) {
+      client.addProduct(product, saveProductCallback);
+  };
+
+  /* callback on successful add request */
+  var saveProductCallback = function (product, id) {
+      customer.id(id);
+      alert("Grazie per averci inviato un messaggio. <br />Provvederemo a risponderti nel più breve tempo possibile!")
+      console.log("Product saved with id [" + customer.id() + "]");
+  };
+
 
   var init = function () {
     /* add code to initialize this module */
@@ -64,6 +72,7 @@ ko.extenders.required = function(target, option) {
   return {
     clear: clear,
     customer: customer,
-    submit: submit
+    submit: submit,
+    saveProduct: saveProduct
   };
 }();

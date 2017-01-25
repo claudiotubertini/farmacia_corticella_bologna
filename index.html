@@ -98,7 +98,7 @@
            <h1 class="payoff2">Farmacia.</h1>
           </div>
       <div class="row marginrow" >
-      
+
         <div class="col-md-2 is-table-row">
         <p class="table-text">&#8594
           <a class="decoration" href="#calendar">I nostri orari</a><br />
@@ -291,12 +291,12 @@ DALLE 9 ALLE 18</h4>
     <div data-bind="visible: $index()<4">
 
     <div class="col-sm-3">
-          
+
           <p><img class="img-responsive" width="171" height="180" data-bind="attr: {src: data.enclosure}"></p>
              <p data-bind="text: data.title" style="font-weight:bold"></p>
               <p class="blog-post-meta" data-bind="text: formattedDate"></p>
               <p>  <a class="circleLineSmall small" target="_blank" data-bind="attr: {href: data.link}"> Leggi tutto</a></p>
-          
+
       </div>
     </div>
   </div>
@@ -335,7 +335,7 @@ DALLE 9 ALLE 18</h4>
       <tr><td>
         <div id="panel" class="margin_neg_laterale">
             <b>Come raggiungere la nostra farmacia</b><br />
-        
+
             <select  id="mode">
               <option value="DRIVING" class="table-text">&#8594 in automobile</option>
               <option value="WALKING" class="table-text">&#8594 a piedi</option>
@@ -349,40 +349,40 @@ DALLE 9 ALLE 18</h4>
 <div class="margin_neg_laterale">
       <form class="form-horizontal" id="registration">
       <label><b>Scrivici</b></label>
-          <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.personalInfo.firstName.hasError}">
+          <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.firstName.hasError}">
           <label for="name" class="col-md-3 control-label">Nome</label>
           <div class="col-md-9">
-            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.firstName"  id="name" placeholder="Nome">
-             <p class="help-block" data-bind="visible: RegistrationForm.customer.personalInfo.firstName.hasError"> Si prega di inserire il nome</p>
+            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.firstName"  id="name" placeholder="Nome">
+             <p class="help-block" data-bind="visible: RegistrationForm.customer.firstName.hasError"> Si prega di inserire il nome</p>
           </div>
         </div>
-         <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.personalInfo.lastName.hasError}">
+         <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.lastName.hasError}">
           <label for="cognome" class="col-md-3 control-label">Cognome</label>
           <div class="col-md-9">
-            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.personalInfo.lastName"  id="cognome" placeholder="Cognome">
-             <p class="help-block" data-bind="visible: RegistrationForm.customer.personalInfo.lastName.hasError"> Si prega di inserire il cognome</p>
+            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.lastName"  id="cognome" placeholder="Cognome">
+             <p class="help-block" data-bind="visible: RegistrationForm.customer.lastName.hasError"> Si prega di inserire il cognome</p>
           </div>
         </div>
-        <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.contactDetails.emailAddress.hasError}">
+        <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.emailAddress.hasError}">
           <label for="inputEmail" class="col-md-3 control-label">Email</label>
           <div class="col-md-9">
-            <input type="email" class="form-control" data-bind="value: RegistrationForm.customer.contactDetails.emailAddress" id="inputEmail" placeholder="Email">
-             <p class="help-block" data-bind="visible: RegistrationForm.customer.contactDetails.emailAddress.hasError"> Si prega di inserire un indirizzo email</p>
+            <input type="email" class="form-control" data-bind="value: RegistrationForm.customer.emailAddress" id="inputEmail" placeholder="Email">
+             <p class="help-block" data-bind="visible: RegistrationForm.customer.emailAddress.hasError"> Si prega di inserire un indirizzo email</p>
           </div>
         </div>
         <div class="form-group">
           <label for="oggetto" class="col-md-3 control-label">Oggetto</label>
           <div class="col-md-9">
-            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.contents.subject" id="oggetto" placeholder="Oggetto">
+            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.subject" id="oggetto" placeholder="Oggetto">
           </div>
         </div>
         <div class="form-group">
           <label for="testo" class="col-md-3 control-label">Testo</label>
           <div class="col-md-9">
-            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.contents.message" id="testo" placeholder="Scrivi qui la tua domanda">
+            <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.message" id="testo" placeholder="Scrivi qui la tua domanda">
           </div>
         </div>
-       
+
         <div class="form-group">
         <div class="col-md-12">
           <button type="submit" class="btn btn-default" data-bind="click: RegistrationForm.submit">Invia</button>
@@ -394,7 +394,7 @@ DALLE 9 ALLE 18</h4>
             </td>
             </tr>
             </table>
-         </div>  
+         </div>
     </div>
                   <div class="col-sm-8">
                   <div class="margin_neg_destro">
@@ -478,6 +478,7 @@ DALLE 9 ALLE 18</h4>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script type="text/javascript" src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script type="text/javascript" src="js/scrollto.js"></script>
+    <script type="text/javascript" src="js/messagesclient.js"></script>
     <script type="text/javascript" src="js/registrationform.js"></script>
 
     <script type="text/javascript" src="js/corticellaapp.js"></script>

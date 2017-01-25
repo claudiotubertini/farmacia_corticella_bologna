@@ -96,16 +96,14 @@ label {
 
   }
 select {
-  
-  background: transparent;
+  border:1 #fff;
+  /*background: transparent;*/
   border-radius: 0;
+  
 }
 
 select option {
-  border:1 #fff;
-  background: transparent;
   border-radius: 0;
-  
 }
 
  .payoff3{
