@@ -1,20 +1,22 @@
 var RetrieveNews = function (){
-        var mydate = function (date){
-                var date = new Date(date);
-                year = date.getFullYear();
-                mm = date.getMonth()+1;
-                dd = date.getDate();
-                if(dd<10){
-                    dd='0'+dd
-                } 
-                if(mm<10){
-                    mm='0'+mm
-                }
-                result = dd+'/'+mm+'/'+year;
-                return result;
-        };
-/* model for products */
+  var mydate = function (date){
+          var date = new Date(date);
+          year = date.getFullYear();
+          mm = date.getMonth()+1;
+          dd = date.getDate();
+          if(dd<10){
+              dd='0'+dd
+          }
+          if(mm<10){
+              mm='0'+mm
+          }
+          result = dd+'/'+mm+'/'+year;
+          return result;
+  };
+
   var self = this;
+  var displayOtherNews = ko.observable(false);
+  
   var productModel = function(item) {
     self.data = {};
     self.data.title = ko.observable(item.title);
@@ -23,7 +25,7 @@ var RetrieveNews = function (){
     self.data.enclosure = ko.observable(item.enclosure);
     //this.displayMode = ko.observable(itemMode);
   };
-  
+
   /* product observable array */
   var products = ko.observableArray();
 $.ajax({
@@ -45,9 +47,9 @@ $.ajax({
         }
     });
 
-        
-      
-    
+
+
+
         // $.get('http://www.agi.it/salute/rss', function (data) {
         //       $(data).find("item").each(function () { // or "item" or whatever suits your feed
         //       var el = $(this);
@@ -94,7 +96,7 @@ $.ajax({
   return {
     products: products,
     formattedDate: formattedDate,
-    //formattedText: formattedText
+    displayOtherNews: displayOtherNews
   };
 
 }();

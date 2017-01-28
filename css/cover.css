@@ -1,32 +1,63 @@
-.col-13 {
-    width: calc((100vw / 4 ) - 1vw);
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-left: 0.2vw;
-    margin-right: 0.2vw;
-   float: left;
-}
-
-
+/*
+ * Globals
+ */
 html,
 body {
-
   padding: 0px;
   padding-top: 50px;
   width: 100%;
   margin: 0px;
-
   overflow-x: hidden;
   background-color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000;
   text-align: center;
-  /*background: url("../img/07.jpg") repeat;*/
 }
-
 h2 {
   margin-top:0.1em;
 }
+.site-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+
+}
+.site-wrapper-inner {
+  display: block;
+  width:100%;
+} 
+
+@media (max-device-width: 543px){
+html, body {
+    text-align: center;
+    width:100%;
+    padding-top:50px;
+    margin-top:40px;
+  }
+  h4.media-heading {
+    margin-top:10px;
+  }
+  .site-wrapper-inner {
+    display: block;
+    width:100%;
+  }
+}
+@media (max-width: 790px) {
+html, body {
+  padding-top:0;
+  margin-top:0;
+}
+p {
+  line-height: 100%;
+ }
+}
+
+@media (max-width: 991px) {
+  }
+
+
+
 /* Links */
 a,
 a:focus,
@@ -38,6 +69,19 @@ a:hover {
   border-bottom: solid 1px #000;
   cursor: pointer;
 }
+@media (max-device-width: 543px){
+.decoration {
+  border-bottom: solid 0px #99CC00;
+  }
+}
+@media (max-width: 790px) {
+  }
+@media (max-width: 991px) {
+}
+
+
+
+/* FORM*/
 .form-control {
   background-color: rgb(198,198,198);
   height: 30px;
@@ -49,84 +93,149 @@ button.btn.btn-default {
 label {
   font-weight: normal;
 }
-
-.table-responsive > tbody:nth-child(1) > tr > td{
-     vertical-align: baseline;
+select {
+  border:1 #fff;
+  border-radius: 0;
 }
-#registration > div > label.control-label {
-  text-align: left;
+select option {
+  border-radius: 0;
 }
-.form-horizontal{}
-  #presentazione, .farmacia-img, #incontri, #eventi{
-  margin-bottom: 30px;
-  position: relative;
-  display: block;
+@media (max-device-width: 543px){
+  .form-control {
+    background-color: rgb(198,198,198);
+    height: 30px;
+    border-radius: 0;
   }
-/*#contatti > div.row.innerblock > div.col-sm-4 > table > tbody > tr > td{
-  margin-left:-30px;
-}*/
+  select {
+    border:1 #fff;
+    /*background: transparent;*/
+    border-radius: 0;
+  }
 
+  select option {
+    border-radius: 0;
+  }
+}
+@media (max-width: 790px) {
+select {
+  border:1 #fff;
+  /*background: transparent;*/
+  border-radius: 0;
+}
+select option {
+  border-radius: 0;
+  }
+}
+@media (max-width: 991px) {
+  }
+
+
+
+/*
+ * Header
+ */
 .navbar-header{
   margin-top:4em;
   margin-left:-1em;
 }
-.parent{
-  position:relative;
-}
-
 #logo{
   position:absolute;
   bottom:20px;
 }
 #navbar{
   position: absolute;
-    bottom:2px;
-    right:2em;
+  bottom:2px;
+  right:2em;
 }
-  #farmacia {
-    margin-top: 30px;
-  }
-  .farmacia-img h1{
-    text-align: left;
-
-  }
- .farmacia-img img {
-    width: 100%;
-    height: 100%;
-
-  }
-select {
-  border:1 #fff;
-  /*background: transparent;*/
-  border-radius: 0;
-  
+.navbar-default, .navbar-fixed-top{
+  background-color: #FFF;
+  border-color: #FFF;
 }
+.navbar-default .navbar-nav > li > a {
+  color: #000;
+}
+@media (max-device-width: 543px){
 
-select option {
-  border-radius: 0;
+#navbar > ul.nav.navbar-nav{
+  text-align:left;
+}
+#logo{
+  position:absolute;
+  top:10px;
+  left:10px;
+  width: 100%;
+  margin-bottom:0;
 }
 
- .payoff3{
-    
-    font-size: 100px;
-    font-weight: 900;
-    text-align: left;
-    color: #c6c6c6;
+.navbar-header{
+  margin:0;
+  padding:0;
+
+}
+nav.navbar .navbar-default .navbar-fixed-top{
+  margin:0;
+  padding:0;
+}
+
+.navbar{
+  min-height:30px;
+}
+.navbar-toggle {
+   margin-top:-10px;
+   padding:0;
+   margin-bottom:0;
+}
+
+.navbar-nav li a {
+  padding-top: 0;
+  padding-bottom:0;
+ }
+}
+@media (max-width: 790px) {
+#navbar > ul.nav.navbar-nav{
+  text-align:left;
+}
+#logo{
+  position:absolute;
+  top:20px;
+  left:20px;
+  width: 60%;
+}
+.navbar-header{
+  margin:0;
+  padding:0;
+}
+nav.navbar{
+  min-height:110px;
+}
+
+.navbar-toggle {
+   margin-top:-10px;
+   padding:0;
+   margin-bottom:0;
+}
+
+.navbar-nav li a {
+  padding-top: 0;
+  padding-bottom:0;
+ }
+ #navbar{
+position:static;
+}
+}
+@media (max-width: 991px) {
+  #logo {
+  position:absolute;
+  top:10px;
+  left:10px;
+  width: 35%;
+}
   }
-
-.farmacia-img > .payoff2{
-    position: absolute;
-    bottom: -29px;
-    left: 35px;
-    width: 100%;
-    font-size: 100px;
-    font-weight: 900;
-
-    text-align: left;
-    color: white;
-
-  }
-
+ 
+ 
+/*
+ * Main contents
+ */
 .circleLine {
   background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
   background-size: 30px 30px;
@@ -147,95 +256,194 @@ select option {
     height: 2.5em;
     text-align: left;
     display: block;
-    }
-
-
-
-table.table-responsive {
-  border-style: hidden;
-  text-align: left;
-  margin-right:30px;
-  margin-left:-45px;
-  display:block;
 }
-
-.table > tbody:nth-child(1) > tr{
-  border-top:3px solid #ddd;
-}
-.table{
-  margin-left:0;
-}
-.table-text {
-  font-size:14px;
-  text-align: left;
-}
-.is-table-row {
-      display: table;
-  }
-.is-table-row [class*="col-"] {
-    float: none;
-    display: table-cell;
-    vertical-align: bottom;
-  }
-
-.small {
-  text-align: left;
-}
-
-
 .title {
   font-size: 40px;
   font-weight: 900;
   text-align: left;
   color:#c6c6c6;
 }
+#presentazione, .farmacia-img, #incontri, #eventi{
+  margin-bottom: 30px;
+  position: relative;
+  display: block;
+} 
+#registration > div > label.control-label {
+  text-align: left;
+}
+.payoff3{
+
+    font-size: 100px;
+    font-weight: 900;
+    text-align: left;
+    color: #c6c6c6;
+}
+.farmacia-img > .payoff2{
+    position: absolute;
+    bottom: -29px;
+    left: 35px;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 900;
+
+    text-align: left;
+    color: white;
+}
+#presentazione{
+  padding-top:150px;
+  margin-top:-150px;
+}
+#farmacia {
+   /* margin-top: 30px;*/
+   padding-top:100px;
+   margin-top:-100px;
+}
+.farmacia-img h1{
+    text-align: left;
+}
+.farmacia-img img {
+    width: 100%;
+    height: 100%;
+}
+#servizi{
+  padding-top:100px;
+  margin-top:-100px;
+}
+#eventi{
+  padding-top:100px;
+  margin-top:-100px;
+}
+#notizie{
+  padding-top:150px;
+  margin-top:-150px;
+}
+#contatti{
+  padding-top:150px;
+  margin-top:-150px;
+}
+#orari{
+  padding-top:150px;
+  margin-top:-150px;
+}
+@media (max-device-width: 543px){
+  #presentazione{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #farmacia {
+    padding-top:100px;
+    margin-top:-100px;
+    }
+  #servizi{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #eventi{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #notizie{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #contatti{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #orari{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  .farmacia-img {
+  position: relative;
+  display: inline-block;
+  padding-top:10px;
+}
 
 
-.hrline {
-    padding: 0px;
-    margin: 0px;
-    margin-bottom:2em;
-    background-color:white;
+.farmacia-img img{
+  width: 100%;
+  height: 100%;
+}
+.farmacia-img .payoff2{
+  position:absolute;
+  font-size: 30px;
+  left:10px;
+  bottom:-15px;
+}
+
+.payoff3{
+    margin-top:0;
+    margin-left:0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    color: #c6c6c6;
+  }
+  .title {
+  padding:0;
+  margin:0;
+  }
+  .circleLineSmall {
+     display:none;
   }
 
-.pull-right {
-  padding-right: 2em;
-  margin-bottom:1em;
-
-}
-
-
- .navbar-default, .navbar-fixed-top{
-    background-color: #FFF;
-    border-color: #FFF;
-}
-.navbar-default .navbar-nav > li > a {
-   color: #000; /*Change active text color here*/
-    }
-/*.navbar .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-color: #000;
-background-color: #99CC00;
-}*/
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: block;
+.circleLine {
+  background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
+  background-size: 30px 30px;
+  background-repeat: repeat-x;
+  background-position: 5px center;
   width: 100%;
-  /*height: 100%; /* For at least Firefox */
-  /*min-height: 100%;*/
-
+  height: 50px;
+  padding-left:0px;
+  display:block;
+  }
 }
-.site-wrapper-inner {
-  display: block;
-  width:100%;
-  /*vertical-align: top;*/
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-
+@media (max-width: 790px) {
+  
+#presentazione h1 span{
+  font-size: 30px;
 }
 
+.farmacia-img {
+  position: relative;
+  display: inline-block;
+  padding-top:10px;
+}
+
+
+.farmacia-img .payoff2{
+  position:absolute;
+  font-size: 40px;
+  left:10px;
+  bottom:-15px;
+}
+.payoff3{
+    margin-top:0;
+    margin-left:0;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: left;
+    color: #c6c6c6;
+}
+.circleLineSmall {
+    background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
+    background-size: 10px 10px;
+    background-repeat: repeat-x;
+    background-position: 20px 20px;
+    width: 100%;
+    height: 2.5em;
+    text-align: left;
+    display: inline-block;
+    }
+  }
+@media (max-width: 991px) {
+}
+
+
+/*
+* PAGINATION
+*/
 .inner {
   margin-left: 3em;
   margin-right:3em;
@@ -264,7 +472,6 @@ background-color: #99CC00;
 .description {
   text-align: left;
 }
-
 .center {
   text-align: center;
 }
@@ -272,7 +479,6 @@ background-color: #99CC00;
   margin-left:30px;
   margin-right:30px;
 }
-
 .marginrow{
   margin-left:13px;
   margin-right:13px;
@@ -291,7 +497,7 @@ background-color: #99CC00;
   border-right:3px solid #ddd;
 }
 .verticalborder-second {
-  
+
   border-right:3px solid #ddd;
 }
 .vertalign{
@@ -305,6 +511,9 @@ background-color: #99CC00;
 .margin_neg_laterale{
   margin-left: -8px;
 }
+.margin_neg_left{
+  margin-left: -15px;
+}
 .margin_neg_destro{
   margin-right: -15px;
   margin-left:0;
@@ -314,118 +523,28 @@ td.color_green{
   font-size: 20px;
   text-align:right;
 }
-
 .grigio_scuro{
   color:rgb(122,134,128);
 }
 .grigio_chiaro{
   color:rgb(198,198,198);
 }
-
-
-/*INIZIO SMARTPHONE*/
-
-
 @media (max-device-width: 543px){
-html, body {
-
-    text-align: center;
-    width:100%;
-    padding-top:40px;
+  td.color_green {
+    color:#99CC00;
+    font-size: 20px;
+    text-align:right;
   }
-
-
-/*#navbar{
-  position:relative;
-  right:-2em;
-  top:-2em;
-}*/
-  .site-wrapper-inner {
-  display: block;
-  width:100%;
-  /*vertical-align: top;*/
-}
-  td.color_green{
-  color:#99CC00;
-  font-size: 20px;
-  text-align:right;
-}
-.pull-right {
-  padding-right: 0;
-  margin-bottom:1em;
-
-}
-.decoration {
-  border-bottom: solid 0px #99CC00;
-}
-.marginrow{
+  .marginrow{
   margin-left:-10px;
   margin-right:-10px;
-}
+  }
 .margindot{
   margin-left:15px;
   margin-right:15px;
 }
 .center {
   text-align: center;
-}
-/* NAVBAR*/
-#navbar > ul.nav.navbar-nav{
-  text-align:left;
-
-}
-#logo{
-  position:absolute;
-  top:0;
-  left:0;
-  width: 100%;
-}
-
-.navbar-header{
-  margin-top:0;
-  margin-right:0;
-}
-
-
-.navbar-brand{
-  position:relative;
-  display: inline-block;
-  width:70%;
-}
-
- .farmacia-img {
-  position: relative;
-  display: inline-block;
-  padding-top:10px;
-}
-
-#presentazione{
-  padding-top:50px;
-}
-.farmacia-img img{
-  width: 100%;
-  height: 100%;
-}
-.farmacia-img .payoff2{
-  position:absolute;
-  font-size: 30px;
-  left:10px;
-  bottom:-15px;
-}
-
-.payoff3{
-    margin-top:0;
-    margin-left:0;
-    font-size: 30px;
-    font-weight: 900;
-    text-align: left;
-    color: #c6c6c6;
-  }
-
-
-.title {
-  padding:0;
-  margin:0;
 }
   .inner {
   margin-left: 0;
@@ -439,93 +558,9 @@ html, body {
   margin-right:2em;
   margin-top:2.5em;
   margin-bottom:2em;
-}
-
-  .circleLineSmall {
-     display:none;
   }
-
-.circleLine {
-  background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
-  background-size: 30px 30px;
-  background-repeat: repeat-x;
-  background-position: 5px center;
-  width: 100%;
-  height: 50px;
-  padding-left:0px;
-  display:block;
 }
-
-table.table-responsive {
-  border-style: hidden;
-  display:table;
- }
-}
-
-/* FINE SMARTPHONE*/
-
 @media (max-width: 790px) {
-
- /* NAVBAR*/
-/*#navbar > ul.nav.navbar-nav{
-  text-align:left;
-
-}*/
-/*#logo{
-  position:absolute;
-
-  left:0;
-  width: 100%;
-}
-
-.navbar-header{
-  margin-top:0;
-  margin-right:0;
-}
-*/
-
-/*.navbar-brand{
-  position:relative;
-  display: block;
-  width:100%;
-}*/
-
-
-
-
-.farmacia-img {
-  position: relative;
-  display: inline-block;
-  padding-top:10px;
-}
-
-
-.farmacia-img .payoff2{
-  position:absolute;
-  font-size: 40px;
-  left:10px;
-  bottom:-15px;
-}
-.payoff3{
-    margin-top:0;
-    margin-left:0;
-    font-size: 40px;
-    font-weight: 900;
-    text-align: left;
-    color: #c6c6c6;
-  }
-.parent{
-position:static;
-}
-#navbar{
-position:static;
-
-}
-#presentazione h1 span{
-  font-size: 30px;
-}
-
-
 .inner {
   padding:20px;
   margin:20px;
@@ -534,109 +569,75 @@ position:static;
   margin-left:10px;
   margin-right: 10px;
 }
-.circleLineSmall {
-    background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
-    background-size: 10px 10px;
-    background-repeat: repeat-x;
-    background-position: 20px 20px;
-    width: 100%;
-    height: 2.5em;
-    text-align: left;
-    display: inline-block;
-    }
-p {
-  line-height: 100%;
- }
 }
-
-
 @media (max-width: 991px) {
-/* NAVBAR*/
-/*#navbar > ul.nav.navbar-nav{
-  text-align:left;
-
-}
-#logo{
-  position:absolute;
-
-  left:0;
-  width: 100%;
-}
-
-.navbar-header{
-  margin-top:0;
-  margin-right:0;
-}
-
-
-.navbar-brand{
-  position:relative;
-  display: inline-block;
-  width:70%;
-}
-*/
-.inner {
+  .inner {
   padding: 20px;
   margin:20px;
 }
+  }
+ 
+
+/*
+* Helpers
+*/
+
+.col-13 {
+    width: calc((100vw / 4 ) - 1vw);
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0.2vw;
+    margin-right: 0.2vw;
+   float: left;
+}
+.table-responsive > tbody:nth-child(1) > tr > td{
+  vertical-align: baseline;
+}
+table.table-responsive {
+  border-style: hidden;
+  text-align: left;
+  margin-right:30px;
+  margin-left:-45px;
+  display:block;
+}
+.table > tbody:nth-child(1) > tr{
+  border-top:3px solid #ddd;
+}
+.table{
+  margin-left:0;
+}
+.table-text {
+  font-size:14px;
+  text-align: left;
+}
+.is-table-row {
+      display: table;
+}
+.small {
+  text-align: left;
+}
+.hrline {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom:2em;
+    background-color:white;
+}
+.pull-right {
+  padding-right: 2em;
+  margin-bottom:1em;
+}
+@media (max-device-width: 543px){
+.pull-right {
+  padding-right: 0;
+  margin-bottom:1em;
+  }
+  table.table-responsive {
+  border-style: hidden;
+  display:table;
  }
-
-
-
-
-
-
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
 }
 
-
-/*
- * Footer
- */
-
-/*.mastfoot {
-  color: #000;  IE8 proofing
-  color: rgba(255,255,255,.5);
-}*/
-.mastfoot a, a:focus, a:hover {
-  color: #000;
+@media (max-width: 790px) {
 }
-
-
-
-.columnfill {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-  -webkit-column-fill: balance;
-  -moz-column-fill: balance;
-  column-fill: balance;
+@media (max-width: 991px) {
 }
-
-.mastfoot {
-   /* position: absolute;*/
-   /* bottom: 0px;*/
-    margin: 20px;
-    width:100%;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container{
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }

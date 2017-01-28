@@ -44,6 +44,9 @@ var ProductsClient = function (url) {
 		});
 	};
 
+
+
+
 	/* method to update a product */
 	var updateProduct = function(product, callback) {
 		var plainProduct = ko.toJS(product.data);

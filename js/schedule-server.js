@@ -1,5 +1,5 @@
 var restify = require('restify');
-
+var fs = require('fs');
 var PATH = '/schedule-corticella';
 var MPATH = '/messages';
 var shifts = [
@@ -46,9 +46,21 @@ function addMessage(req, res, next) {
 	var msgId = currentIdCount * 1000;
 	req.body.id = msgId.toString();
 	msg.push(req.body);
+	writeMsg(msg);
 	res.send(200, msgId);
 	next();
 };
+function writeMsg( string ){
+	fs.writeFile("/messages/corticella.json", string, function(err) {
+	    if(err) {
+	        return console.log(err);
+	    }
+
+	    console.log("The file was saved!");
+	});
+}
+
+
 
 // function updateProduct(req, res, next) {
 // 	res.setHeader('Access-Control-Allow-Origin','*');

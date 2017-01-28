@@ -8,5 +8,6 @@
 	            scrollTop: target.offset().top
 	        }, 2000);
 	    }
+
     });
 })();

@@ -231,10 +231,10 @@ var mystyles = [
           }
         ];
 var map;
-var farma = {lat: 44.5466389, lng: 11.3566971};
+var farma = {lat: 44.5466256, lng: 11.354455};
 
 var initMap = function() {
-  
+
 
         var directionsDisplay = new google.maps.DirectionsRenderer({
           suppressMarkers: true
@@ -250,7 +250,7 @@ var initMap = function() {
       styles: googlestyle,
       mapTypeControl: false
     });
-  
+
     function makeMarkerIcon(markerColor) {
         var markerImage = new google.maps.MarkerImage(
           'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
@@ -262,20 +262,20 @@ var initMap = function() {
         return markerImage;
       }
       var imageFarma = {
-            url: 'http://46.101.102.250/documents/img/image.png',
-            size: new google.maps.Size(50,46),
+            url: 'http://46.101.102.250/documents/img/image2.png',
+            size: new google.maps.Size(60,75),
             origin: new google.maps.Point(0,0),
-            anchor: new google.maps.Point(25,46),
-            scaledSize: new google.maps.Size(25, 25)
+            anchor: new google.maps.Point(30,75),
+            scaledSize: new google.maps.Size(30, 37)
           };
-      
+
       var shape = {
-            coord: [0,0,50,46],
+            coord: [0,0,60,75],
             type: 'rect'
           };
       var defaultIcon = makeMarkerIcon('99CC00');
       var yourIcon = makeMarkerIcon('CFCFCF');
-     
+
          marker = new google.maps.Marker({
               position: farma,
               title: "Farmacia di Corticella",
@@ -320,7 +320,7 @@ mymarker = new google.maps.Marker({
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var selectedMode = document.getElementById('mode').value;
-        
+
         directionsService.route({
           origin: pos,
           destination: farma,
