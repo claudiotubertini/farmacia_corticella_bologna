@@ -7,7 +7,7 @@ body {
   padding-top: 50px;
   width: 100%;
   margin: 0px;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   background-color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000;
@@ -32,8 +32,9 @@ h2 {
 html, body {
     text-align: center;
     width:100%;
-    padding-top:50px;
-    margin-top:40px;
+    padding-top:70px;
+    margin-top:0;
+    height: 100%;
   }
   h4.media-heading {
     margin-top:10px;
@@ -134,6 +135,7 @@ select option {
 /*
  * Header
  */
+
 .navbar-header{
   margin-top:4em;
   margin-left:-1em;
@@ -154,10 +156,13 @@ select option {
 .navbar-default .navbar-nav > li > a {
   color: #000;
 }
-@media (max-device-width: 543px){
+@media (max-device-width: 570px){
 
-#navbar > ul.nav.navbar-nav{
+#navbar > ul.nav.navbar-nav .visible-xs{
   text-align:left;
+  line-height: 25px;
+  padding:0;
+  margin:0;
 }
 #logo{
   position:absolute;
@@ -166,29 +171,33 @@ select option {
   width: 100%;
   margin-bottom:0;
 }
-
 .navbar-header{
   margin:0;
   padding:0;
-
+}
+.navbar-brand{
+  padding:0;
 }
 nav.navbar .navbar-default .navbar-fixed-top{
   margin:0;
   padding:0;
-}
-
-.navbar{
-  min-height:30px;
+  min-height:50px;
 }
 .navbar-toggle {
    margin-top:-10px;
    padding:0;
    margin-bottom:0;
 }
-
-.navbar-nav li a {
-  padding-top: 0;
-  padding-bottom:0;
+.innernav{
+  margin:10px;
+  padding:10px;
+  
+}
+.innernav > ul.navbar-nav > li > a {
+  padding-top: 0 !important;
+  padding-bottom:0 !important;
+  margin-left:-10px;
+  padding-left:-30px;
  }
 }
 @media (max-width: 790px) {
@@ -248,14 +257,14 @@ position:static;
   padding-bottom:0;
 }
 .circleLineSmall {
-    background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
-    background-size: 10px 10px;
-    background-repeat: repeat-x;
-    background-position: 20px 20px;
-    width: 100%;
-    height: 2.5em;
-    text-align: left;
-    display: block;
+  background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
+  background-size: 10px 10px;
+  background-repeat: repeat-x;
+  background-position: 20px 20px;
+  width: 100%;
+  height: 2.5em;
+  text-align: left;
+  display: block;
 }
 .title {
   font-size: 40px;
@@ -272,26 +281,24 @@ position:static;
   text-align: left;
 }
 .payoff3{
-
-    font-size: 100px;
-    font-weight: 900;
-    text-align: left;
-    color: #c6c6c6;
+  font-size: 100px;
+  font-weight: 900;
+  text-align: left;
+  color: #c6c6c6;
 }
 .farmacia-img > .payoff2{
-    position: absolute;
-    bottom: -29px;
-    left: 35px;
-    width: 100%;
-    font-size: 100px;
-    font-weight: 900;
-
-    text-align: left;
-    color: white;
+  position: absolute;
+  bottom: -29px;
+  left: 35px;
+  width: 100%;
+  font-size: 100px;
+  font-weight: 900;
+  text-align: left;
+  color: white;
 }
 #presentazione{
   padding-top:150px;
-  margin-top:-150px;
+  margin-top:-100px;
 }
 #farmacia {
    /* margin-top: 30px;*/
@@ -328,7 +335,7 @@ position:static;
 @media (max-device-width: 543px){
   #presentazione{
     padding-top:150px;
-    margin-top:-150px;
+    margin-top:-30px;
   }
   #farmacia {
     padding-top:100px;
@@ -400,6 +407,34 @@ position:static;
   }
 }
 @media (max-width: 790px) {
+  #presentazione{
+    padding-top:150px;
+    margin-top:-30px;
+  }
+  #farmacia {
+    padding-top:100px;
+    margin-top:-100px;
+    }
+  #servizi{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #eventi{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #notizie{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #contatti{
+    padding-top:150px;
+    margin-top:-150px;
+  }
+  #orari{
+    padding-top:150px;
+    margin-top:-150px;
+  }
   
 #presentazione h1 span{
   font-size: 30px;
@@ -546,7 +581,7 @@ td.color_green{
 .center {
   text-align: center;
 }
-  .inner {
+.inner {
   margin-left: 0;
   margin-right:0;
   margin-bottom:0;

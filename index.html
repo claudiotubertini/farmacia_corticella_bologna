@@ -10,8 +10,8 @@
     <title>Farmacia di Corticella - Bologna</title>
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/cover.css" rel="stylesheet">
+   <!--  <link href="dist/css/bootstrap.min.css" rel="stylesheet"> -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,7 +24,7 @@
    <link href="css/carousel.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/base.css" />
-
+<link href="css/cover.css" rel="stylesheet">
   </head>
   <body>
  <div class="site-wrapper">
@@ -35,7 +35,7 @@
 
         <nav class="navbar navbar-default navbar-fixed-top">
 
-    <div class="inner">
+    <div class="inner innernav">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -232,8 +232,9 @@
               </tr>
              </table>
 
-    </div>
+    
     <div class="pull-right"> <a class="imgres2" href="#presentazione"><img class="img-responsive imgres" src="img/tornasu.jpg" /></a></div>
+    </div>
     </section>
 
 
@@ -315,8 +316,9 @@ DALLE 9 ALLE 18</h4>
 
 </div>
 
-<div class="row-fluid margindot description payoff2 table-text" data-bind="if: not displayOtherNews()"><a class="decoration" data-bind="click: function(){displayOtherNews(true)}">&#8594 Vuoi leggere altre notizie?</a></div>
+<div class="row-fluid margindot description payoff2 table-text margin" data-bind="if: !displayOtherNews()"><a class="decoration" data-bind="click: function(){displayOtherNews(true)}">&#8594 Vuoi leggere altre notizie?</a></div>
 <div class="row" data-bind="visible: displayOtherNews">
+<div class=" innerrow description ">
 <div data-bind="foreach: RetrieveNews.products">
     <div data-bind="if: $index()===4">
     <div class="col-sm-3">
@@ -360,7 +362,7 @@ DALLE 9 ALLE 18</h4>
    </div>
   </div>
 </div>
-
+</div>
 
 <div class="row-fluid margindot description payoff2 small">Queste notizie sono gentilmente fornite dall'<a class="decoration" href="http://www.agi.it/salute/" target="_blank">Agenzia Giornalistica Italiana</a></div>
 
@@ -526,7 +528,7 @@ DALLE 9 ALLE 18</h4>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
-
+ <script type="text/javascript" src="js/scrollto.js"></script>
     <script src="jquery-ui/jquery-ui.min.js"></script>
     <script src="jquery-ui/datepicker-it.js">
     </script>
@@ -543,7 +545,7 @@ DALLE 9 ALLE 18</h4>
     <script type="text/javascript" src="js/corticellaapp.js"></script>
     <script type="text/javascript" src="js/newsapp.js"></script>
    <script type="text/javascript" src="js/map.js"></script>
-    <script type="text/javascript" src="js/scrollto.js"></script>
+   
 <script async
         src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyBZR08CuagYkwAw6KeJBry2pZpiULeYuhM&callback=initMap"
          onerror="googleError()">
