@@ -48,15 +48,12 @@ ko.extenders.required = function(target, option) {
       client.addProduct(customer, saveProductCallback);
     };
 
-  /* method to send add request to the client */
-  var saveProduct = function (product) {
-      client.addProduct(product, saveProductCallback);
-  };
+  
 
   /* callback on successful add request */
   var saveProductCallback = function (product, id) {
       customer.id(id);
-      alert("Grazie per averci inviato un messaggio. <br />Provvederemo a risponderti nel più breve tempo possibile!")
+      alert("Grazie per averci inviato un messaggio.\nProvvederemo a risponderti nel più breve tempo possibile!")
       console.log("Product saved with id [" + customer.id() + "]");
   };
 
