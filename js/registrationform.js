@@ -2,25 +2,67 @@
 var RegistrationForm = function () {
 var client = ProductsClient("http://localhost:8081/messages");
   /* extender for required fields */
-ko.extenders.required = function(target, option) {
-  //observables to indicate an error
-  target.hasError = ko.observable(false);
-  //set the error flag whenever the value changes
-  target.subscribe(function (newValue) {
-     target.hasError(newValue ? false : true);
-  });
+// ko.extenders.required = function(target, option) {
+//   //observables to indicate an error
+//   target.hasError = ko.observable(false);
+//   //set the error flag whenever the value changes
+//   target.subscribe(function (newValue) {
+//      target.hasError(newValue ? false : true);
+//   });
 
-  //return the original observable
-  return target;
-};
+//   //return the original observable
+//   return target;
+// };
+// var myComplexValue = ko.observable().extend({
+//                      required: true,
+//                      minLength: 3,
+//                      pattern: {
+//                           message: 'Hey this doesnt match my pattern',
+//                           params: '^[A-Z0-9].$'
+//                      }
+//                  });
+
+
 
   var customer = {
     id: ko.observable(),
-    firstName: ko.observable().extend({ required: null}),
-    lastName: ko.observable().extend({ required: null}),
-    emailAddress: ko.observable().extend({ required: null}),
-    subject: ko.observable(),
-    message: ko.observable()
+    firstName: ko.observable().extend({
+                required: true,
+                maxLength: 12,
+                pattern: {
+                  message:'Il nome deve contenere solo lettere!',
+                  params: '^[A-Za-z]*$'
+                }
+              }),
+    lastName: ko.observable().extend({
+                required: true,
+                maxLength: 15,
+                pattern: {
+                  message:'Il cognome deve contenere solo lettere!',
+                  params: '^[A-Za-z]*$'
+                }
+              }),
+    emailAddress: ko.observable().extend({
+                    required: true,
+                    email: true,
+                    message: 'Controlla meglio la tua mail!'
+                      }),
+    subject: ko.observable().extend({
+                    required: false,
+                    maxLength: 15,
+                    pattern: {
+                      message: 'Puoi usare solo lettere e numeri!',
+                      params: '[A-Za-z0-9\.,"\']*'
+                    }
+              }),
+
+    message: ko.observable().extend({
+                    required: false,
+                    pattern: {
+                      message: 'Puoi usare solo lettere e numeri!',
+                      params: '[A-Za-z0-9\.,"\']*'
+                    }
+              }),
 };
 
 /* method to traverse the model and clear observables */
@@ -42,10 +84,26 @@ ko.extenders.required = function(target, option) {
     console.log("Clear customer model");
     traverseAndClearModel(customer);
   };
-  /* form submission */
+ // if (!viewModel.isValid()) { viewModel.errors.showAllMessages(); }
+// function(){
+//     self.errors = ko.validation.group(self);
+//     if (self.errors().length == 0) {
+
+//     }
+//     else{
+//         self.errors.showAllMessages();
+//     }
+// }
+
+
     var submit = function () {
-      console.log(ko.toJSON(customer));
-      client.addProduct(customer, saveProductCallback);
+      self.errors = ko.validation.group(self);
+      if (self.errors().length === 0) {
+            alert('Thank you.');
+            console.log(ko.toJSON(customer));
+            client.addProduct(customer, saveProductCallback);
+        }
+
     };
 
 
@@ -61,6 +119,7 @@ ko.extenders.required = function(target, option) {
   var init = function () {
     /* add code to initialize this module */
     ko.applyBindings(RegistrationForm, document.getElementById('contatti'));
+    ko.validation.init();
   };
 
   /* execute the init function when the DOM is ready */

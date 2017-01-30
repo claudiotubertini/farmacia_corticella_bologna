@@ -412,25 +412,23 @@ DALLE 9 ALLE 18</h4>
 <div class="margin_neg_laterale">
       <form class="form-horizontal" id="registration">
       <label><b>Scrivici</b></label>
-          <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.firstName.hasError}">
+          <div class="form-group">
           <label for="name" class="col-md-3 control-label">Nome</label>
           <div class="col-md-9">
             <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.firstName"  id="name" placeholder="Nome">
-             <p class="help-block" data-bind="visible: RegistrationForm.customer.firstName.hasError"> Si prega di inserire il nome</p>
           </div>
         </div>
-         <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.lastName.hasError}">
+         <div class="form-group">
           <label for="cognome" class="col-md-3 control-label">Cognome</label>
           <div class="col-md-9">
             <input type="text" class="form-control" data-bind="value: RegistrationForm.customer.lastName"  id="cognome" placeholder="Cognome">
-             <p class="help-block" data-bind="visible: RegistrationForm.customer.lastName.hasError"> Si prega di inserire il cognome</p>
+
           </div>
         </div>
-        <div class="form-group" data-bind="css: {'has-error': RegistrationForm.customer.emailAddress.hasError}">
+        <div class="form-group">
           <label for="inputEmail" class="col-md-3 control-label">Email</label>
           <div class="col-md-9">
             <input type="email" class="form-control" data-bind="value: RegistrationForm.customer.emailAddress" id="inputEmail" placeholder="Email">
-             <p class="help-block" data-bind="visible: RegistrationForm.customer.emailAddress.hasError"> Si prega di inserire un indirizzo email</p>
           </div>
         </div>
         <div class="form-group">
@@ -537,13 +535,13 @@ DALLE 9 ALLE 18</h4>
         crossorigin="anonymous"></script>
     <script src="jquery-ui/datepicker-it.js">
     </script>
-   <!--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script> -->
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js">
     </script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script type="text/javascript" src="assets/js/ie10-viewport-bug-workaround.js"></script>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/knockout.validation/2.0.3/knockout.validation.min.js"></script>
     <script type="text/javascript" src="js/messagesclient.js"></script>
     <script type="text/javascript" src="js/registrationform.js"></script>
 
