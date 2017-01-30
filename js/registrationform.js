@@ -48,7 +48,7 @@ ko.extenders.required = function(target, option) {
       client.addProduct(customer, saveProductCallback);
     };
 
-  
+
 
   /* callback on successful add request */
   var saveProductCallback = function (product, id) {
@@ -69,7 +69,7 @@ ko.extenders.required = function(target, option) {
   return {
     clear: clear,
     customer: customer,
-    submit: submit,
-    saveProduct: saveProduct
+    submit: submit
+    //saveProduct: saveProduct
   };
 }();
