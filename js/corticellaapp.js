@@ -1,11 +1,11 @@
 
 
 var ShiftWork = function(){
-
+    var self = this;
     // anno del footer
-    this.copyrightyear = ko.computed(function(){
+    self.copyrightyear = ko.computed(function(){
       return new Date().getFullYear();
-      }, this);
+      }, self);
 // datepicker
     var displayMode = {
           view: "VIEW",
@@ -14,16 +14,17 @@ var ShiftWork = function(){
 
     /* model for shifts */
     var shiftModel = function(item) {
-        this.data = {};
-        this.data.week = ko.observable(item.week);
-        this.data.description = ko.observable(item.description);
+        self.data = {};
+        self.data.day = ko.observable(item.date);
+        self.data.description = ko.observable(item.turni);
     };
-var openings = ko.observableArray();
-    var ShiftClient = function (url) {
+    var mydate = ko.observable();
+    var myopening = ko.observable();
+    var openings = ko.observableArray();
 
+    var ShiftClient = function (url) {
         /* the base url for the rest service */
         var baseUrl = url;
-
         /* method to retrieve data */
         var getShifts = function(callback) {
             $.ajax({
@@ -39,6 +40,7 @@ var openings = ko.observableArray();
             getShifts: getShifts
         };
     };
+
     var client = ShiftClient("http://localhost:8081");
 
 /* method to retrieve products using the client */
@@ -54,37 +56,84 @@ var openings = ko.observableArray();
 
         });
     };
+var myformatdate = function (date){
+          var date = new Date(date);
+          year = date.getFullYear();
+          mm = date.getMonth()+1;
+          dd = date.getDate();
+          if(dd<10){
+              dd='0'+dd
+          }
+          if(mm<10){
+              mm='0'+mm
+          }
+          result = dd+'/'+mm+'/'+year;
+          return result;
+  };
+//Search and filter the items (markers) using the input form
+    self.orari = ko.computed(function() {
+        var substrdate = myformatdate(self.mydate());
+        return ko.utils.arrayFilter(self.openings(), function(item) {
+          if (item.day.indexOf(substrdate) > -1){
+            return true;
+          } else {
+            return false;
+          }
+        });
+        }
+    }, self);
+
+     viewModel.beers = ko.dependentObservable(function() {
+        var search = this.query().toLowerCase();
+        return ko.utils.arrayFilter(beers, function(beer) {
+            return beer.name.toLowerCase().indexOf(search) >= 0;
+        });
+    }, viewModel);
 
 
- var configureBindingHandlers = function(){
-        ko.bindingHandlers.datepicker = {
-            init: function (element, valueAccessor, allBindingsAccessor) {
-                var options = allBindingsAccessor().datepickerOptions || {};
-                $(element).datepicker(options);
 
-                //handle the field changing
-                ko.utils.registerEventHandler(element, "change", function () {
-                    var observable = valueAccessor();
-                    var newDate = $(element).datepicker("getDate");
-                    observable($(element).datepicker.iso8601Week(newDate));
-                });
 
-                //handle disposal (if KO removes by the template binding)
-                ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
-                    $(element).datepicker("destroy");
-                });
-            }
-        };
-    };
+
+
+
+
+ko.bindingHandlers.datepicker = {
+    init: function(element, valueAccessor, allBindingsAccessor) {
+        var $el = $(element);
+
+        //initialize datepicker with some optional options
+        var options = allBindingsAccessor().datepickerOptions || {};
+        $el.datepicker(options);
+
+        //handle the field changing
+        ko.utils.registerEventHandler(element, "change", function() {
+            var observable = valueAccessor();
+            observable($el.datepicker("getDate"));
+        });
+
+        //handle disposal (if KO removes by the template binding)
+        ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
+            $el.datepicker("destroy");
+        });
+
+    },
+    update: function(element, valueAccessor) {
+        var value = ko.utils.unwrapObservable(valueAccessor());
+            $el = $(element);
+
+            $el.datepicker("setDate", value);
+    }
+};
+
 
 var init = function () {
         /* add code to initialise this module */
-        configureBindingHandlers();
+        // configureBindingHandlers();
         retrieveShifts();
         $("#calendar").datepicker({
-            dateFormat: "dd/mm/yy",
-            showWeek: true
+            dateFormat: "dd/mm/yy"
         });
+
         //apply ko bindings
         ko.applyBindings(ShiftWork, document.getElementById('koturni'));
     };
@@ -94,7 +143,8 @@ var init = function () {
 
     return {
         /* add members that will be exposed publicly */
-       openings: openings
+       openings: openings,
+       mydate: mydate
     };
 }();
 

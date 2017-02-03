@@ -8,9 +8,7 @@
     <meta name="author" content="open-word.com">
     <link rel="icon" href="">
     <title>Farmacia di Corticella - Bologna</title>
-    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
-    <!-- Bootstrap core CSS -->
-   <!--  <link href="dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -19,10 +17,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
    <link href="css/carousel.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css/base.css" />
 <link href="css/cover.css" rel="stylesheet">
   </head>
@@ -476,12 +471,11 @@ DALLE 9 ALLE 18</h4>
         </div>
 
           <div class="row innerrow">
-            <div class="col-sm-4 media-left media-middle">
 
-            <div class="margin_neg_left" id="calendar" ></div>
-           </div>
-              <div class="col-sm-8">
+              <div class="col-sm-4">
               <h4 class="media-heading">Turni di apertura</h4>
+
+
               <table data-bind='visible: openings().length > 0'>
                       <thead>
                           <tr>
@@ -490,16 +484,21 @@ DALLE 9 ALLE 18</h4>
                               <th />
                           </tr>
                       </thead>
-                      <tbody data-bind='foreach: openings'>
+                      <tbody>
                           <tr>
-                              <td><span class="" data-bind='text: data.week'></span> </td>
-                              <td><span class="" data-bind='text: data.description'></span></td>
+                              <td><span class="" data-bind='text: mydate'></span> </td>
+                              <td><span class="" data-bind='text: orari.data.description'></span></td>
 
                           </tr>
                       </tbody>
           </table>
+           <p data-bind="text: mydate"></p>
               <h4 data-bind="visible: openings().length == 0">Siamo spiacenti ma in questo momento gli orari di apertura non sono disponibili.</h4>
           </div>
+           <div class="col-sm-4 media-middle">
+
+            <div class="ui-date" id="calendar" data-bind="datepicker: mydate" ></div>
+           </div>
       </div>
           </section>
 
@@ -525,7 +524,7 @@ DALLE 9 ALLE 18</h4>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
  <script type="text/javascript" src="js/scrollto.js"></script>

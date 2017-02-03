@@ -26,7 +26,7 @@ h2 {
 .site-wrapper-inner {
   display: block;
   width:100%;
-} 
+}
 
 @media (max-device-width: 543px){
 html, body {
@@ -191,7 +191,7 @@ nav.navbar .navbar-default .navbar-fixed-top{
 .innernav{
   margin:10px;
   padding:10px;
-  
+
 }
 .innernav > ul.navbar-nav > li > a {
   padding-top: 0 !important;
@@ -240,11 +240,22 @@ position:static;
   width: 35%;
 }
   }
- 
- 
+
+
 /*
  * Main contents
  */
+ .ui-date{
+
+  width: 216px;
+  height: 190px;
+  margin: 5px auto 0;
+  font: 9pt Arial, sans-serif;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+
+ }
 .circleLine {
   background: radial-gradient(circle at center, #c6c6c6 0%, #c6c6c6 30%, transparent 20%);
   background-size: 30px 30px;
@@ -276,7 +287,7 @@ position:static;
   margin-bottom: 30px;
   position: relative;
   display: block;
-} 
+}
 #registration > div > label.control-label {
   text-align: left;
 }
@@ -435,7 +446,7 @@ position:static;
     padding-top:150px;
     margin-top:-150px;
   }
-  
+
 #presentazione h1 span{
   font-size: 30px;
 }
@@ -611,7 +622,7 @@ td.color_green{
   margin:20px;
 }
   }
- 
+
 
 /*
 * Helpers

@@ -3,18 +3,43 @@ var fs = require('fs');
 var sendmail = require('sendmail')({silent: false});
 var PATH = '/schedule-corticella';
 var MPATH = '/messages';
-var shifts = [
-		{week: "28/11/2016" , description: "A"},
-		{week: "29/11/2016", description:"B"},
-		{week: "30/11/2016", description:"C"},
-		{week: "01/12/2016", description:"D"},
-		{week: "02/12/2016", description:"8:30 - 12:30; 15:30 - 19:30"},
-		{week: "03/12/2016", description:"F"},
-		{week: "04/12/2016", description:"G"},
-		{week: "05/12/2016", description:"H"},
-		{week: "06/12/2016", description:"Solo sabato 8:30 - 12:30; 15:30 - 19:30"}
-];
+//var obj = $.parseJSON( '{ "name": "John" }' );
+ var shifts = [
+    {
+        date: "2017-02-02T00:00:00",
+        turni: "1 \u2013 2"
+    },
+    {
+        date: "2017-02-03T00:00:00",
+        turni: "1 \u2013 2"
+    },
+    {
+        date: "2017-02-04T00:00:00",
+        turni: "1 \u2013 2"
+    },
+    {
+        date: "2017-02-05T00:00:00",
+        turni: 0
+    },
+    {
+        date: "2017-02-06T00:00:00",
+        turni: 0
+    },
+    {
+        date: "2017-02-07T00:00:00",
+        turni: "1 \u2013 2"
+    },
+    {
+        date: "2017-02-08T00:00:00",
+        turni: "1 \u2013 2"
+    },
+    {
+        date: "2017-02-09T00:00:00",
+        turni: "1 \u2013 2"
+    }
+ ];
 
+// var shifts = require('./turni.json');
 var msg = [
         { id: "1000", firstName: "", lastName: "", emailAddress: "", subject: "", message: ""},
     ];
@@ -29,16 +54,26 @@ var currentIdCount = msg.length;
 // };
 function getShifts(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin','*');
-	console.log("GET[" + PATH + "] " + JSON.stringify(shifts));
 	res.send(200, shifts);
 	next();
-};
+}
 function getMessage(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin','*');
 	console.log("GET[" + MPATH + "] " + JSON.stringify(msg));
 	res.send(200, msg);
 	next();
 };
+
+// function getshift() {
+// 		$.ajax({
+// 		    url: "turni.json",
+// 		    type: "GET",
+// 		    success: function(result) {
+// 				return JSON.stringify(result);
+// 		    }
+// 		});
+// 	};
+
 function addMessage(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin','*');
 	console.log("POST[" + MPATH + "] " + JSON.stringify(req.body));
@@ -49,9 +84,9 @@ function addMessage(req, res, next) {
 	sendmail({
 		    from: JSON.stringify(req.body.emailAddress),
 		    to: 'claudio.tubertini@gmail.com',
-		    subject: JSON.stringify(req.body.subject) + JSON.stringify(req.body.emailAddress),
+		    subject: JSON.stringify(req.body.subject) +' from ' + JSON.stringify(req.body.emailAddress),
 		    html: JSON.stringify(req.body.message),
-			  }, 
+			  },
 			  function(err, reply) {
 				    console.log(err && err.stack);
 				    console.dir(reply);
@@ -61,15 +96,15 @@ function addMessage(req, res, next) {
 	res.send(200, msgId);
 	next();
 };
-function writeMsg( string ){
-	fs.writeFile("/home/claudio/corticella.json", string, function(err) {
-	    if(err) {
-	        return console.log(err);
-	    }
+// function writeMsg( string ){
+// 	fs.writeFile("/home/claudio/corticella.json", string, function(err) {
+// 	    if(err) {
+// 	        return console.log(err);
+// 	    }
 
-	    console.log("The file was saved!");
-	});
-}
+// 	    console.log("The file was saved!");
+// 	});
+// }
 
 
 

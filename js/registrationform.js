@@ -99,7 +99,7 @@ var client = ProductsClient("http://localhost:8081/messages");
     var submit = function () {
       self.errors = ko.validation.group(self);
       if (self.errors().length === 0) {
-            alert('Thank you.');
+            alert('Grazie per averci inviato un messaggio\nLe risponderemo quanto prima.');
             console.log(ko.toJSON(customer));
             client.addProduct(customer, saveProductCallback);
         }

@@ -231,7 +231,8 @@ var mystyles = [
           }
         ];
 var map;
-var farma = {lat: 44.5466256, lng: 11.354455};
+//var farma = {lat: 44.5466256, lng: 11.354455};
+var farma = {lat: 44.5441623, lng: 11.354455};
 
 var initMap = function() {
 
@@ -279,7 +280,7 @@ var initMap = function() {
          marker = new google.maps.Marker({
               position: farma,
               title: "Farmacia di Corticella",
-              animation: google.maps.Animation.DROP,
+              //animation: google.maps.Animation.DROP,
               icon: imageFarma
             });
              marker.setMap(map);
@@ -332,7 +333,7 @@ mymarker = new google.maps.Marker({
             var bounds = new google.maps.LatLngBounds();
             bounds.extend(pos);
           } else {
-            window.alert('Non ci sono indicazioni disponibili ' + status);
+            window.alert('Non ci sono indicazioni disponibili per questa modalità');
           }
         });
       }
