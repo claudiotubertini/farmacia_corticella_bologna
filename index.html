@@ -8,7 +8,7 @@
     <meta name="author" content="open-word.com">
     <link rel="icon" href="">
     <title>Farmacia di Corticella - Bologna</title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -487,17 +487,17 @@ DALLE 9 ALLE 18</h4>
                       <tbody>
                           <tr>
                               <td><span class="" data-bind='text: mydate'></span> </td>
-                              <td><span class="" data-bind='text: orari.data.description'></span></td>
+                              <td><span class="" data-bind=''></span> </td>
 
                           </tr>
                       </tbody>
           </table>
-           <p data-bind="text: mydate"></p>
-              <h4 data-bind="visible: openings().length == 0">Siamo spiacenti ma in questo momento gli orari di apertura non sono disponibili.</h4>
+          
+              <h4 data-bind="if: openings().length == 0">Siamo spiacenti ma in questo momento gli orari di apertura non sono disponibili.</h4>
           </div>
            <div class="col-sm-4 media-middle">
 
-            <div class="ui-date" id="calendar" data-bind="datepicker: mydate" ></div>
+            <div  id="calendar" data-bind="datepicker: mydate" ></div>
            </div>
       </div>
           </section>
@@ -529,7 +529,7 @@ DALLE 9 ALLE 18</h4>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
  <script type="text/javascript" src="js/scrollto.js"></script>
      <script
-        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
         crossorigin="anonymous"></script>
     <script src="jquery-ui/datepicker-it.js">
@@ -544,10 +544,10 @@ DALLE 9 ALLE 18</h4>
     <script type="text/javascript" src="js/messagesclient.js"></script>
     <script type="text/javascript" src="js/registrationform.js"></script>
 
-    <script type="text/javascript" src="js/corticellaapp.js"></script>
+   
     <script type="text/javascript" src="js/newsapp.js"></script>
    <script type="text/javascript" src="js/map.js"></script>
-
+ <script type="text/javascript" src="js/corticellaapp.js"></script>
 <script async
         src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyBZR08CuagYkwAw6KeJBry2pZpiULeYuhM&callback=initMap"
          onerror="googleError()">

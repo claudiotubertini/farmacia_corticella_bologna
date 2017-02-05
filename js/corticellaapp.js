@@ -1,16 +1,33 @@
 
 
 var ShiftWork = function(){
+    var myformatdate = function (mydate){
+          var date = new Date(mydate);
+          year = date.getFullYear();
+          mm = date.getMonth()+1;
+          dd = date.getDate();
+          if(dd<10){
+              dd='0'+dd
+          }
+          if(mm<10){
+              mm='0'+mm
+          }
+          result = dd+'/'+mm+'/'+year;
+          return result;
+  };
+
+    $("#calendar").datepicker({
+            dateFormat: "dd/mm/yy"
+            // onSelect: function(value, date) {
+            //         date.dpDiv.find('.ui-datepicker-current-day a')
+            //         .css('background-color', '#ffffff');
+            //     }
+        });
     var self = this;
     // anno del footer
     self.copyrightyear = ko.computed(function(){
       return new Date().getFullYear();
       }, self);
-// datepicker
-    var displayMode = {
-          view: "VIEW",
-          edit: "EDIT"
-        };
 
     /* model for shifts */
     var shiftModel = function(item) {
@@ -18,6 +35,8 @@ var ShiftWork = function(){
         self.data.day = ko.observable(item.date);
         self.data.description = ko.observable(item.turni);
     };
+    var today = new Date();
+    
     var mydate = ko.observable();
     var myopening = ko.observable();
     var openings = ko.observableArray();
@@ -56,40 +75,30 @@ var ShiftWork = function(){
 
         });
     };
-var myformatdate = function (date){
-          var date = new Date(date);
-          year = date.getFullYear();
-          mm = date.getMonth()+1;
-          dd = date.getDate();
-          if(dd<10){
-              dd='0'+dd
-          }
-          if(mm<10){
-              mm='0'+mm
-          }
-          result = dd+'/'+mm+'/'+year;
-          return result;
-  };
-//Search and filter the items (markers) using the input form
-    self.orari = ko.computed(function() {
-        var substrdate = myformatdate(self.mydate());
-        return ko.utils.arrayFilter(self.openings(), function(item) {
-          if (item.day.indexOf(substrdate) > -1){
-            return true;
-          } else {
-            return false;
-          }
-        });
-        }
-    }, self);
 
-     viewModel.beers = ko.dependentObservable(function() {
-        var search = this.query().toLowerCase();
-        return ko.utils.arrayFilter(beers, function(beer) {
-            return beer.name.toLowerCase().indexOf(search) >= 0;
-        });
-    }, viewModel);
+    // self.orari = ko.computed(function() {
+    //     var substrdate = myformatdate(mydate());
+    //     console.log(substrdate);
+        
+    //     return ko.utils.arrayFilter(openings(), function(item) {
+    //         return openings().item.day.indexOf(substrdate) > -1;
+          
+    //       //return item.day.indexOf(substrdate) > -1;
+    //     });
+        
+    // }, self);
 
+    //filter the items using the filter text
+// viewModel.filteredItems = ko.computed(function() {
+//     var filter = this.filter().toLowerCase();
+//     if (!filter) {
+//         return this.items();
+//     } else {
+//         return ko.utils.arrayFilter(this.items(), function(item) {
+//             return ko.utils.stringStartsWith(item.name().toLowerCase(), filter);
+//         });
+//     }
+// }, viewModel);
 
 
 
@@ -100,39 +109,50 @@ var myformatdate = function (date){
 ko.bindingHandlers.datepicker = {
     init: function(element, valueAccessor, allBindingsAccessor) {
         var $el = $(element);
-
         //initialize datepicker with some optional options
         var options = allBindingsAccessor().datepickerOptions || {};
         $el.datepicker(options);
-
         //handle the field changing
         ko.utils.registerEventHandler(element, "change", function() {
             var observable = valueAccessor();
             observable($el.datepicker("getDate"));
         });
-
         //handle disposal (if KO removes by the template binding)
         ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
             $el.datepicker("destroy");
         });
-
     },
     update: function(element, valueAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor());
             $el = $(element);
-
             $el.datepicker("setDate", value);
+            $el.datepicker({
+                onSelect: function(value, date) {
+                    date.dpDiv.find('.ui-datepicker-current-day a')
+                    .css('background-color', '#CCCCCC');
+}
+            });
     }
 };
 
-
+// ko.bindingHandlers.datepicker = {
+//     init: function (element, valueAccessor, allBindingsAccessor) {
+//         var options = allBindingsAccessor().datepickerOptions || {};
+//         $(element).datepicker(options).on("changeDate", function (ev) {
+//             var observable = valueAccessor();
+//             observable(ev.date);
+//         });
+//     },
+//     update: function (element, valueAccessor) {
+//         var value = ko.utils.unwrapObservable(valueAccessor());
+//         $(element).datepicker("setValue", value);
+//     }
+// }; 
 var init = function () {
         /* add code to initialise this module */
         // configureBindingHandlers();
         retrieveShifts();
-        $("#calendar").datepicker({
-            dateFormat: "dd/mm/yy"
-        });
+        
 
         //apply ko bindings
         ko.applyBindings(ShiftWork, document.getElementById('koturni'));
@@ -145,6 +165,7 @@ var init = function () {
         /* add members that will be exposed publicly */
        openings: openings,
        mydate: mydate
+       //orari: orari
     };
 }();
 
