@@ -23,24 +23,24 @@ var ShiftWork = function(){
             //         .css('background-color', '#ffffff');
             //     }
         });
-    var self = this;
+    //var self = this;
     // anno del footer
-    self.copyrightyear = ko.computed(function(){
+    this.copyrightyear = ko.computed(function(){
       return new Date().getFullYear();
-      }, self);
+      }, this);
 
     /* model for shifts */
     var shiftModel = function(item) {
-        self.data = {};
-        self.data.day = ko.observable(item.date);
-        self.data.description = ko.observable(item.turni);
+        this.data = {};
+        this.data.day = ko.observable(item.date);
+        this.data.description = ko.observable(item.turni);
     };
     var today = new Date();
-    
-    var mydate = ko.observable();
+
+    var mydate = ko.observable(today);
     var myopening = ko.observable();
     var openings = ko.observableArray();
-
+    var showMessage = ko.observable(false);
     var ShiftClient = function (url) {
         /* the base url for the rest service */
         var baseUrl = url;
@@ -52,6 +52,10 @@ var ShiftWork = function(){
                 success: function(result) {
                     console.log("Schedule retrieved: " + JSON.stringify(result));
                     callback(result);
+                    showMessage(false);
+                },
+                error: function(){
+                    showMessage(true);
                 }
             });
         };
@@ -76,30 +80,18 @@ var ShiftWork = function(){
         });
     };
 
-    // self.orari = ko.computed(function() {
-    //     var substrdate = myformatdate(mydate());
-    //     console.log(substrdate);
-        
-    //     return ko.utils.arrayFilter(openings(), function(item) {
-    //         return openings().item.day.indexOf(substrdate) > -1;
-          
-    //       //return item.day.indexOf(substrdate) > -1;
-    //     });
-        
-    // }, self);
+    this.orari = ko.computed(function() {
+        var substrdate = myformatdate(mydate());
+        if (!substrdate){
+            return openings();
+        } else {
+        return ko.utils.arrayFilter(openings(), function(item) {
+            return myformatdate(item.data.day()) === myformatdate(substrdate);
 
-    //filter the items using the filter text
-// viewModel.filteredItems = ko.computed(function() {
-//     var filter = this.filter().toLowerCase();
-//     if (!filter) {
-//         return this.items();
-//     } else {
-//         return ko.utils.arrayFilter(this.items(), function(item) {
-//             return ko.utils.stringStartsWith(item.name().toLowerCase(), filter);
-//         });
-//     }
-// }, viewModel);
-
+          //return item.day.indexOf(substrdate) > -1;
+        });
+}
+    }, this);
 
 
 
@@ -126,33 +118,16 @@ ko.bindingHandlers.datepicker = {
         var value = ko.utils.unwrapObservable(valueAccessor());
             $el = $(element);
             $el.datepicker("setDate", value);
-            $el.datepicker({
-                onSelect: function(value, date) {
-                    date.dpDiv.find('.ui-datepicker-current-day a')
-                    .css('background-color', '#CCCCCC');
-}
-            });
+
     }
 };
 
-// ko.bindingHandlers.datepicker = {
-//     init: function (element, valueAccessor, allBindingsAccessor) {
-//         var options = allBindingsAccessor().datepickerOptions || {};
-//         $(element).datepicker(options).on("changeDate", function (ev) {
-//             var observable = valueAccessor();
-//             observable(ev.date);
-//         });
-//     },
-//     update: function (element, valueAccessor) {
-//         var value = ko.utils.unwrapObservable(valueAccessor());
-//         $(element).datepicker("setValue", value);
-//     }
-// }; 
+
 var init = function () {
         /* add code to initialise this module */
         // configureBindingHandlers();
         retrieveShifts();
-        
+
 
         //apply ko bindings
         ko.applyBindings(ShiftWork, document.getElementById('koturni'));
@@ -164,102 +139,11 @@ var init = function () {
     return {
         /* add members that will be exposed publicly */
        openings: openings,
-       mydate: mydate
-       //orari: orari
+       mydate: mydate,
+       showMessage: showMessage,
+       orari: orari,
+       copyrightyear: copyrightyear
     };
 }();
 
 
-
-
-/////////////////////////////////////////////
-// APPUNTI
-
-// $(".calendar").datepicker({
-//     dateFormat: "dd/mm/yy",
-//     showWeek: true,
-//     onSelect: function(dateText, inst) {
-//       var newDate = new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay);
-//       dateFormat: "'Week Number '" + $.datepicker.iso8601Week(newDate),
-//         $(".week").val('Week:' + $.datepicker.iso8601Week(newDate));
-//     }
-// var configureBindingHandlers = function(){
-//         ko.bindingHandlers.datepicker = {
-//             init: function (element, valueAccessor, allBindingsAccessor) {
-//                 var options = allBindingsAccessor().datepickerOptions || {};
-//                 $(element).datepicker(options);
-
-//                 //handle the field changing
-//                 ko.utils.registerEventHandler(element, "change", function () {
-//                     var observable = valueAccessor();
-//                     observable($(element).datepicker("getDate"));
-//                 });
-
-//                 //handle disposal (if KO removes by the template binding)
-//                 ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
-//                     $(element).datepicker("destroy");
-//                 });
-//             }
-//         };
-//     };
-// $( "#calendar" ).datepicker({
-//         showWeek: true,
-//         onSelect: function(dateText, inst) {
-//             alert($.datepicker.iso8601Week(new Date(dateText)))
-//      }
-// });
-// $("#calendar").datepicker({
-//         showWeek: true,
-//         onSelect: function(dateText, inst) {
-//             $(this).val("'Week Number '" + $.datepicker.iso8601Week(new Date(dateText)));
-//         }
-//     })
-
-// $('#datepicker').datepicker({
-//     onSelect: function (dateText, inst) {
-//           var date = $(this).datepicker('getWeek');
-//           alert($.datepicker.formatDate('DD', date));
-//     }
-// });
-// function toDate(selector) {
-//           var from = $(selector).val().split("-");
-//           return new Date(from[2], from[1] - 1, from[0]);
-//       }
-
-// function AppViewModel() {
-
-//     self.value2 = ko.observableArray([]);
-// evtjson = [
-//       { name: "Bungle", apdate: "01-01-2017" },
-//     { name: "George", apdate: "02-02-2017" },
-//     { name: "Zippy", apdate: "03-03-2017" }
-//     ];
-//     self.value1 = ko.observable();
-
-
-    // $("#datepicker").datepicker({
-    //                     dateFormat: "@", // Unix timestamp
-    //                     onSelect: function(dateText, inst){
-    //                         addOrRemoveDate(dateText);
-    //                     },
-    //                     beforeShowDay: function(date){
-    //                         var gotDate = $.inArray($.datepicker.formatDate($(this).datepicker('option', 'dateFormat'), date), dates);
-    //                         if (gotDate >= 0) {
-    //                             return [false,"ui-state-highlight", "Event Name"];
-    //                         }
-    //                         return [true, ""];
-    //                     }
-    //                 });
-    //self.value2(new Date(2000, 0, 1));
-    //$("#txtDate").val($.datepicker.formatDate('dd M yy', new Date()));
-    //$( "#datepicker" ).datepicker();
-    //$.datepicker.parseDate(new Date(1957, 24, 12));
-
-
-
-
-
-//}
-
-// Activates knockout.js
-//ko.applyBindings(new AppViewModel());

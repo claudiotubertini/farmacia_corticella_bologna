@@ -231,8 +231,8 @@ var mystyles = [
           }
         ];
 var map;
-//var farma = {lat: 44.5466256, lng: 11.354455};
-var farma = {lat: 44.5441623, lng: 11.354455};
+//var farma = {lat:44.5466256,lng: 11.354455};
+var farma = {lat: 44.5455, lng: 11.354455};
 
 var initMap = function() {
 
@@ -246,7 +246,7 @@ var initMap = function() {
         var mymarker;
         var pos;
     map = new google.maps.Map(document.getElementById('map'), {
-      center: farma,
+      center: {lat:44.5466256,lng: 11.354455},
       zoom: 14,
       styles: googlestyle,
       mapTypeControl: false
@@ -324,7 +324,7 @@ mymarker = new google.maps.Marker({
 
         directionsService.route({
           origin: pos,
-          destination: farma,
+          destination: {lat:44.5466256,lng: 11.354455},
 
           travelMode: google.maps.TravelMode[selectedMode]
         }, function(response, status) {
