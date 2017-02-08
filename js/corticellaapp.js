@@ -76,26 +76,28 @@ var ShiftWork = function(){
     var retrieveShiftsCallback = function (data) {
         data.forEach(function(item) {
             openings.push(new shiftModel(item));
-
         });
+
     };
 
-    this.orari = ko.computed(function() {
-        var substrdate = myformatdate(mydate());
-        if (!substrdate){
-            return openings();
-        } else {
-        return ko.utils.arrayFilter(openings(), function(item) {
-            return myformatdate(item.data.day()) === myformatdate(substrdate);
+    this.orari = ko.computed(function(){
+        //var substrdate = myformatdate(mydate());
+        function isregdat(element) {
+                return myformatdate(element.data.day()) === myformatdate(mydate());
+            }
 
-          //return item.day.indexOf(substrdate) > -1;
-        });
-}
-    }, this);
-
-
-
-
+        if openings().find(isregdat) {
+            return ko.utils.arrayFilter(openings(), function(item) {
+                return myformatdate(item.data.day()) === myformatdate(mydate());
+                    });
+            } else {
+                if (mydate().toString().search('Sun'||'Sat') > -1) {
+                    return (new shiftModel({date: mydate(), turni: "Siamo chiusi"}));
+                } else {
+                    return (new shiftModel({date: mydate(), turni: "Siamo aperti dalle 8.30 alle 12.30 e dalle 15.30 alle 19.30"}));
+                }
+            }
+        }, this);
 
 
 ko.bindingHandlers.datepicker = {
@@ -118,7 +120,6 @@ ko.bindingHandlers.datepicker = {
         var value = ko.utils.unwrapObservable(valueAccessor());
             $el = $(element);
             $el.datepicker("setDate", value);
-
     }
 };
 
