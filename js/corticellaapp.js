@@ -18,12 +18,8 @@ var ShiftWork = function(){
 
     $("#calendar").datepicker({
             dateFormat: "dd/mm/yy"
-            // onSelect: function(value, date) {
-            //         date.dpDiv.find('.ui-datepicker-current-day a')
-            //         .css('background-color', '#ffffff');
-            //     }
         });
-    //var self = this;
+
     // anno del footer
     this.copyrightyear = ko.computed(function(){
       return new Date().getFullYear();
@@ -41,6 +37,9 @@ var ShiftWork = function(){
     var myopening = ko.observable();
     var openings = ko.observableArray();
     var showMessage = ko.observable(false);
+    var showdate = ko.computed(function(){
+        return myformatdate(mydate());
+    });
     var ShiftClient = function (url) {
         /* the base url for the rest service */
         var baseUrl = url;
@@ -79,25 +78,24 @@ var ShiftWork = function(){
         });
 
     };
-
     this.orari = ko.computed(function(){
-        //var substrdate = myformatdate(mydate());
-        function isregdat(element) {
-                return myformatdate(element.data.day()) === myformatdate(mydate());
+        // check first if server include information
+        for(var i = 0 ; i < openings().length; i++){
+            if(myformatdate(openings()[i].data.day()) === myformatdate(mydate())) {
+               return (new shiftModel({date: mydate(), turni: openings()[i].data.description()}));
             }
+        }
+        // if the server do not include information evaluate this
+        if (mydate().toString().search('Sat') > -1) {
+            return (new shiftModel({date: mydate(), turni: "Siamo chiusi"}));
+        } else if (mydate().toString().search('Sun') > -1) {
+            return (new shiftModel({date: mydate(), turni: "Siamo chiusi"}));
+        }
+        else {
+            return (new shiftModel({date: mydate(), turni: "Siamo aperti dalle 8.30 alle 12.30 e dalle 15.30 alle 19.30"}));
+        }
+    }, this);
 
-        if openings().find(isregdat) {
-            return ko.utils.arrayFilter(openings(), function(item) {
-                return myformatdate(item.data.day()) === myformatdate(mydate());
-                    });
-            } else {
-                if (mydate().toString().search('Sun'||'Sat') > -1) {
-                    return (new shiftModel({date: mydate(), turni: "Siamo chiusi"}));
-                } else {
-                    return (new shiftModel({date: mydate(), turni: "Siamo aperti dalle 8.30 alle 12.30 e dalle 15.30 alle 19.30"}));
-                }
-            }
-        }, this);
 
 
 ko.bindingHandlers.datepicker = {
@@ -143,7 +141,8 @@ var init = function () {
        mydate: mydate,
        showMessage: showMessage,
        orari: orari,
-       copyrightyear: copyrightyear
+       copyrightyear: copyrightyear,
+       showdate: showdate
     };
 }();
 

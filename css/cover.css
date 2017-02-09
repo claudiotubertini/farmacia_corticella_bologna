@@ -245,6 +245,12 @@ position:static;
 /*
  * Main contents
  */
+ /*td.ui-datepicker-week-end a.ui-state-default{
+  background-color: #FF0000;
+ }*/
+ .closed{
+  background-color: #FF0000;
+ }
  .ui-date{
 
   width: 216px;
@@ -605,6 +611,7 @@ td.color_green{
   margin-top:2.5em;
   margin-bottom:2em;
   }
+
 }
 @media (max-width: 790px) {
 .inner {
