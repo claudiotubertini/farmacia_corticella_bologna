@@ -40,6 +40,7 @@ var ShiftWork = function(){
     var showdate = ko.computed(function(){
         return myformatdate(mydate());
     });
+    var close = ko.observable(false);
     var ShiftClient = function (url) {
         /* the base url for the rest service */
         var baseUrl = url;
@@ -82,16 +83,20 @@ var ShiftWork = function(){
         // check first if server include information
         for(var i = 0 ; i < openings().length; i++){
             if(myformatdate(openings()[i].data.day()) === myformatdate(mydate())) {
+               close(false);
                return (new shiftModel({date: mydate(), turni: openings()[i].data.description()}));
             }
         }
         // if the server do not include information evaluate this
         if (mydate().toString().search('Sat') > -1) {
+            close(true);
             return (new shiftModel({date: mydate(), turni: "Siamo chiusi"}));
         } else if (mydate().toString().search('Sun') > -1) {
+            close(true);
             return (new shiftModel({date: mydate(), turni: "Siamo chiusi"}));
         }
         else {
+            close(false);
             return (new shiftModel({date: mydate(), turni: "Siamo aperti dalle 8.30 alle 12.30 e dalle 15.30 alle 19.30"}));
         }
     }, this);
@@ -142,7 +147,8 @@ var init = function () {
        showMessage: showMessage,
        orari: orari,
        copyrightyear: copyrightyear,
-       showdate: showdate
+       showdate: showdate,
+       close: close
     };
 }();
 
