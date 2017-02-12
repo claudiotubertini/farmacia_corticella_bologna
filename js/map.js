@@ -267,9 +267,10 @@ var initMap = function() {
             size: new google.maps.Size(60,75),
             origin: new google.maps.Point(0,0),
             anchor: new google.maps.Point(30,75),
-            scaledSize: new google.maps.Size(30, 37)
+            scaledSize: new google.maps.Size(30, 37),
+            zIndex:100
           };
-
+var image = 'http://46.101.102.250/documents/img/image3.png';
       var shape = {
             coord: [0,0,60,75],
             type: 'rect'
@@ -280,10 +281,11 @@ var initMap = function() {
          marker = new google.maps.Marker({
               position: farma,
               title: "Farmacia di Corticella",
-              //animation: google.maps.Animation.DROP,
-              icon: imageFarma
+              animation: google.maps.Animation.DROP,
+              icon: image
             });
              marker.setMap(map);
+            
 
 
         if (navigator.geolocation) {
@@ -301,7 +303,7 @@ mymarker = new google.maps.Marker({
               icon: yourIcon
             });
 
-
+       
 
         directionsDisplay.setMap(map);
         directionsDisplay.setOptions({

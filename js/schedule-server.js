@@ -1,6 +1,6 @@
 var restify = require('restify');
 var fs = require('fs');
-var sendmail = require('sendmail')({silent: false});
+var sendmail = require('sendmail');
 var PATH = '/schedule-corticella';
 var MPATH = '/messages';
 //var obj = $.parseJSON( '{ "name": "John" }' );
@@ -165,10 +165,11 @@ function addMessage(req, res, next) {
 				    console.dir(reply);
 			});
 	msg.push(req.body);
-	writeMsg(JSON.stringify(msg));
+	//writeMsg(JSON.stringify(msg));
 	res.send(200, msgId);
 	next();
 };
+
 // function writeMsg( string ){
 // 	fs.writeFile("/home/claudio/corticella.json", string, function(err) {
 // 	    if(err) {

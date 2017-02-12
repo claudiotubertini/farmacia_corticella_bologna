@@ -45,10 +45,11 @@ var ShiftWork = function(){
         /* the base url for the rest service */
         var baseUrl = url;
         /* method to retrieve data */
-        var getShifts = function(callback) {
+        var getMyShifts = function(callback) {
             $.ajax({
                 url: baseUrl + "/schedule-corticella",
                 type: "GET",
+                dataType: "json",
                 success: function(result) {
                     console.log("Schedule retrieved: " + JSON.stringify(result));
                     callback(result);
@@ -60,16 +61,16 @@ var ShiftWork = function(){
             });
         };
         return{
-            getShifts: getShifts
+            getMyShifts: getMyShifts
         };
     };
 
-    var client = ShiftClient("http://localhost:8081");
+    var client = new ShiftClient("http://localhost:8081");
 
 /* method to retrieve products using the client */
     var retrieveShifts = function () {
         console.log("Retrieving products from server ...");
-        client.getShifts(retrieveShiftsCallback);
+        client.getMyShifts(retrieveShiftsCallback);
     };
 
     /* callback for when the products are retrieved from the server */

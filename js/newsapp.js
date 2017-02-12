@@ -16,7 +16,7 @@ var RetrieveNews = function (){
 
   var self = this;
   var displayOtherNews = ko.observable(false);
-  
+
   var productModel = function(item) {
     self.data = {};
     self.data.title = ko.observable(item.title);
@@ -31,6 +31,7 @@ var RetrieveNews = function (){
 $.ajax({
     url: 'http://www.agi.it/salute/rss',
     dataType: 'xml',
+    cache:false,
     success: function(data) {
       $(data).find("item").each(function () { // or "item" or whatever suits your feed
               var el = $(this);

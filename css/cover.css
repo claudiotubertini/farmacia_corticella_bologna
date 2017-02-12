@@ -249,7 +249,10 @@ position:static;
   background-color: #FF0000;
  }*/
  .closed{
-  background-color: #FF0000;
+  background: radial-gradient(circle at center, #FF0000 0%, #FF0000 30%, transparent 20%);
+ }
+ .opened {
+  background: radial-gradient(circle at center, #66CD00 0%, #66CD00 30%, transparent 20%);
  }
  .ui-date{
 

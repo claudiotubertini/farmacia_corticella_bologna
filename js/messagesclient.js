@@ -16,6 +16,20 @@ var ProductsClient = function (url) {
 		    }
 		});
 	};
+	var getMyShifts = function(callback) {
+        $.ajax({
+            url: baseUrl + "/schedule-corticella",
+            type: "GET",
+                success: function(result) {
+                    console.log("Schedule retrieved: " + JSON.stringify(result));
+                    callback(result);
+                    showMessage(false);
+                },
+                error: function(){
+                    showMessage(true);
+                }
+            });
+        };
 
 	/* method to delete a product */
 	var deleteProduct = function(product, callback) {
