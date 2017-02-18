@@ -31,6 +31,7 @@ var RetrieveNews = function (){
 $.ajax({
     url: 'http://www.agi.it/salute/rss',
     dataType: 'xml',
+    async: true,
     cache:false,
     success: function(data) {
       $(data).find("item").each(function () { // or "item" or whatever suits your feed
