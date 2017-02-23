@@ -170,16 +170,16 @@ function addMessage(req, res, next) {
 	next();
 };
 
-// function writeMsg( string ){
-// 	fs.writeFile("/home/claudio/corticella.json", string, function(err) {
-// 	    if(err) {
-// 	        return console.log(err);
-// 	    }
+function writeMsg(file, string ){
+    jsonstring = JSON.stringify(string);
+	fs.writeFile(file, jsonstring, function(err) {
+	    if(err){
+        return console.log(err);}
 
-// 	    console.log("The file was saved!");
-// 	});
-// }
-
+	    console.log("The file was saved!");
+	});
+}
+writeMsg("/var/www/html/js/turni.json", shifts)
 
 
 // function updateProduct(req, res, next) {

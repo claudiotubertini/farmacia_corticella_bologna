@@ -1,6 +1,6 @@
 /* Module for Registration form application */
 var RegistrationForm = function () {
-var client = ProductsClient("http://localhost:8081/messages");
+
   /* extender for required fields */
 // ko.extenders.required = function(target, option) {
 //   //observables to indicate an error
@@ -95,7 +95,7 @@ var client = ProductsClient("http://localhost:8081/messages");
 //     }
 // }
 
-
+var client = ProductsClient("http://localhost:8081/messages");
     var submit = function () {
       self.errors = ko.validation.group(self);
       if (self.errors().length === 0) {
@@ -111,6 +111,7 @@ var client = ProductsClient("http://localhost:8081/messages");
   /* callback on successful add request */
   var saveProductCallback = function (product, id) {
       customer.id(id);
+
       //alert("Grazie per averci inviato un messaggio.\nProvvederemo a risponderti nel più breve tempo possibile!")
       console.log("Product saved with id [" + customer.id() + "]");
   };

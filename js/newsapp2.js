@@ -26,75 +26,52 @@ var RetrieveNews = function (){
     //this.displayMode = ko.observable(itemMode);
   };
 
-  /* product observable array */
-  self.products = ko.observableArray();
-  // $.ajax({
-  //   url: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.agi.it%2Fsalute%2Frss%22&format=json&diagnostics=false&callback=',
-  //   dataType: 'json',
-  //   success: function(data) {
-  //               var items = data.query.results.item;
+  var products = ko.observableArray();
 
-  //               var no_items=items.length;
-  //               for(var i=0;i<no_items;i++){
-  //                 var title = items[i].title;
-  //                 var link = items[i].link;
-  //                 var date = items[i].puDate;
-  //                 var enclosure = items[i].enclosure.url;
-  //                 self.products.push(new productModel({
-  //                   title: title,
-  //                   date: date,
-  //                   link: link,
-  //                   enclosure: enclosure
-  //                    }));
-  //                 console.log(items[i]);
-  //                 //self.tasks.push(new Task({ title: this.newTaskText() }));
-  //               };
-  //             },
-  //   error: function(){
-  //           alert("Abbiamo riscontrato un problema nell\'aggiornamento delle notizie. Riprovate fra qualche minuto.");
-  //       }
-  //   });
 
-   // $(data).find("item").each(function () { // or "item" or whatever suits your feed
-   //            var el = $(this);
-   //            item = {
-   //              "title": el.find("title").text(),
-   //              "date": el.find("pubDate").text(),
-   //              "link": el.find("link").text(),
-   //              "enclosure": el.find("enclosure").attr('url')};
-   //            products.push(new productModel(item));
-   //            });
-$.ajax({
-    url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%20%3D%20'http%3A%2F%2Fwww.agi.it%2Fsalute%2Frss'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
-    datatype: 'json',
-    success: function(data){
-              $(data).find('item').each(function () { // or "item" or whatever suits your feed
-              var el = $(this);
-              items = {
-                "title": el.find("title").text(),
-                "date": el.find("pubDate").text(),
-                "link": el.find("link").text(),
-                "enclosure": el.find("enclosure").attr('url')};
-              self.products.push(items);
-
-              });
-              console.log(self.products()[0])
-        },
-    error: function(){
-            alert("Abbiamo riscontrato un problema nell\'aggiornamento delle notizie. Riprovate fra qualche minuto.");
-        }
-    });
-
+ var url = 'http://www.agi.it/salute/rss'
+  feednami.load(url,function(result){
+    if(result.error){
+      console.log(result.error)
+    }
+    else{
+      var entries = result.feed.entries
+      for(var i = 0; i < entries.length; i++){
+        var entry = entries[i];
+        items = {
+                "title": entry.title,
+                "date": entry.date,
+                "link": entry.link,
+                "enclosure": entry.enclosures[0].url};
+                console.log(items);
+        products.push(new productModel(items));
+        console.log(products());
+      }
+    }
+  })
 
   self.formattedDate = ko.pureComputed(function(){
             return mydate(self.data.date());
     }, self);
 
 
-};
 
-var yqlError = function(){
-  alert("Abbiamo riscontrato un problema nell\'aggiornamento delle notizie. Riprovate fra qualche minuto.");
-};
 
-ko.applyBindings(new RetrieveNews(), document.getElementById("notizie"));
+// var yqlError = function(){
+//   alert("Abbiamo riscontrato un problema nell\'aggiornamento delle notizie. Riprovate fra qualche minuto.");
+// };
+
+
+ var init = function(){
+      ko.applyBindings(RetrieveNews, document.getElementById("notizie"));
+  };
+
+  $(init);
+
+  return {
+    products: products,
+    formattedDate: formattedDate,
+    displayOtherNews: displayOtherNews
+  };
+
+}();

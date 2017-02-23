@@ -50,7 +50,7 @@ var ShiftWork = function(){
                 url: baseUrl + "/schedule-corticella",
                 type: "GET",
                 dataType: "json",
-                jsonpCallback: "_testcb",
+                //jsonpCallback: "_testcb",
                 success: function(result) {
                     console.log("Schedule retrieved: " + JSON.stringify(result));
                     callback(result);
