@@ -67,7 +67,7 @@ var ShiftWork = function(){
         };
     };
 
-    var client = new ShiftClient("http://207.154.202.235/js/turni.json");
+    var client = new ShiftClient("http://207.154.208.157/js/turni.json");http://
 
 /* method to retrieve products using the client */
     var retrieveShifts = function () {
