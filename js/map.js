@@ -263,14 +263,14 @@ var initMap = function() {
         return markerImage;
       }
       var imageFarma = {
-            url: 'http://207.154.208.157/img/image2.png',
+            url: 'https://farmaciadicorticella.com/img/image2.png',
             size: new google.maps.Size(60,75),
             origin: new google.maps.Point(0,0),
             anchor: new google.maps.Point(30,75),
             scaledSize: new google.maps.Size(30, 37),
             zIndex:100
           };
-var image = 'http://207.154.208.157/img/image3.png';
+var image = 'https://farmaciadicorticella.com/img/image3.png';
       var shape = {
             coord: [0,0,60,75],
             type: 'rect'

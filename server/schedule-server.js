@@ -1,6 +1,6 @@
 var restify = require('restify');
 var fs = require('fs');
-var sendmail = require('sendmail');
+//var sendmail = require('sendmail');
 var PATH = '/schedule-corticella';
 var MPATH = '/messages';
 //var obj = $.parseJSON( '{ "name": "John" }' );
@@ -154,16 +154,16 @@ function addMessage(req, res, next) {
 	currentIdCount = currentIdCount + 1;
 	var msgId = currentIdCount * 1000;
 	req.body.id = msgId.toString();
-	sendmail({
-		    from: JSON.stringify(req.body.emailAddress),
-		    to: 'claudio.tubertini@gmail.com',
-		    subject: JSON.stringify(req.body.subject) +' from ' + JSON.stringify(req.body.emailAddress),
-		    html: JSON.stringify(req.body.message),
-			  },
-			  function(err, reply) {
-				    console.log(err && err.stack);
-				    console.dir(reply);
-			});
+	// sendmail({
+	// 	    from: JSON.stringify(req.body.emailAddress),
+	// 	    to: 'claudio.tubertini@gmail.com',
+	// 	    subject: JSON.stringify(req.body.subject) +' from ' + JSON.stringify(req.body.emailAddress),
+	// 	    html: JSON.stringify(req.body.message),
+	// 		  },
+	// 		  function(err, reply) {
+	// 			    console.log(err && err.stack);
+	// 			    console.dir(reply);
+	// 		});
 	msg.push(req.body);
 	//writeMsg(JSON.stringify(msg));
 	res.send(200, msgId);
