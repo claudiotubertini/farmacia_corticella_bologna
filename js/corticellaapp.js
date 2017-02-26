@@ -67,7 +67,7 @@ var ShiftWork = function(){
         };
     };
 
-    var client = new ShiftClient("http://localhost:8081");
+    var client = new ShiftClient("https://localhost:8081");
 
 /* method to retrieve products using the client */
     var retrieveShifts = function () {

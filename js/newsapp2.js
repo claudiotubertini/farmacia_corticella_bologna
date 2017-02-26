@@ -28,8 +28,8 @@ var RetrieveNews = function (){
 
   var products = ko.observableArray();
 
-
- var url = 'http://www.agi.it/salute/rss'
+  feednami.setPublicApiKey('c37e2b609bc2333452742fb05f11f5ec52c86c2275b2f64b2ecf94a00fd2ec65')
+  var url = 'http://www.agi.it/salute/rss'
   feednami.load(url,function(result){
     if(result.error){
       console.log(result.error)

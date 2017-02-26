@@ -1,6 +1,7 @@
 var restify = require('restify');
 var fs = require('fs');
 //var sendmail = require('sendmail');
+var helper = require('sendgrid').mail;
 var PATH = '/schedule-corticella';
 var MPATH = '/messages';
 //var obj = $.parseJSON( '{ "name": "John" }' );
@@ -164,6 +165,24 @@ function addMessage(req, res, next) {
 	// 			    console.log(err && err.stack);
 	// 			    console.dir(reply);
 	// 		});
+            from_email = new helper.Email("claudio.tubertini@gmail.com");
+            to_email = new helper.Email("claudio.tubertini@archetipolibri.it");
+            subject = JSON.stringify(req.body.subject) +' from ' + JSON.stringify(req.body.emailAddress);
+            content = new helper.Content("text/plain", JSON.stringify(req.body.message));
+            mail = new helper.Mail(from_email, subject, to_email, content);
+
+            var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+            var request = sg.emptyRequest({
+            method: 'POST',
+            path: '/v3/mail/send',
+            body: mail.toJSON()
+            });
+
+            sg.API(request, function(error, response) {
+            console.log(response.statusCode);
+            console.log(response.body);
+            console.log(response.headers);
+            }); 
 	msg.push(req.body);
 	//writeMsg(JSON.stringify(msg));
 	res.send(200, msgId);
